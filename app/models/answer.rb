@@ -1,5 +1,6 @@
 class Answer < ApplicationRecord
   belongs_to :question
+  belongs_to :next_question, class_name: "Question", foreign_key: :question_id
   after_initialize :init
 
   def init
