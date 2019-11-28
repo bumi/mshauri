@@ -2,6 +2,10 @@ language: ruby
 rvm:
   - 2.6
 
+branches:
+  only:
+    - master
+
 script:
   - bundle exec rubocop
   - bundle exec rake
