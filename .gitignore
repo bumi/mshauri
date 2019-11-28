@@ -13,6 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 /.idea/*
+.tm_properties
 
 # Ignore uploaded files in development.
 /storage/*
