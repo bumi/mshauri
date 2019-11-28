@@ -1,0 +1,115 @@
+
+# This is the configuration used to check the rubocop source code.
+
+# inherit_from: .rubocop_todo.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+    - 'vendor/bundle/**/*'
+  TargetRubyVersion: 2.6
+  DisplayCopNames: true
+
+# ========== Style ==========
+
+Layout/AlignHash:
+  Enabled: true
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+# ========== Style ==========
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: single_quotes
+
+Style/TernaryParentheses:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+# ========== Metrics ==========
+
+Metrics/AbcSize:
+  Max: 19
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*.rb
+    - config/routes.rb
+    - config/sitemap.rb
+    - spec/**/*.rb
+
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/LineLength:
+  AllowHeredoc: true
+  Max: 150
+
+# ========== Lint ==========
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+# ========== Rails ==========
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - production
+    - staging
+    - test
+
+Rails/Output:
+  Exclude:
+    - db/seeds.rb
+
+# ========== Rspec ==========
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/LeadingSubject:
+  Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 4
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
