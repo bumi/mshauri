@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
@@ -8,9 +10,9 @@ RSpec.describe Question, type: :model do
   #
   # end
 
-  context 'Can create Question' do
-    it 'should have all the validations' do
-      expect(Question.create(title: 'new', description: 'do u use any IDE')).to be_valid
+  context 'when creating a question' do
+    it 'has all the validations' do
+      expect(described_class.create(title: 'new', description: 'do u use any IDE')).to be_valid
     end
   end
 end
