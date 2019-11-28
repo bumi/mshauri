@@ -2,7 +2,7 @@
 
 class Answer < ApplicationRecord
   belongs_to :question
-  belongs_to :next_question, class_name: 'Question', foreign_key: :question_id # rubocop:disable Rails/InverseOf
+  belongs_to :next_question, class_name: 'Question'
   after_initialize :init
 
   def init
