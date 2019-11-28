@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '> 2.3.0', '< 2.7.0' # specific upper limit to manually upgrade if next version is available
 
 gem 'rails', '~> 6.0.1'
 # Use postgresql as the database for Active Record
@@ -30,6 +30,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do

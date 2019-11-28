@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: MyString
+  freetext: false
+  score: 
+  question: one
+
+two:
+  value: MyString
+  freetext: false
+  score: 
+  question: two
