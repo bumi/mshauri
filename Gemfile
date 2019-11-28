@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '> 2.3.0', '< 2.7.0' # specific upper limit to manually upgrade if next version is available
+ruby '2.6.3' # specific upper limit to manually upgrade if next version is available
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'

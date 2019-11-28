@@ -1,6 +1,7 @@
+require 'faker'
 FactoryBot.define do
   factory :question do
-    title { 'new' }
-    description { 'Also new' }
+    title { Faker::String.random }
+    description { Faker::Lorem.paragraph(rand(2..8)) }
   end
 end
