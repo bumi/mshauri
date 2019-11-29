@@ -2,8 +2,8 @@
 
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  namespace :api do
+  scope :api do
     resources :users, only: [:show]
-    resources :answers, only: [:store]
+    resources :answers, only: [:create]
   end
 end
