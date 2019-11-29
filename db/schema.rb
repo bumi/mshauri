@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_084846) do
+ActiveRecord::Schema.define(version: 2019_11_28_140215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.bigint "next_question_id", null: false
+    t.bigint "next_question_id"
     t.bigint "question_id", null: false
     t.string "value"
     t.boolean "freetext"
@@ -51,13 +51,13 @@ ActiveRecord::Schema.define(version: 2019_11_28_084846) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "recommedations", force: :cascade do |t|
+  create_table "recommendations", force: :cascade do |t|
     t.bigint "answer_id", null: false
     t.string "title"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["answer_id"], name: "index_recommedations_on_answer_id"
+    t.index ["answer_id"], name: "index_recommendations_on_answer_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_084846) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
   add_foreign_key "answers", "questions"
@@ -75,5 +76,5 @@ ActiveRecord::Schema.define(version: 2019_11_28_084846) do
   add_foreign_key "iterations_answers", "answers"
   add_foreign_key "iterations_answers", "iterations"
   add_foreign_key "iterations_answers", "questions"
-  add_foreign_key "recommedations", "answers"
+  add_foreign_key "recommendations", "answers"
 end
