@@ -93,6 +93,7 @@ Rails/UnknownEnv:
 Rails/Output:
   Exclude:
     - db/seeds.rb
+    - db/seeds/*.rb
 
 # ========== Rspec ==========
 
