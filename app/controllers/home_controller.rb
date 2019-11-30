@@ -1,5 +1,6 @@
-class HomeController < ApplicationController
+# frozen_string_literal: true
 
+class HomeController < ApplicationController
   # entry point for the vue.js app
   # rendered with a given user slug /[USER SLUG]
   def index
@@ -7,6 +8,5 @@ class HomeController < ApplicationController
   end
 
   # page rendered as root - when no user slug is given
-  def welcome
-  end
+  def welcome; end
 end
