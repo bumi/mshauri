@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Api
-  class UsersController < Api::BaseController
+  class UsersController < BaseController
     def show
       user = User.find_by(slug: params[:id])
       if user

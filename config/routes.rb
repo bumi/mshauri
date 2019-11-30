@@ -5,5 +5,11 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users, only: [:show]
     resources :answers, only: [:create]
+    resources :questions, only: [:show]
   end
+
+  # entry point for the vue.js
+  get '/:user_slug', to: 'home#index'
+
+  root to: 'home#welcome'
 end
