@@ -1,22 +1,7 @@
 <template>
-  <div id="app">
-    <p>{{ message }}</p>
-  </div>
+    <div id="app">
+        <div class="w-85 mx-auto">
+            <router-view></router-view>
+        </div>
+    </div>
 </template>
-
-<script>
-export default {
-  data: function () {
-    return {
-      message: "Hello Vue!"
-    }
-  }
-}
-</script>
-
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
-</style>
