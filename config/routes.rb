@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show]
     resources :answers, only: [:create]
     resources :questions, only: [:show]
+    resources :iterations, only: %i[index create]
   end
 
   # entry point for the vue.js
