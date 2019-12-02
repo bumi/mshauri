@@ -4,6 +4,11 @@ module Api
   class IterationsController < BaseController
     before_action :require_current_user
 
+    # get all current user's iterations
+    def index
+      render json: current_user.iterations
+    end
+
     def show
       @iteration = current_user.iterations.find(params[:id])
       render json: @iteration
