@@ -1,0 +1,100 @@
+---
+-
+  id: 1
+  title: Do you follow any defined Software Development Life Cycle?
+  answers:
+    -
+      value: No / I don't know
+      recommendation: sdlc
+    -
+      value: Waterfall
+      recommendation: agile
+    -
+      value: Agile Software Development: SCRUM
+    -
+      value: Agile Software Development: Kanban
+    -
+      value: Agile adaption for our own process
+    -
+      value: Other
+      input: true
+
+-
+  id: 2
+  title: Before you start developing the products, what do you do?
+  answers:
+    -
+      value: Create wireframes/mockups of the user interface
+      recommendation:
+    -
+      value: Create flowcharts of the user interaction
+      recommendation:
+    -
+      value: Create technical concept
+      recommendation:
+    -
+      value: Create system architecture models
+      recommendation:
+    -
+      value: Gather input from all stakeholders (users, etc.)
+      recommendation:
+    -
+      value: Write user stories
+      recommendation:
+    -
+      value: Other
+      input: true
+      recommendation:
+
+-
+  id: 3
+  title: How are you organizing your tasks and requirements?
+  answers:
+    - Paper list
+    - Physical task board
+    - Google document
+    - Trello
+    - Jira
+    -
+      value: Other
+      input: true
+
+-
+  id: 4
+  title: How are you collecting your bugs and change requests?
+  answers:
+    -
+      value: email, phone, etc.
+      recommendation: bugtracking
+    -
+      value: google document
+      recommendation: bugtracking
+    -
+      value: paper list
+      recommendation: bugtracking
+    - Trello
+    - Jira
+
+-
+  id: 5
+  title: How often do you align the progress with the customers?
+  answers:
+    -
+      value: daily
+    -
+      value: weekly
+    -
+      value: monthly
+    -
+      value: after the project is finished
+    -
+      value: Other
+      input: true
+
+-
+  id: 6
+  title: What are your main project management challenges?
+  answers:
+    -
+      value: ""
+      input: true

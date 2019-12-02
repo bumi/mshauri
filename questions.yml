@@ -1,0 +1,200 @@
+---
+-
+  id: 1
+  title: How many people work in your company?
+  answers:
+    - < 5
+    - 5 - 10
+    - 11 - 25
+    - more
+-
+  id: 2
+  title: How many people are directly involved in software development at your company?
+  answers:
+    - < 5
+    - 5 - 10
+    - 11 - 25
+    - more
+-
+  id: 3
+  title: What programming language are you using?
+  other: true
+  answers: [ PHP, Java, Ruby, JavaScript, Python, Kotlin, Swift, Objective-C]
+
+-
+  id: 4
+  title: Are you using any framework? If so, which?
+  other: true
+  answers:
+     - Laravel
+     - CodeIgniter
+     - Symfony
+     - Ruby on Rails
+     - Play
+     - Spring
+     -
+      value: None / I don't know
+      recommendation: frameworks
+
+-
+  id: 5
+  title: What database system are you using?
+  other: true
+  answers: [ MySQL, PostgreSQL, MariaDB, MongoDB, Oracle, Microsoft SQL Server ]
+
+-
+  id: 6
+  title: Which version control system (VCS) are you using?
+  answers:
+    -
+      value: SVN
+      recommendation: git
+    -
+      value: CSV
+      recommendation: git
+    -
+      value: Git
+    -
+      value: Mercurial
+    -
+      value: Visual Studio Teams
+    -
+      value: None / I don't know
+      recommendation: git
+      next_question: 7
+
+-
+  id: 6a
+  title: Are you using any code hosting service providers?
+  answers:
+    -
+      value: None
+      recommendation: github
+    - GitHub
+    - GitLab
+    - BitBucket
+    - Beanstalk
+    - Self-hosted (e.g. Gitea, GitLab)
+-
+  id: 6b
+  title: What describes your development process best:
+  answers:
+    -
+      value: Developers push every change directly into the shared code repository
+      recommendation: gitflow
+    -
+      value: Developers develop locally and push finished todos into the shared code repository
+      recommendation: gitflow
+    -
+      value: Developers work in a separate code branch
+    -
+      value: Developers work in separate code branch and follow a defined release process for new features
+-
+  id: 7
+  title: How often to you release new features of the software you are building?
+  answers:
+    - daily
+    - weekly
+    - monthly
+    - longer
+
+-
+  id: 8
+  title: Where are you running the software?
+  other: true
+  answers:
+    - Installed on the user's computer
+    - Hosting provider in Rwanda
+    - Foreign hosting provider (self managed servers)
+    - Cloud hosting provider (AWS, Heroku, Azure, etc.)
+
+-
+  id: 9
+  title: How do you release new versions of your software?
+  answers:
+    -
+      value: Manual code updates (e.g. FTP code upload)
+      recommendation: deployment
+    - Automated code updates (e.g. with a deploy script)
+    - Automated through CI/CD
+-
+  id: 10
+  title: Do you have an architecture diagram of your system?
+  answers:
+    -
+      value: No
+      recommendation: architecture_diagram
+    -
+      value: Yes
+
+-
+  id: 11
+  title: Do you have getting started guide for new developers?
+  answers:
+    -
+      value: No
+      recommendation: getting_started_documentation
+    -
+      value: Yes
+
+-
+  id: 12
+  title: Do you maintain a general software development knowledge base?
+  answers:
+    -
+      value: No
+      recommendation: knowledge_base
+    -
+      value: Yes
+
+-
+  id: 13
+  title: Do you have a defined process to test your software in place?
+  answers:
+    -
+      value: No
+      recommendation: testing
+      next_question: 14
+    -
+      value: Yes
+
+-
+  id: 13a
+  title: How often do you test your software?
+  answers:
+    -
+      value: When a new version is released
+      recommendation: continuous_integration
+    -
+      value: On every change made by a developer
+    -
+      value: Periodically (e.g. once a day/week/...)
+    -
+      value: Manually / on demand
+      recommendation: continuous_integration
+
+-
+  id: 13b
+  title: How do you test the functionality of your software?
+  answers:
+    -
+      value: Automated software tests (unit tests, functional tests, or similar)
+    -
+      value: Manual functionality testing
+      recommendation: test_automation
+      next_question: 15
+    -
+      value: Other
+      input: true
+      recommendation: test_automation
+      next_question: 15
+-
+  id: 13c
+  title: Which test automation are you applying?
+  multiple: true
+  answers:
+    - Unit tests
+    - Functional tests / User Acceptance tests
+    - Visual regression tests
+    - Code linting
+
