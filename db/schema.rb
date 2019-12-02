@@ -27,21 +27,21 @@ ActiveRecord::Schema.define(version: 2019_11_28_140215) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "iteration_answers", force: :cascade do |t|
+    t.bigint "iteration_id", null: false
+    t.bigint "question_id", null: false
+    t.bigint "answer_id", null: false
+    t.string "value"
+    t.index ["answer_id"], name: "index_iteration_answers_on_answer_id"
+    t.index ["iteration_id"], name: "index_iteration_answers_on_iteration_id"
+    t.index ["question_id"], name: "index_iteration_answers_on_question_id"
+  end
+
   create_table "iterations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_iterations_on_user_id"
-  end
-
-  create_table "iterations_answers", force: :cascade do |t|
-    t.bigint "iteration_id", null: false
-    t.bigint "question_id", null: false
-    t.bigint "answer_id", null: false
-    t.string "value"
-    t.index ["answer_id"], name: "index_iterations_answers_on_answer_id"
-    t.index ["iteration_id"], name: "index_iterations_answers_on_iteration_id"
-    t.index ["question_id"], name: "index_iterations_answers_on_question_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -67,14 +67,13 @@ ActiveRecord::Schema.define(version: 2019_11_28_140215) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "questions", column: "next_question_id"
+  add_foreign_key "iteration_answers", "answers"
+  add_foreign_key "iteration_answers", "iterations"
+  add_foreign_key "iteration_answers", "questions"
   add_foreign_key "iterations", "users"
-  add_foreign_key "iterations_answers", "answers"
-  add_foreign_key "iterations_answers", "iterations"
-  add_foreign_key "iterations_answers", "questions"
   add_foreign_key "recommendations", "answers"
 end
