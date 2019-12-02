@@ -1,5 +1,5 @@
 class User {
-    static show(slug, success, error = Function()) {
+    static show(success, error = Function()) {
         return axios.get(this.url() + '/me')
             .then(({data}) => success(data))
             .catch(
