@@ -2,12 +2,16 @@
 
 module Api
   class AnswersController < Api::BaseController
-    def create
-      iteration = Iteration.find(request_params[:iteration_id])
-      answer = Answer.find(request_params[:answer_id])
-      return render json: true if iteration && answer && iteration.answer_question(answer)
+    before_action :require_current_user
+    before_action :require_current_iteration
 
-      render json: false, status: :unprocessable_entity
+    def create
+      answer = Answer.find(request_params[:answer_id])
+      if current_iteration.answer_question(answer)
+        render json: true
+      else
+        render json: false, status: :unprocessable_entity
+      end
     end
 
     private
