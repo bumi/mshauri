@@ -9,7 +9,11 @@ Rails.application.routes.draw do
       end
     end
     resources :answers, only: [:create]
-    resources :questions, only: [:show]
+    resources :questions, only: [:show]do
+      collection do
+        get :next
+      end
+    end
     resources :iterations, only: %i[index show create]
   end
 

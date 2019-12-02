@@ -14,12 +14,13 @@ class Iteration < ApplicationRecord
   # For now we always start with the first question
   # This can later be easily changed by changing this method
   def starting_question_id
-    Question.first.id
+    question = Question.where(entry: true).first || Question.first
+    question.id
   end
 
   def as_json(args = {})
     super(args.merge(
-      methods: [:starting_question_id]
+        methods: [:starting_question_id]
     ))
   end
 end
