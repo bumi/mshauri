@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,800|Roboto:300,400,500');
+
+// Typography
+$primary-font: 'Nunito', sans-serif;
+$secondary-font: 'Nunito', sans-serif;
+$font-family-sans-default: "Roboto", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$body-bg: #f8fafc;
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #50c787;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+$primary-lightest: rgba(94, 203, 216, 0.55);
+$primary-lighter: #5dd3e0;
+$primary-light: #5ecfdc;
+$primary: #5ecbd8;
+$primary-dark: #5ec1ce;
+$primary-darker: #58b7c4;
+$primary-darkest: #57adba;
+
+$accent-lightest: #0a6fa7;
+$accent-lighter: #0a6aa2;
+$accent-light: #0a669d;
+$accent: #0a6298;
+$accent-dark: #0a588e;
+$accent-darker: #0a4e84;
+$accent-darkest: #0a437a;
+
+
+$primary-semi-transparent: rgba(94, 203, 216, 0.51);
+$primary-tiny-transparent: rgba(242, 211, 203, 0.10);
+//$accent : #ec4551;
+$full-radius: 9999px;
+$white-smoke: #f7f7f7;
+
+
+.vc-title-wrapper {
+    width: 100% !important;
+}
+
+.vc-title {
+    text-align: center !important;
+}
+
+.vhd-input[data-v-3236f3d4] {
+    width: 100% !important;
+    border: none !important;
+    text-align: center !important;
+    color: inherit !important;
+    background: transparent url('/images/calendar_icon.regular.svg') no-repeat 17px/17px !important;
+}
+
+.vhd-input[data-v-3236f3d4]::placeholder {
+    color: inherit !important;
+    opacity: 1 !important
+}
+
+.day.in-date-range[data-v-3236f3d4] {
+    background-color: $primary-tiny-transparent !important;
+}
+
+.vhd-calendar .calendar-date .week .day.end-date[data-v-3236f3d4] {
+    background-color: $primary-tiny-transparent !important;
+}
+
+.day.start-date[data-v-3236f3d4] {
+    background-color: $primary-tiny-transparent !important;
+}
+
+.vhd-calendar .calendar-date .week .day.end-date[data-v-3236f3d4]:after {
+    background-color: $primary !important
+}
+
+.vhd-calendar .calendar-date .week .day.start-date[data-v-3236f3d4]:before {
+    background-color: $primary !important;
+}
+
+.vhd-calendar-footer .confirm[data-v-3236f3d4] {
+    color: $primary !important;
+}
+
+.vhd-calendar-footer .reset[data-v-3236f3d4] {
+    color: $accent !important;
+}
+
+.vhd-calendar-header {
+    color: #4a4a4a !important;
+}
+
+.emoji[data-v-7990801e] {
+  padding: 0 !important;
+  margin-top: 2px !important;
+  //height: 0 !important;
+  //width: 100% !important;
+}
