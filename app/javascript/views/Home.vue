@@ -6,15 +6,16 @@
 
         </div>
         <div class="flex">
-           <div class="w-50 center">
-               <div class="mt-4 b-2 bg-blue-darker w-25 h-100% center r-5">
-              Iteration
-               </div>
-           </div>
-            <div class="w-50">
-                <div class="mt-4 b-2 bg-grey-lighter w-25 h-100% center r-5">
-                   <i class="fas fa-times-circle"></i>
+            <div class="w-50 center">
+                <div class="mt-5 b-2 bg-blue-light w-50 h-100 text-center r-5" v-for="iteration  in iterations">
+                    {{iteration.completion_rate}}
                 </div>
+            </div>
+            <div class="w-50">
+
+                <button class="mt-5 b-2 bg-blue-light w-50 h-100 text-center r-5" @click="newIteration">
+                    New iteration
+                </button>
             </div>
         </div>
     </div>
@@ -23,21 +24,38 @@
 <script>
 
     import User from "../models/User";
+    import Iteration from "../models/Iteration";
+    import Form from "../utilities/Form";
 
     export default {
         name: "Home",
         data() {
             return {
-                user: {}
+                user: {},
+                iterations: {},
+
+                form: new Form({}),
+
             }
         }, methods: {
             getUser() {
                 User.show((data) => {
                     this.user = data
                 });
+            }, getIteration() {
+                Iteration.index((data) => {
+                    this.iterations = data
+                })
+            }, newIteration() {
+                Iteration.create(response => {
+                    this.$router.push({name: 'question'});
+                    console.log(response)
+                })
             }
         }, mounted() {
             this.getUser();
+            this.getIteration();
+
         }
     }
 </script>

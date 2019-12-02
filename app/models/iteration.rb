@@ -17,9 +17,14 @@ class Iteration < ApplicationRecord
     Question.first.id
   end
 
+  def completion_rate
+    # just added a default before the implementing the function
+    12.0
+  end
+
   def as_json(args = {})
     super(args.merge(
-      methods: [:starting_question_id]
+        methods: [:starting_question_id, :completion_rate]
     ))
   end
 end
