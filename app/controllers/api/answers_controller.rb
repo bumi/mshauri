@@ -3,7 +3,7 @@
 module Api
   class AnswersController < Api::BaseController
     before_action :require_current_user
-    before_action :require_iteration
+    before_action :require_current_iteration
 
     def create
       answer = Answer.find(request_params[:answer_id])

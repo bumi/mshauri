@@ -18,7 +18,7 @@ module Api
       render json: { error: 'User not found' }, status: :unauthorized if current_user.blank?
     end
 
-    def require_iteration
+    def require_current_iteration
       render json: { error: 'Iteration not found' }, status: :unauthorized if current_user.blank? || iteration.blank?
     end
   end
