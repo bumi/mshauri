@@ -8,9 +8,8 @@ module Api
     end
 
     def next
-      if current_iteration.answers.blank?
-        return render json: Question.find(current_iteration.starting_question_id)
-      end
+      return render json: Question.find(current_iteration.starting_question_id) if current_iteration.answers.blank?
+
       render json: current_iteration.answers.last.next_question
     end
   end
