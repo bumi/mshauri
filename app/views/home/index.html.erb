@@ -1,7 +1,7 @@
-<h1>Welcome <%= @user.email %></h1>
+<!--<h1>Welcome <%#= @user.email %></h1>-->
 
-<script type="text/javascript">
-  var user = <%= raw @user.to_json %>
-  fetch('<%= api_question_url(Question.first) %>')
-    .then(r => r.json().then(console.log))
-</script>
+<!--<script type="text/javascript">-->
+<!--  var user = <%#= raw @user.to_json %>-->
+<!--  fetch('<%= api_question_url(Question.first) %>')-->
+<!--    .then(r => r.json().then(console.log))-->
+<!--</script>-->
