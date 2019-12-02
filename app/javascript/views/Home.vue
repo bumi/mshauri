@@ -19,7 +19,7 @@
             }
         }, methods: {
             getUser() {
-                User.show(this.$route.params.user_slug, (data) => {
+                User.show((data) => {
                     this.user = data
                 });
             }
