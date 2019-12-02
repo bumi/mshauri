@@ -10,4 +10,16 @@ class Iteration < ApplicationRecord
 
     iteration_answers.create(answer: answer, question: answer.question, value: value)
   end
+
+  # For now we always start with the first question
+  # This can later be easily changed by changing this method
+  def starting_question_id
+    Question.first.id
+  end
+
+  def as_json(args = {})
+    super(args.merge(
+      methods: [:starting_question_id]
+    ))
+  end
 end
