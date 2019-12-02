@@ -35,3 +35,6 @@ if (token) {
     window.csrftoken = '';
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
+
+let user_slug = document.head.querySelector('meta[name="user-slug"]');
+window.axios.defaults.headers.common['X-USER-SLUG'] = user_slug.content;

@@ -2,13 +2,10 @@
 
 module Api
   class UsersController < BaseController
-    def show
-      user = User.find_by(slug: params[:id])
-      if user
-        render json: user
-      else
-        render json: 'Invalid user', status: :not_found
-      end
+    before_action :require_current_user
+
+    def me
+      render json: current_user
     end
   end
 end

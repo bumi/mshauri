@@ -2,19 +2,15 @@
 
 module Api
   class IterationsController < BaseController
+    before_action :require_current_user
+
     def create
-      user = User.find_by(slug: post_params[:slug])
-      if user
-        user.iteration.create
+      @iteration = current_user.iterations.build
+      if @iteration.save
+        render json: @iteration
       else
-        render json: 'Invalid user', status: :not_found
+        render json: @iteration.errors, status: :unprocessable_entity
       end
-    end
-
-    private
-
-    def post_params
-      params.permit(:slug)
     end
   end
 end
