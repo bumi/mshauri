@@ -1,6 +1,6 @@
 ---
 -
-  id: 1
+  id: 14
   title: Do you track how many and how people access your system?
   answers:
     -
@@ -10,7 +10,7 @@
       recommendation: analytics
 
 -
-  id: 2
+  id: 15
   title: How do you track user activity?
   answers:
     - Google Analytics
@@ -21,7 +21,7 @@
       input: true
 
 -
-  id: 3
+  id: 16
   title: Do you get notifications if your application encouters errors? Or something does not work for the user?
   answers:
     -
@@ -31,17 +31,18 @@
       recommendation: exception_tracking
 
 -
-  id: 4
+  id: 17
   title: Do you monitor the system usage?
   answers:
     -
       value: Yes
+      next_question: 17a
     -
       value: No
       recommendation: monitoring
-      next_question: 5
+      next_question: 18
 
-- id: 4a
+- id: 17a
   title: What tools do you use for system monitoring?
   answers:
     - exception tracking tool
@@ -54,50 +55,68 @@
       value: Other
       input: true
 
- -
-  id: 5
+-
+  id: 18
   title: Do you have regular backups of your whole system?
   answers:
-    - Yes
+    -
+      value: Yes
+      next_question: 18a
     -
       value: No
       recommendation: backups
-      next_question: 6
+      next_question: 19
 
 -
-  id: 5a
+  id: 18a
   title: How often do you backup your system?
   answers:
-    - < 1 hour
-    - > 1 hour but < 1 day
     -
-      value: > 1 day but < 1 week
+      value: "< 1 hour"
+      next_question: 18b
+    -
+      value: "> 1 hour but < 1 day"
+      next_question: 18b
+    -
+      value: "> 1 day but < 1 week"
       recommendation: backups
+      next_question: 18b
 
 -
-  id: 5b
+  id: 18b
   title: What do you backup?
   multiple: true
   answers:
-    - Database
-    - Code
-    - Server configuration
+    -
+      value: Database
+      next_question: 18c
+    -
+      value: Code
+      next_question: 18c
+    -
+      value: Server configuration
+      next_question: 18c
 
 -
-  id: 5c
+  id: 18c
   title: How long does it take to recover your system from a backup?
   answers:
-    - < 1 hour
-    - < 1 day
+    -
+      value: < 1 hour
+      next_question: 19
+    -
+      value: < 1 day
+      next_question: 19
     -
       value: longer
       recommendation: backups
+      next_question: 19
 
 -
-  id: 6
+  id: 19
   title: Do you have defined data access policy? / who can access the data?
   answers:
-    - Yes
+    - "Yes"
     -
-      value: No
+      value: "No"
       recommendation: data_access_policy

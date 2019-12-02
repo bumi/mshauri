@@ -8,11 +8,44 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-%w[
-  questions
-  users
-].each do |file|
-  puts "Seeding #{file}..."
-  load "db/seeds/#{file}.rb"
+
+require 'yaml'
+questions = {}
+Dir['./data/questions/*.yml'].each do |filename|
+  category = File.basename(filename, '.yml')
+  questions[category]  = YAML.load(File.read(filename))
 end
-puts 'Done'
+
+# create all questions first
+questions.each do |category, category_questions|
+  category_questions.each do |question_data|
+    question = Question.where(identifier: question_data['id']).first_or_initialize
+    question.title = question_data['title']
+    question.other = question_data['other']
+    question.multiple = question_data['multiple']
+    question.save!
+  end
+end
+
+# now create answers for each question and associate next question
+questions.each do |category, category_questions|
+  category_questions.each do |question_data|
+    question = Question.find_by_identifier!(question_data['id'])
+    puts question_data
+    question_data['answers'].each do |answer_data|
+      puts answer_data
+      if answer_data.is_a?(String)
+        answer_data = { 'value': answer_data }
+      end
+      answer = question.answers.find_or_initialize_by(value: answer_data['value'])
+      answer.input = answer_data['input']
+      if answer_data['next_question']
+        puts answer_data['next_question']
+        answer.next_question = Question.find_by!(identifier: answer_data['next_question'])
+      else
+        answer.next_question = Question.find_by(identifier: question.identifier.to_i + 1)
+      end
+      answer.save!
+    end
+  end
+end

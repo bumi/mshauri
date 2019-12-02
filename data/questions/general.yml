@@ -193,12 +193,13 @@
     -
       value: Manual functionality testing
       recommendation: test_automation
-      next_question: 1
+      next_question: 14
     -
       value: Other
       input: true
       recommendation: test_automation
-      next_question: 1
+      next_question: 14
+
 -
   id: 13c
   title: Which test automation are you applying?
@@ -206,14 +207,14 @@
   answers:
     -
       value: Unit tests
-      next_question: 1
+      next_question: 14
     -
       value: Functional tests / User Acceptance tests
-      next_question: 1
+      next_question: 14
     -
       value: Visual regression tests
-      next_question: 1
+      next_question: 14
     -
       value: Code linting
-      next_question: 1
+      next_question: 14
 
