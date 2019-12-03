@@ -4,7 +4,9 @@
         <div v-for="answer in question.answers">
             <input type="radio" name="answer"  v-model="form.answer_id">
             <label>{{answer.value}}</label>
+
         </div>
+        <button @click="saveAnswer">Save</button>
     </div>
 </template>
 

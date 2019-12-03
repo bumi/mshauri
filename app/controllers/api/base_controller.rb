@@ -21,7 +21,7 @@ module Api
     end
 
     def require_current_iteration
-      render json: { error: 'Iteration not found' }, status: :unauthorized if current_user.blank? || iteration.blank?
+      render json: { error: 'Iteration not found' }, status: :unauthorized if current_user.blank? || current_iteration.blank?
     end
   end
 end
