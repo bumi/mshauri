@@ -10,6 +10,7 @@ The project uses [rubocop](https://github.com/rubocop-hq/rubocop) for code linti
 
 ```rb
 
+bundle exec rubocop
 bundle exec rubocop -a # auto fix
 ```
 
