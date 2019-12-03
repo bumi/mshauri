@@ -19,9 +19,7 @@ class Iteration < ApplicationRecord
   end
 
   def completion_rate
-    # just added a default before the implementing the function
-    Question.all.count
-    iteration_answers.count
+    (iteration_answers.count.to_f / Question.count * 100).to_f
   end
 
   def as_json(args = {})
