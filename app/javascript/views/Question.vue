@@ -6,6 +6,7 @@
             <label>{{answer.value}}</label>
         </div>
         <button @click="saveAnswer">Save</button>
+
     </div>
 </template>
 
@@ -26,6 +27,7 @@
                     answer_id: '',
                     iteration_id: '',
                 }),
+                nextQuestion:''
 
             }
         }, methods: {
@@ -35,9 +37,11 @@
                 })
 
             }, saveAnswer() {
-                this.form.post(apiUrl + '/answers').then(response => {
-                    // this.$router.push({name: 'question', params: {id: data.starting_question_id }});
-                    console.log(response)
+                this.form.post(apiUrl + '/answers').then(data => {
+                    this.$router.push({name: 'question',
+                        params: {id: data , iteration_id: this.form.iteration_id }});
+
+                    console.log(data)
                 })
 
             }
