@@ -24,7 +24,7 @@ class Iteration < ApplicationRecord
 
   def as_json(args = {})
     super(args.merge(
-        methods: [:starting_question_id, :completion_rate]
+      methods: %i[starting_question_id completion_rate]
     ))
   end
 end
