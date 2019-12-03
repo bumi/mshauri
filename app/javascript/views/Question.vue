@@ -2,8 +2,8 @@
     <div>
         {{question.title}} <br>
         <div v-for="answer in question.answers">
+            <input type="radio" name="answer"  v-model="form.value">
             <label>{{answer.value}}</label>
-
         </div>
     </div>
 </template>
@@ -13,6 +13,7 @@
     import Question from "../models/Question";
     import Iteration from "../models/Iteration";
     import QuestionCard from "../component/cards/QuestionCard";
+    import Answer from "../models/Answer";
 
     export default {
         name: "Question",
@@ -20,6 +21,9 @@
         data() {
             return {
                 question: {},
+                form: new Form({
+                    value: '',
+                }),
 
             }
         }, methods: {
@@ -27,6 +31,12 @@
                 Question.show(this.$route.params.id, (data) => {
                     this.question = data
                 })
+
+            }, saveAnswer() {
+                    this.form.post(apiUrl + '/answers').then(response => {
+                        // this.$router.push({name: 'question', params: {id: data.starting_question_id }});
+                        console.log(response)
+                    })
 
             }
         }, mounted() {
