@@ -4,9 +4,9 @@
   title: Do you track how many and how people access your system?
   answers:
     -
-      value: Yes
+      value: "Yes"
     -
-      value: No
+      value: "No"
       recommendation: analytics
 
 -
@@ -25,9 +25,9 @@
   title: Do you get notifications if your application encouters errors? Or something does not work for the user?
   answers:
     -
-      value: Yes
+      value: "Yes"
     -
-      value: No
+      value: "No"
       recommendation: exception_tracking
 
 -
@@ -35,10 +35,10 @@
   title: Do you monitor the system usage?
   answers:
     -
-      value: Yes
+      value: "Yes"
       next_question: 17a
     -
-      value: No
+      value: "No"
       recommendation: monitoring
       next_question: 18
 
@@ -60,10 +60,10 @@
   title: Do you have regular backups of your whole system?
   answers:
     -
-      value: Yes
+      value: "Yes"
       next_question: 18a
     -
-      value: No
+      value: "No"
       recommendation: backups
       next_question: 19
 
