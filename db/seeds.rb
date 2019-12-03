@@ -37,11 +37,11 @@ questions.each do |_category, category_questions|
       answer_data = { 'value': answer_data } if answer_data.is_a?(String)
       answer = question.answers.find_or_initialize_by(value: answer_data['value'])
       answer.input = answer_data['input']
-      if answer_data['next_question']
-        answer.next_question = Question.find_by!(identifier: answer_data['next_question'])
-      else
-        answer.next_question = Question.find_by(identifier: question.identifier.to_i + 1)
-      end
+      answer.next_question = if answer_data['next_question']
+                               Question.find_by!(identifier: answer_data['next_question'])
+                             else
+                               Question.find_by(identifier: question.identifier.to_i + 1)
+                             end
       answer.save!
     end
   end
