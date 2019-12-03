@@ -9,7 +9,7 @@ module Api
       answer = Answer.find(request_params[:answer_id])
       if current_iteration.answer_question(answer)
         question = Question.where(id: answer.next_question_id).first
-        render json:  question.id
+        render json: question.id
       else
         render json: false, status: :unprocessable_entity
       end
