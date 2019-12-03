@@ -3,7 +3,7 @@
 class Question < ApplicationRecord
   after_initialize :init
 
-  has_many :answers
+  has_many :answers, dependent: destroy_all
 
   validates :title, presence: true
   validates :description, presence: false
@@ -14,7 +14,7 @@ class Question < ApplicationRecord
 
   def as_json(args = {})
     super(args.merge(
-        methods: %i[answers]
+      methods: %i[answers]
     ))
   end
 end
