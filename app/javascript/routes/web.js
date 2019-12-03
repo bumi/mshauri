@@ -11,7 +11,7 @@ export default {
             component: Home,
             name: 'home'
         }, {
-             path: '/questions',
+             path: '/:user_slug/questions/:id',
              component: Question,
              name: 'question'
         }

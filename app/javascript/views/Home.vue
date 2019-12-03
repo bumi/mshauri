@@ -47,9 +47,9 @@
                     this.iterations = data
                 })
             }, newIteration() {
-                Iteration.create(response => {
-                    this.$router.push({name: 'question'});
-                    console.log(response)
+                Iteration.create(data => {
+                    this.$router.push({name: 'question', params: {id: data.starting_question_id }});
+                    console.log(data)
                 })
             }
         }, mounted() {
