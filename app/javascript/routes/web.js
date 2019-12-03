@@ -12,7 +12,7 @@ export default {
             component: Home,
             name: 'home'
         }, {
-             path: '/:user_slug/questions/:id',
+             path: '/:user_slug/i/:iteration_id/questions/:id',
              component: Question,
              name: 'question'
         },{

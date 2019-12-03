@@ -2,7 +2,7 @@
     <div>
         {{question.title}} <br>
         <div v-for="answer in question.answers">
-            <input type="radio" name="answer"  v-model="form.value">
+            <input type="radio" name="answer"  v-model="form.answer_id">
             <label>{{answer.value}}</label>
         </div>
     </div>
@@ -22,7 +22,8 @@
             return {
                 question: {},
                 form: new Form({
-                    value: '',
+                    answer_id: '',
+                    iteration_id: '',
                 }),
 
             }
@@ -41,6 +42,7 @@
             }
         }, mounted() {
             this.getQuestions();
+            this.form.iteration_id = this.$route.params.iteration_id;
         }
     }
 </script>
