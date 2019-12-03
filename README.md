@@ -9,7 +9,7 @@ application up and running.
 The project uses [rubocop](https://github.com/rubocop-hq/rubocop) for code linting.
 
 ```rb
-bundle exec rubocop
+
 bundle exec rubocop -a # auto fix
 ```
 

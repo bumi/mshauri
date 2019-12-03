@@ -11,6 +11,8 @@ module Api
     # the current iteration is always the last iteration
     # When a user creates a new iterations the old ones can not be changed again
     def current_iteration
+      return @current_iteration ||= current_user.iterations.find(params[:iteration_id]) || current_user.iterations.last if params[:iteration_id]
+
       @current_iteration ||= current_user.iterations.last
     end
 
@@ -19,7 +21,7 @@ module Api
     end
 
     def require_current_iteration
-      render json: { error: 'Iteration not found' }, status: :unauthorized if current_user.blank? || iteration.blank?
+      render json: { error: 'Iteration not found' }, status: :unauthorized if current_user.blank? || current_iteration.blank?
     end
   end
 end

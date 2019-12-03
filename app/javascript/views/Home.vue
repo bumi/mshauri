@@ -5,17 +5,20 @@
             <h3>Start learning</h3>
 
         </div>
-        <div class="flex">
-            <div class="w-50 center">
-                <div class="mt-5 b-2 bg-blue-light w-50 h-100 text-center r-5" v-for="iteration  in iterations">
-                    {{iteration.completion_rate}}
+        <div class="flex flex-wrap justify-content-center">
+            <div @click="newIteration"
+                 class="mt-3 b-2 w-25 border-2 border-solid mr-3 h-100 text-center p-5 bg-primary text-white cursor-pointer">
+                <div class="w-100 h-32 mx-auto flex flex-wrap align-items-center justify-content-center">
+                    <p class="text-center text-6xl w-100 m-0"><i class="fas fa-plus-circle"></i></p>
+                    <p class="text-center m-0"> New iteration</p>
                 </div>
             </div>
-            <div class="w-50">
-
-                <button class="mt-5 b-2 bg-blue-light w-50 h-100 text-center r-5" @click="newIteration">
-                    New iteration
-                </button>
+            <div @click="openIteration(iteration)"
+                 class="mt-3 b-2 w-25 border-2 border-solid mr-3 h-100 text-center p-5 cursor-pointer"
+                 v-for="iteration  in iterations">
+                <div class="w-rem-32 h-32 mx-auto rounded-full border-2 border-solid flex align-items-center justify-content-center">
+                    <p class="text-center text-3xl">{{iteration.completion_rate}} %</p>
+                </div>
             </div>
         </div>
     </div>
@@ -47,10 +50,15 @@
                     this.iterations = data
                 })
             }, newIteration() {
-                Iteration.create(response => {
-                    this.$router.push({name: 'question'});
-                    console.log(response)
+                Iteration.create(data => {
+                    this.openIteration(data);
+                    console.log(data)
                 })
+            }, openIteration(iteration) {
+                this.$router.push({
+                    name: 'question',
+                    params: {id: iteration.starting_question_id, iteration_id: iteration.id}
+                });
             }
         }, mounted() {
             this.getUser();

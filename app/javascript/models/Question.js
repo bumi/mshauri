@@ -7,6 +7,13 @@ class Question {
             )
     }
 
+    static show(id, success, error = Function()) {
+        return axios.get(this.url() + '/' + id).then(({data}) => success(data))
+            .catch(
+                e => error(e)
+            )
+    }
+
     static url() {
         return apiUrl + '/questions'
     }

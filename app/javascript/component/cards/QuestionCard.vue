@@ -4,7 +4,15 @@
 
 <script>
     export default {
-        name: "QuestionCard"
+        name: "QuestionCard",
+        data() {
+          return{
+
+          }
+        },
+        methods:{
+
+        }
     }
 </script>
 
