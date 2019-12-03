@@ -11,6 +11,8 @@ module Api
     # the current iteration is always the last iteration
     # When a user creates a new iterations the old ones can not be changed again
     def current_iteration
+      return @current_iteration ||= current_user.iterations.find(params[:iteration_id]) || current_user.iterations.last if params[:iteration_id]
+      ​
       @current_iteration ||= current_user.iterations.last
     end
 
