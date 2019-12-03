@@ -1,12 +1,33 @@
 <template>
-    <div>
-        {{question.title}} <br>
-        <div v-for="answer in question.answers">
-            <input type="radio" name="answer" v-model="form.answer_id" :value="answer.id">
-            <label>{{answer.value}}</label>
+    <div class="w-90 mx-auto py-5 my-5 bg-white rounded-lg">
+        <div class="w-80 mx-auto">
+            <div class="w-100">
+                <div class="h-3 w100 bg-grey-lighter rounded-full">
+                    <div class="w-20 h-100 bg-primary rounded-full"></div>
+                </div>
+            </div>
+            <div class="py-4">
+                <h4 class="my-1 font-medium">{{question.title}}</h4>
+                <p class="my-0 text-sm opacity-80">{{question.description}}</p>
+            </div>
         </div>
-        <button @click="saveAnswer">Save</button>
-
+        <div class="w-100 border-0 border-b-1 border-solid"></div>
+        <div class="w-80 mx-auto">
+            <div class="w-100 py-4">
+                <div class="w-100 pt-3 pb-5">
+                    <div v-for="answer in question.answers">
+                        <p><label class="radiocontainer">
+                            <span class="text-lg">{{answer.value}}</span>
+                            <input type="radio" name="answer" v-model="form.answer_id" :value="answer.id">
+                            <span class="radiomark"></span>
+                        </label></p>
+                    </div>
+                </div>
+                <div class="text-right mt-4">
+                    <button class="btn btn-primary rounded py-1" @click="saveAnswer">Save</button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -27,7 +48,7 @@
                     answer_id: '',
                     iteration_id: '',
                 }),
-                nextQuestion:''
+                nextQuestion: ''
 
             }
         }, methods: {
@@ -38,8 +59,10 @@
 
             }, saveAnswer() {
                 this.form.post(apiUrl + '/answers').then(data => {
-                    this.$router.push({name: 'question',
-                        params: {id: data , iteration_id: this.form.iteration_id }});
+                    this.$router.push({
+                        name: 'question',
+                        params: {id: data, iteration_id: this.form.iteration_id}
+                    });
 
                     console.log(data)
                 })
