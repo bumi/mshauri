@@ -3,7 +3,7 @@
 class Question < ApplicationRecord
   after_initialize :init
 
-  has_many :answers, dependent: destroy_all
+  has_many :answers, dependent: :destroy
 
   validates :title, presence: true
   validates :description, presence: false
