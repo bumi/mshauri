@@ -14,8 +14,9 @@ class Iteration < ApplicationRecord
   # For now we always start with the first question
   # This can later be easily changed by changing this method
   def starting_question_id
-    question = Question.find_by(entry: true).first || Question.first
-    question.id
+    return Question.first.id if iteration_answers.blank?
+
+    answers.last.next_question_id
   end
 
   def as_json(args = {})
