@@ -40,7 +40,6 @@
                 this.form.post(apiUrl + '/answers').then(data => {
                     this.$router.push({name: 'question',
                         params: {id: data , iteration_id: this.form.iteration_id }});
-
                     console.log(data)
                 })
 
