@@ -1,7 +1,14 @@
 <template>
-    <div id="app">
-        <div class="w-85 mx-auto">
+    <div id="app" class="bg-grey-lighter min-h-screen">
+        <navbar></navbar>
+        <div class="w-70 bg-white mx-auto py-4">
             <router-view></router-view>
         </div>
     </div>
 </template>
+<script>
+    import Navbar from "./component/Navbar";
+    export default {
+        components: {Navbar}
+    }
+</script>
