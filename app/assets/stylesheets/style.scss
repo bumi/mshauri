@@ -1233,13 +1233,13 @@ a.label:focus {
 /* Create a custom radio button */
 .radiomark {
   background-color: white;
-  border: 1px #c2c2c2 solid;
+  border: 2px #c2c2c2 solid;
   border-radius: 50%;
-  height: 20px;
+  height: 25px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 20px;
+  width: 25px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -1268,10 +1268,10 @@ a.label:focus {
 .radiocontainer .radiomark:after {
   background: white;
   border-radius: 50%;
-  height: 8px;
-  left: 5px;
-  top: 5px;
-  width: 8px;
+  height: 13px;
+  left: 4px;
+  top: 4px;
+  width: 13px;
 }
 
 .btn-options {
