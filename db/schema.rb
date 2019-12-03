@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_135548) do
+ActiveRecord::Schema.define(version: 2019_12_02_180507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_135548) do
     t.bigint "next_question_id"
     t.bigint "question_id", null: false
     t.string "value"
-    t.boolean "freetext"
+    t.boolean "input", default: false
     t.float "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 2019_12_02_135548) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "entry", default: false
+    t.string "identifier"
+    t.boolean "multiple"
+    t.boolean "other"
   end
 
   create_table "recommendations", force: :cascade do |t|
