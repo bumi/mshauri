@@ -9,6 +9,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'yaml'
+Dir['./db/seeds/*.rb'].each do |file|
+  puts "Seeding #{file}..."
+  load file
+end
+
 questions = {}
 Dir['./data/questions/*.yml'].each do |filename|
   category = File.basename(filename, '.yml')
