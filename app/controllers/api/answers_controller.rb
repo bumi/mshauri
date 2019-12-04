@@ -18,7 +18,7 @@ module Api
     private
 
     def request_params
-      params.permit(:answer_id, :iteration_id)
+      params.permit(:answers, :iteration_id)
     end
   end
 end

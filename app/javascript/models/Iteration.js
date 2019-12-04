@@ -7,6 +7,13 @@ class Iteration {
             )
     }
 
+    static show(id, success, error = Function()) {
+        return axios.get(this.url() + '/' + id).then(({data}) => success(data))
+            .catch(
+                e => error(e)
+            )
+    }
+
     static create(success, error){
       return axios.post(this.url())
           .then(({data}) => success(data))

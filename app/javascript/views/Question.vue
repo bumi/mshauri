@@ -3,7 +3,8 @@
         <div class="w-80 mx-auto">
             <div class="w-100">
                 <div class="h-3 w100 bg-grey-lighter rounded-full">
-                    <div class="w-20 h-100 bg-primary rounded-full"></div>
+                    <div class="h-100 bg-primary rounded-full"
+                         v-bind:style="{ width: completionRate+'%', fontSize: fontSize + 'px' }"></div>
                 </div>
             </div>
             <div class="w-100 relative">
@@ -23,10 +24,12 @@
             <div class="w-100 py-4 relative z-0">
                 <div class="w-100 pt-3 pb-5">
                     <div v-for="answer in question.answers">
-                        <p><label class="radiocontainer">
+                        <p><label
+                                v-bind:class="{'radiocontainer': !question.multiple, 'checkcontainer': question.multiple}">
                             <span class="text-lg">{{answer.value}}</span>
-                            <input type="radio" name="answer" v-model="form.answer_id" :value="answer.id">
-                            <span class="radiomark"></span>
+                            <input :type="question.multiple ? 'checkbox' : 'radio'" name="answer"
+                                   v-model="form.answers" :value="answer.id">
+                            <span v-bind:class="{'radiomark': !question.multiple, 'checkmark': question.multiple}"></span>
                         </label></p>
                     </div>
                 </div>
@@ -45,6 +48,7 @@
     import Form from "../utilities/Form";
     import Question from "../models/Question";
     import QuestionCard from "../component/cards/QuestionCard";
+    import Iteration from "../models/Iteration";
 
     export default {
         name: "Question",
@@ -53,17 +57,22 @@
             return {
                 question: {},
                 form: new Form({
-                    answer_id: '',
+                    answers: [],
                     iteration_id: '',
                 }),
                 nextQuestion: '',
-                loading: true
+                loading: true,
+                iteration: {}
 
             }
         }, methods: {
             getReload() {
                 this.loading = true;
-                this.form.answer_id = '';
+                this.form.answers = [];
+                Iteration.show(this.$route.params.iteration_id, (data) => {
+                    this.iteration = data;
+                    this.loading = false;
+                });
                 Question.show(this.$route.params.id, (data) => {
                     this.question = data;
                     this.loading = false;
@@ -89,6 +98,10 @@
         }, mounted() {
             this.getReload();
             this.form.iteration_id = this.$route.params.iteration_id;
+        }, computed: {
+            completionRate() {
+                return this.iteration.completion_rate ? this.iteration.completion_rate : 0;
+            }
         }
     }
 </script>
