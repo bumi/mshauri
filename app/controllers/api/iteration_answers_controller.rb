@@ -7,8 +7,10 @@ module Api
 
     def create
       @iteration_answers = params[:answers].map do |a|
-        answer = Answer.find(a.answer_id)
-        current_iteration.iteration_answers.build(answer: answer, question: answer.question, value: a.value)
+        if !a.blank?
+          answer = Answer.find(a[:answer_id])
+          current_iteration.iteration_answers.build(answer: answer, question: answer.question, value: a[:value])
+        end
       end
       if @iteration_answers.all?(&:valid?) && @iteration_answers.each(&:save!)
         render json: @iteration_answers.first.answer.next_question_id
