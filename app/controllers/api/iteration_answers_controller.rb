@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   class IterationAnswersController < Api::BaseController
     before_action :require_current_user
