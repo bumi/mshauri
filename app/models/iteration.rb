@@ -4,7 +4,7 @@ class Iteration < ApplicationRecord
   belongs_to :user
   has_many :iteration_answers, dependent: :destroy
   has_many :answers, through: :iteration_answers
-  has_many :answers, through: :iteration_answers
+  has_many :questions, through: :iteration_answers
 
   def answer_question(answer, value = nil)
     return false if iteration_answers.find_by(question: answer.question)
@@ -19,7 +19,7 @@ class Iteration < ApplicationRecord
   end
 
   def completion_rate
-    (iteration_answers.count.to_f / Question.count * 100).to_f
+    (questions.count.to_f / Question.count * 100).to_i
   end
 
   def as_json(args = {})
