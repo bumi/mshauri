@@ -19,7 +19,7 @@ class Iteration < ApplicationRecord
   end
 
   def completion_rate
-    (questions.count.to_f / Question.count * 100).to_i
+    (questions.distinct.count.to_f / Question.count * 100).to_i
   end
 
   def as_json(args = {})
