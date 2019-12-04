@@ -80,7 +80,7 @@
 
             }, saveAnswer() {
                 this.loading = true;
-                this.form.post(apiUrl + '/answers').then(data => {
+                this.form.post(apiUrl + '/iteration_answers').then(data => {
                     if (data) {
                         this.$router.push({
                             name: 'question',
