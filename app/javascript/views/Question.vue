@@ -37,7 +37,7 @@
                 })
 
             }, saveAnswer() {
-                this.form.post(apiUrl + '/answers').then(data => {
+                this.form.post(apiUrl + '/iteration_answers').then(data => {
                     this.$router.push({name: 'question',
                         params: {id: data , iteration_id: this.form.iteration_id }});
 

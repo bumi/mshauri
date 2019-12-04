@@ -1,5 +1,5 @@
 module Api
-  class IterationAnswersController < ApplicationController
+  class IterationAnswersController < Api::BaseController
     before_action :require_current_user
     before_action :require_current_iteration
 
@@ -7,7 +7,7 @@ module Api
       answer = Answer.find(request_params[:answer_id])
       @iteration_answer = current_iteration.iteration_answers.build(answer: answer, question: answer.question, value: params[:value])
       if @iteration_answer.save
-        render json: @iteration_answer
+        render json: answer.next_question_id
       else
         render json: @iteration_answer.errors, status: :unprocessable_entity
       end
