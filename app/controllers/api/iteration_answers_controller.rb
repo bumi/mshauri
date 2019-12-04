@@ -6,15 +6,14 @@ module Api
     before_action :require_current_iteration
 
     def create
-      params[:answers].each do |answer_id|
+      @iteration_answers = params[:answers].map do |answer_id|
         answer = Answer.find(answer_id)
-        @iteration_answer = current_iteration.iteration_answers.build(answer: answer, question: answer.question, value: params[:value])
-        @iteration_answer.save
+        current_iteration.iteration_answers.build(answer: answer, question: answer.question, value: params[:value])
       end
-      if @iteration_answer
-        render json: @iteration_answer.answer.next_question_id
+      if @iteration_answers.all?(&:valid?) && @iteration_answers.each(&:save!)
+        render json: @iteration_answers.first.answer.next_question_id
       else
-        render json: @iteration_answer.errors, status: :unprocessable_entity
+        render json: @iteration_answers.map(&:errors), status: :unprocessable_entity
       end
     end
 
