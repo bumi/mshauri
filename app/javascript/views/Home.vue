@@ -1,11 +1,11 @@
 <template>
-    <div class="bg-white">
-        <div class="text-center">
-            <h2>Hi {{user.name}}</h2>
-            <h3>Start learning</h3>
-
+    <div class="bg-white py-5">
+        <div class="w-80 mx-auto">
+            <h2 class="font-primary mb-3">Hi {{user.name}}</h2>
+            <p>Welcome to Mshauri </p>
         </div>
-        <div class="flex flex-wrap justify-content-center">
+        <div class="w-100 border-0 border-b-1 border-solid border-primary mt-4"></div>
+        <div class="flex flex-wrap justify-content-center pt-4">
             <div @click="newIteration"
                  class="mt-3 b-2 w-25 border-2 border-solid mr-3 h-100 text-center p-5 bg-primary text-white cursor-pointer">
                 <div class="w-100 h-32 mx-auto flex flex-wrap align-items-center justify-content-center">
