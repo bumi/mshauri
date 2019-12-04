@@ -1,14 +1,23 @@
 ---
 -
   id: 3
-  title: What programming language are you using?
-  other: true
-  answers: [ PHP, Java, Ruby, JavaScript, Python, Kotlin, Swift, Objective-C]
+  title: What programming languages are you using?
+  answers:
+    - PHP
+    - Java
+    - Ruby
+    - JavaScript
+    - Python
+    - Kotlin
+    - Swift
+    - Objective-C
+    -
+      value: Other
+      input: true
 
 -
   id: 4
-  title: Are you using any framework? If so, which?
-  other: true
+  title: Are you using any (web) framework? If so, which one?
   answers:
      - Laravel
      - CodeIgniter
@@ -16,6 +25,9 @@
      - Ruby on Rails
      - Play
      - Spring
+    -
+      value: Other
+      input: true
      -
       value: None / I don't know
       recommendation: frameworks
@@ -23,61 +35,84 @@
 -
   id: 5
   title: What database system are you using?
-  other: true
-  answers: [ MySQL, PostgreSQL, MariaDB, MongoDB, Oracle, Microsoft SQL Server ]
+  answers:
+    - MySQL
+    - PostgreSQL
+    - MariaDB
+    - MongoDB
+    - Oracle
+    - Microsoft SQL Server
+    - None
+    -
+      value: Other
+      input: true
 
 -
   id: 6
-  title: Which version control system (VCS) are you using?
+  title: Are you using any Version Control System (VCS)?
+  answers:
+    -
+      value: "Yes"
+      next_question: 6a
+    -
+      value: "No"
+      next_question: 7
+-
+  id: 6a
+  title: Which Version Control System (VCS) are you using?
   answers:
     -
       value: SVN
       recommendation: git
-      next_question: 6a
+      next_question: 6b
     -
       value: CSV
       recommendation: git
-      next_question: 6a
+      next_question: 6b
     -
       value: Git
-      next_question: 6a
+      next_question: 6b
     -
       value: Mercurial
-      next_question: 6a
+      next_question: 6b
     -
       value: Visual Studio Teams
       recommendation: git
-      next_question: 6a
+      next_question: 6b
     -
       value: None / I don't know
       recommendation: git
       next_question: 7
 
 -
-  id: 6a
+  id: 6b
   title: Are you using any code hosting service providers?
   answers:
     -
       value: None
       recommendation: github
-      next_question: 6b
+      next_question: 6c
     -
       value: GitHub
-      next_question: 6b
+      next_question: 6c
     -
       value: GitLab
-      next_question: 6b
+      next_question: 6c
     -
       value: BitBucket
-      next_question: 6b
+      next_question: 6c
     -
       value: Beanstalk
-      next_question: 6b
+      next_question: 6c
     -
       value: Self-hosted (e.g. Gitea, GitLab)
-      next_question: 6b
+      next_question: 6c
+    -
+      value: Other
+      input: true
+      next_question: 6c
 -
-  id: 6b
+  id: 6c
   title: What describes your development process best
   answers:
     -
