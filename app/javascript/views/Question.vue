@@ -4,7 +4,7 @@
             <div class="w-100">
                 <div class="h-3 w100 bg-grey-lighter rounded-full">
                     <div class="h-100 bg-primary rounded-full"
-                         v-bind:style="{ width: completionRate+'%', fontSize: fontSize + 'px' }"></div>
+                         v-bind:style="{ width: completionRate+'%' }"></div>
                 </div>
             </div>
             <div class="w-100 relative">
@@ -27,14 +27,20 @@
                         <p><label
                                 v-bind:class="{'radiocontainer': !question.multiple, 'checkcontainer': question.multiple}">
                             <span class="text-lg">{{answer.value}}</span>
-                            <input :type="question.multiple ? 'checkbox' : 'radio'" name="answer"
+
+                            <input v-if="!question.multiple" type="radio" name="answer"
+                                   v-model="form.answers[0]" :value="answer.id">
+
+                            <input v-if="question.multiple" type="checkbox" name="answer"
                                    v-model="form.answers" :value="answer.id">
+
                             <span v-bind:class="{'radiomark': !question.multiple, 'checkmark': question.multiple}"></span>
                         </label></p>
                     </div>
                 </div>
                 <div class="text-right mt-4">
-                    <button :disabled="!form.answer_id" class="btn btn-primary rounded py-1" @click="saveAnswer">Save
+                    <button :disabled="!form.answers.length" class="btn btn-primary rounded py-1" @click="saveAnswer">
+                        Save
                     </button>
                 </div>
             </div>

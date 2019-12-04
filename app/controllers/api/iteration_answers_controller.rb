@@ -6,10 +6,13 @@ module Api
     before_action :require_current_iteration
 
     def create
-      answer = Answer.find(request_params[:answer_id])
-      @iteration_answer = current_iteration.iteration_answers.build(answer: answer, question: answer.question, value: params[:value])
-      if @iteration_answer.save
-        render json: answer.next_question_id
+      params[:answers].each do |answer_id|
+        answer = Answer.find(answer_id)
+        @iteration_answer = current_iteration.iteration_answers.build(answer: answer, question: answer.question, value: params[:value])
+        @iteration_answer.save
+      end
+      if @iteration_answer
+        render json: @iteration_answer.answer.next_question_id
       else
         render json: @iteration_answer.errors, status: :unprocessable_entity
       end
@@ -18,7 +21,7 @@ module Api
     private
 
     def request_params
-      params.permit(:answer_id, :iteration_id)
+      params.permit(:answers, :iteration_id)
     end
   end
 end
