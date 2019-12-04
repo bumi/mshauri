@@ -1,21 +1,50 @@
 <template>
-    <div>
-        {{question.title}} <br>
-        <div v-for="answer in question.answers">
-            <input type="radio" name="answer" v-model="form.answer_id" :value="answer.id">
-            <label>{{answer.value}}</label>
+    <div class="w-90 mx-auto py-5 my-5 bg-white rounded-lg">
+        <div class="w-80 mx-auto">
+            <div class="w-100">
+                <div class="h-3 w100 bg-grey-lighter rounded-full">
+                    <div class="w-20 h-100 bg-primary rounded-full"></div>
+                </div>
+            </div>
+            <div class="w-100 relative">
+                <div class="py-4 relative z-0">
+                    <h4 class="my-1 font-medium">{{question.title}}</h4>
+                    <p class="my-0 text-sm opacity-80">{{question.description}}</p>
+                </div>
+                <div v-if="loading" class="w-100 h-100 absolute z-99 bg-white t-0 opacity-50">
+                </div>
+            </div>
         </div>
-        <button @click="saveAnswer">Save</button>
-
+        <div class="w-100 border-0 border-b-1 border-solid"></div>
+        <div v-if="loading" class="w-100 overflow-hidden h-2 relative">
+            <div class="bg-primary-darker h-100 progress-loader w-20 rounded-full"></div>
+        </div>
+        <div class="w-80 mx-auto relative">
+            <div class="w-100 py-4 relative z-0">
+                <div class="w-100 pt-3 pb-5">
+                    <div v-for="answer in question.answers">
+                        <p><label class="radiocontainer">
+                            <span class="text-lg">{{answer.value}}</span>
+                            <input type="radio" name="answer" v-model="form.answer_id" :value="answer.id">
+                            <span class="radiomark"></span>
+                        </label></p>
+                    </div>
+                </div>
+                <div class="text-right mt-4">
+                    <button :disabled="!form.answer_id" class="btn btn-primary rounded py-1" @click="saveAnswer">Save
+                    </button>
+                </div>
+            </div>
+            <div v-if="loading" class="w-100 h-100 absolute z-99 bg-white t-0 opacity-50">
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import Form from "../utilities/Form";
     import Question from "../models/Question";
-    import Iteration from "../models/Iteration";
     import QuestionCard from "../component/cards/QuestionCard";
-    import Answer from "../models/Answer";
 
     export default {
         name: "Question",
@@ -27,26 +56,38 @@
                     answer_id: '',
                     iteration_id: '',
                 }),
-                nextQuestion:''
+                nextQuestion: '',
+                loading: true
 
             }
         }, methods: {
-            getQuestions() {
+            getReload() {
+                this.loading = true;
+                this.form.answer_id = '';
                 Question.show(this.$route.params.id, (data) => {
-                    this.question = data
+                    this.question = data;
+                    this.loading = false;
                 })
 
             }, saveAnswer() {
+                this.loading = true;
                 this.form.post(apiUrl + '/iteration_answers').then(data => {
-                    this.$router.push({name: 'question',
-                        params: {id: data , iteration_id: this.form.iteration_id }});
-
-                    console.log(data)
+                    if (data) {
+                        this.$router.push({
+                            name: 'question',
+                            params: {id: data, iteration_id: this.form.iteration_id}
+                        });
+                        this.getReload();
+                    } else {
+                        this.$router.push({
+                            name: 'dashboard'
+                        });
+                    }
                 })
 
             }
         }, mounted() {
-            this.getQuestions();
+            this.getReload();
             this.form.iteration_id = this.$route.params.iteration_id;
         }
     }

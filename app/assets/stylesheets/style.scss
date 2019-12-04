@@ -1233,13 +1233,13 @@ a.label:focus {
 /* Create a custom radio button */
 .radiomark {
   background-color: white;
-  border: 1px #c2c2c2 solid;
+  border: 2px #c2c2c2 solid;
   border-radius: 50%;
-  height: 20px;
+  height: 25px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 20px;
+  width: 25px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -1268,10 +1268,10 @@ a.label:focus {
 .radiocontainer .radiomark:after {
   background: white;
   border-radius: 50%;
-  height: 8px;
-  left: 5px;
-  top: 5px;
-  width: 8px;
+  height: 13px;
+  left: 4px;
+  top: 4px;
+  width: 13px;
 }
 
 .btn-options {
@@ -1968,6 +1968,19 @@ ul.inline-block li {
   display: none;
 }
 
+.progress-loader {
+  animation-delay: 250ms;
+  animation-direction: initial;
+  -webkit-animation-direction: initial; /* Safari 4.0 - 8.0 */
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-iteration-count: infinite;
+  animation-name: progress-loader;
+  -webkit-animation-name: progress-loader; /* Safari 4.0 - 8.0 */
+  opacity: 1;
+  position: absolute;
+}
+
 @-webkit-keyframes input-loading-left-right {
   0% {
     width: 0;
@@ -2004,6 +2017,25 @@ ul.inline-block li {
   100% {
     width: 0;
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes progress-loader {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Standard syntax */
+@keyframes progress-loader {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
   }
 }
 

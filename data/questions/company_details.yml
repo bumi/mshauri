@@ -3,10 +3,10 @@
   id: 1
   title: How many people work in your company?
   answers:
-    - < 5
-    - 5 - 10
-    - 11 - 25
-    - more
+    - "< 5"
+    - "5 - 10"
+    - "11 - 25"
+    - "more"
 -
   id: 2
   title: How many people are directly involved in software development at your company?

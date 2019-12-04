@@ -9,6 +9,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'yaml'
+Dir['./db/seeds/*.rb'].each do |file|
+  puts "Seeding #{file}..."
+  load file
+end
+
 questions = {}
 Dir['./data/questions/*.yml'].each do |filename|
   category = File.basename(filename, '.yml')
@@ -34,7 +39,7 @@ questions.each do |_category, category_questions|
   category_questions.each do |question_data|
     question = Question.find_by!(identifier: question_data['id'])
     question_data['answers'].each do |answer_data|
-      answer_data = { 'value': answer_data } if answer_data.is_a?(String)
+      answer_data = { 'value' => answer_data } if answer_data.is_a?(String)
       answer = question.answers.find_or_initialize_by(value: answer_data['value'])
       answer.input = answer_data['input']
       answer.next_question = if answer_data['next_question']

@@ -8,7 +8,7 @@ module Api
     def create
       answer = Answer.find(request_params[:answer_id])
       if current_iteration.answer_question(answer)
-        question = Question.where(id: answer.next_question_id).first
+        question = Question.where(id: answer.next_question).first
         render json: question.id
       else
         render json: false, status: :unprocessable_entity
