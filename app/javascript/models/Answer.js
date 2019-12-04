@@ -6,7 +6,7 @@ class Answer {
     }
 
     static url() {
-        return apiUrl + '/answers'
+        return apiUrl + '/iteration_answers'
     }
 }
 
