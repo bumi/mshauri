@@ -17,25 +17,14 @@
             </div>
         </div>
         <div class="w-100 border-0 border-b-1 border-solid"></div>
-        <div v-if="loading" class="w-100 overflow-hidden h-2 relative">
+        <div v-bind:class="{'invisible': !loading}" class="w-100 overflow-hidden h-2 relative">
             <div class="bg-primary-darker h-100 progress-loader w-20 rounded-full"></div>
         </div>
         <div class="w-80 mx-auto relative">
             <div class="w-100 py-4 relative z-0">
                 <div class="w-100 pt-3 pb-5">
-                    <div v-for="answer in question.answers">
-                        <p><label
-                                v-bind:class="{'radiocontainer': !question.multiple, 'checkcontainer': question.multiple}">
-                            <span class="text-lg">{{answer.value}}</span>
-
-                            <input v-if="!question.multiple" type="radio" name="answer"
-                                   v-model="form.answers[0]" :value="answer.id">
-
-                            <input v-if="question.multiple" type="checkbox" name="answer"
-                                   v-model="form.answers" :value="answer.id">
-
-                            <span v-bind:class="{'radiomark': !question.multiple, 'checkmark': question.multiple}"></span>
-                        </label></p>
+                    <div v-for="(answer, index) in question.answers">
+                        <answer :key="answer.id" :answer="answer" v-model="form.answers[question.multiple ? index : 0]" :is-multiple="question.multiple"></answer>
                     </div>
                 </div>
                 <div class="text-right mt-4">
@@ -53,12 +42,12 @@
 <script>
     import Form from "../utilities/Form";
     import Question from "../models/Question";
-    import QuestionCard from "../component/cards/QuestionCard";
+    import Answer from "../component/form/Answer";
     import Iteration from "../models/Iteration";
 
     export default {
         name: "Question",
-        components: {QuestionCard},
+        components: {Answer},
         data() {
             return {
                 question: {},
@@ -80,8 +69,11 @@
                     this.loading = false;
                 });
                 Question.show(this.$route.params.id, (data) => {
-                    this.question = data;
-                    this.loading = false;
+                    if(data){
+                        this.form.answers = [];
+                        this.question = data;
+                        this.loading = false;
+                    }
                 })
 
             }, saveAnswer() {
@@ -99,7 +91,6 @@
                         });
                     }
                 })
-
             }
         }, mounted() {
             this.getReload();
