@@ -1,7 +1,7 @@
 <template>
     <div id="app" class="bg-grey-lighter min-h-screen">
         <navbar></navbar>
-        <div class="w-70 mx-auto py-4">
+        <div class="w-80 mx-auto py-4">
             <router-view></router-view>
         </div>
     </div>
