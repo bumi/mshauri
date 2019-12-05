@@ -1,7 +1,7 @@
 <template>
 <div>
            <span  v-for="recommendation in recommendations" :key="recommendation.id">
-             <router-link :to="{name: 'recommendations-show', params:{id: recommendation.id}}">
+             <router-link :to="{name: 'recommendation-show', params:{id: recommendation.id, title: recommendation.title}}">
                 {{recommendation.title}}
              </router-link>
            </span>

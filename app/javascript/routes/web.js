@@ -24,9 +24,9 @@ export default {
             component: RecommendationIndex,
             name: 'recommendations-index'
         }, {
-            path: 'user_slug/i/:iteration_id/recommendation_id',
+            path: '/:user_slug/recommendations/:id/:title',
             component: RecommendationShow,
-            name: 'recommendations-show'
+            name: 'recommendation-show'
         }
 
     ]
