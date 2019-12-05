@@ -95,7 +95,8 @@
                         this.getReload();
                     } else {
                         this.$router.push({
-                            name: 'dashboard'
+                            name: 'dashboard',
+                            params: {iteration_id: this.form.iteration_id}
                         });
                     }
                 })

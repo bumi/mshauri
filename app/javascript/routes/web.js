@@ -16,7 +16,7 @@ export default {
             component: Question,
             name: 'question'
         }, {
-            path: '/:user_slug/dashboard',
+            path: '/:user_slug/i/:iteration_id/completed',
             component: Dashboard,
             name: 'dashboard'
         }, {
