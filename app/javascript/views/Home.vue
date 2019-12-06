@@ -1,37 +1,45 @@
 <template>
-    <div class="bg-white py-5">
-        <div class="w-80 mx-auto">
-            <h2 class="font-primary mb-3">Hi {{user.name}}</h2>
-            <p>Welcome to Mshauri </p>
+    <div class="bg-white py-5 min-h-screen -mt-8">
+
+        <div class="w-80 mx-auto pt-3">
+            <h1 class="text-grey-darker text-5xl font-primary xs:text-3xl text-centered">
+                Hi, {{user.name}}
+                <span class="w-90"><img src="/assets/waving-hand.svg" class="w-8 text-grey"></span>
+            </h1>
+
+            <h2 class="text-center text-weight-normal text-grey-dark text-2xl xs:text-lg">Welcome to Mshauri !</h2>
         </div>
-        <div class="w-100 border-0 border-b-1 border-solid border-primary mt-4"></div>
-        <div class="flex flex-wrap justify-content-center pt-4">
+        <div class="w-100 h-1 bg-primary"></div>
+        <div class="flex flex-wrap justify-content-center py-5">
             <div @click="newIteration"
-                 class="mt-3 b-2 w-25 border-2 border-solid mr-3 h-100 text-center p-5 bg-primary text-white cursor-pointer">
-                <div class="w-100 h-32 mx-auto flex flex-wrap align-items-center justify-content-center">
-                    <p class="text-center text-6xl w-100 m-0"><i class="fas fa-plus-circle"></i></p>
-                    <p class="text-center m-0"> New iteration</p>
+                class="mt-3 w-25 mr-3 w-20 border-1 border-solid border-grey-lighter shadow-sm cursor-pointer">
+
+                <div class="px-3 py-2 text-center">
+                    <img src="/assets/plus.svg" class="w-35 pt-5 mx-auto text-center ">
+
+                    <h2 class="pt-3 text-xs text-grey-dark ">Start Iteration</h2>
                 </div>
+
             </div>
-            <div @click="openIteration(iteration)"
-                 class="mt-3 b-2 w-25 border-2 border-solid mr-3 h-100 text-center p-5 cursor-pointer"
-                 v-for="iteration  in iterations">
-                <div class="w-rem-32 h-32 mx-auto rounded-full border-2 border-solid flex align-items-center justify-content-center">
-                    <p class="text-center text-3xl">{{iteration.completion_rate}} %</p>
-                </div>
+            <div @click="openIteration(iteration)" :key="iteration.id" class="mt-3 w-25 mr-3"
+                v-for="iteration  in iterations">
+                <iteration-card :iteration="iteration"></iteration-card>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-
     import User from "../models/User";
     import Iteration from "../models/Iteration";
+    import IterationCard from "../component/cards/IterationCard";
     import Form from "../utilities/Form";
 
     export default {
         name: "Home",
+        components: {
+            IterationCard
+        },
         data() {
             return {
                 user: {},
@@ -40,27 +48,35 @@
                 form: new Form({}),
 
             }
-        }, methods: {
+        },
+        methods: {
             getUser() {
                 User.show((data) => {
                     this.user = data
                 });
-            }, getIteration() {
+            },
+            getIteration() {
                 Iteration.index((data) => {
                     this.iterations = data
                 })
-            }, newIteration() {
+            },
+            newIteration() {
                 Iteration.create(data => {
                     this.openIteration(data);
                     console.log(data)
                 })
-            }, openIteration(iteration) {
+            },
+            openIteration(iteration) {
                 this.$router.push({
                     name: 'question',
-                    params: {id: iteration.starting_question_id, iteration_id: iteration.id}
+                    params: {
+                        id: iteration.starting_question_id,
+                        iteration_id: iteration.id
+                    }
                 });
             }
-        }, mounted() {
+        },
+        mounted() {
             this.getUser();
             this.getIteration();
 
