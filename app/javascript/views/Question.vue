@@ -27,8 +27,8 @@
                         <answer :key="answer.id" :answer="answer" v-model="form.answers[question.multiple ? index : 0]" :is-multiple="question.multiple"></answer>
                     </div>
                 </div>
-                <div class="text-right mt-4">
-                    <button :disabled="!form.answers.length" class="btn btn-primary rounded py-1" @click="saveAnswer">
+                <div class="text-right mt-2">
+                    <button :disabled="!form.answers.length" class="btn btn-primary rounded py-2 text-base" @click="saveAnswer">
                         Save
                     </button>
                 </div>
