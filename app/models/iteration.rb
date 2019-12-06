@@ -13,12 +13,10 @@ class Iteration < ApplicationRecord
     iteration_answers.create(answer: answer, question: answer.question, value: value)
   end
 
-  
   def complete?
-    if answers.last.blank? || answers.last.next_question_id
-      return false
-    end  
-    return true
+    return false if answers.last.blank? || answers.last.next_question_id
+
+    true
   end
 
   # For now we always start with the first question
@@ -28,9 +26,8 @@ class Iteration < ApplicationRecord
   end
 
   def completion_rate
-    if complete?
-      return 100
-    end  
+    return 100 if complete?
+
     (questions.distinct.count.to_f / Question.count * 100).to_i
   end
 
