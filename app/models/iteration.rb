@@ -13,6 +13,14 @@ class Iteration < ApplicationRecord
     iteration_answers.create(answer: answer, question: answer.question, value: value)
   end
 
+  
+  def complete?
+    if answers.last.blank? || answers.last.next_question_id
+      return false
+    end  
+    return true
+  end
+
   # For now we always start with the first question
   # This can later be easily changed by changing this method
   def starting_question_id
@@ -20,12 +28,15 @@ class Iteration < ApplicationRecord
   end
 
   def completion_rate
+    if complete?
+      return 100
+    end  
     (questions.distinct.count.to_f / Question.count * 100).to_i
   end
 
   def as_json(args = {})
     super(args.merge(
-      methods: %i[starting_question_id completion_rate]
+      methods: %i[starting_question_id completion_rate complete?]
     ))
   end
 end
