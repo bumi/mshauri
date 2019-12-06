@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     resources :questions, only: [:show]
     resources :iterations, only: %i[index show create]
     resources :recommendations, only: %i[index show]
+    namespace :admin do
+      resources :analytics, only: [:index]
+    end
   end
 
   # entry point for the vue.js
