@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :iteration_answers, only: [:create]
     resources :questions, only: [:show]
     resources :iterations, only: %i[index show create]
+    resources :recommendations, only: %i[index show]
   end
 
   # entry point for the vue.js
