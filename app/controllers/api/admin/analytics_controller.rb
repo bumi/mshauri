@@ -4,13 +4,7 @@ module Api
   module Admin
     class AnalyticsController < ActionController::API
       def index
-        render json: Question.first.to_json(include: {
-
-                                              answers: {
-                                                methods: :user_count,
-                                              },
-
-                                            })
+        @questions = Question.all
       end
     end
   end
