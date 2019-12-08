@@ -1,7 +1,7 @@
 class Answer {
     static create(success, error) {
         return axios.post(this.url())
-            .then(({data}) => success(data))
+            .then(({ data }) => success(data))
             .catch(e => error)
     }
 
