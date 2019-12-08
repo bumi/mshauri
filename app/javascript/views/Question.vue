@@ -67,6 +67,7 @@
 <script>
 import Form from "../utilities/Form";
 import Question from "../models/Question";
+import AnswerModel from "../models/Answer";
 import Answer from "../component/form/Answer";
 import Iteration from "../models/Iteration";
 
@@ -114,7 +115,7 @@ export default {
     },
     saveAnswer() {
       this.loading = true;
-      this.form.post(Answer.url()).then(data => {
+      this.form.post(AnswerModel.url()).then(data => {
         if (data) {
           this.$router.push({
             name: 'question',

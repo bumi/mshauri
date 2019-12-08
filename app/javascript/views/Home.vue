@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     getUser() {
-      User.show().then(({ data }) => {
+      User.show('me').then(({ data }) => {
         this.user = data
       });
     },

@@ -1,4 +1,5 @@
 import Errors from "./Errors";
+import Service from "../models/Service";
 
 
 export default class Form {
@@ -97,13 +98,7 @@ export default class Form {
   submit(requestType, url) {
     return new Promise(
       (resolve, reject) => {
-        window.axios(
-          {
-            method: requestType,
-            url: String(url),
-            data: this.data()
-          }
-        ).then(
+        Service.request(requestType,url,this.data()).then(
           response => {
             this.onSuccess(response.data);
             resolve(response.data);
