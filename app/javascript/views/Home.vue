@@ -64,22 +64,22 @@ export default {
   },
   mounted() {
     this.getUser();
-    this.getIteration();
+    this.getIterations();
 
   },
   methods: {
     getUser() {
-      User.show((data) => {
+      User.show('me').then(({ data }) => {
         this.user = data
       });
     },
-    getIteration() {
-      Iteration.index((data) => {
+    getIterations() {
+      Iteration.index().then(({ data }) => {
         this.iterations = data
       })
     },
     newIteration() {
-      Iteration.create(data => {
+      Iteration.create().then(({ data }) => {
         this.openIteration(data);
         console.log(data)
       })
@@ -93,7 +93,7 @@ export default {
         }
       });
     }
-  }
+  },
 }
 </script>
 

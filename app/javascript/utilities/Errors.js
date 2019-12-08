@@ -1,4 +1,4 @@
-class Errors {
+export default class Errors {
   /**
      * Create a new Errors instance.
      */
@@ -62,5 +62,3 @@ class Errors {
     this.errors = {};
   }
 }
-
-export default Errors;

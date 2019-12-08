@@ -28,7 +28,7 @@ export default {
   },
 
   mounted() {
-    Recommendation.show(this.$route.params.id, (data) => {
+    Recommendation.show(this.$route.params.id).then(({ data }) => {
       this.recommendation = data;
     });
   }

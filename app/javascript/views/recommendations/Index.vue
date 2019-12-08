@@ -22,7 +22,7 @@ export default {
   },
 
   mounted() {
-    Recommendation.index(this.$route.params.iteration_id, (data) => {
+    Recommendation.index(this.$route.params.iteration_id).then(({ data }) => {
       this.recommendations = data;
       console.log(data)
     });

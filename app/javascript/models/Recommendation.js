@@ -1,28 +1,5 @@
-class Recommendation {
-  static index(iteration_id, success, error = Function()) {
-    return window.axios.get(this.url(), {
-      params: {
-        iteration_id: iteration_id
-      }
-    })
-      .then(({ data }) => success(data))
-      .catch(
-        e => error(e)
-      )
-  }
+import BaseModel from "./BaseModel";
 
-  static show(id, success, error = Function()) {
-    return window.axios.get(this.url() + '/' + id)
-      .then(({ data }) => success(data))
-      .catch(
-        e => error(e)
-      )
-  }
-
-  static url() {
-    return window.apiUrl + '/recommendations'
-  }
-
+export default class Recommendation extends BaseModel {
+     static basePath = "recommendations";
 }
-
-export default Recommendation

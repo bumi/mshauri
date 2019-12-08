@@ -1,16 +1,5 @@
-class User {
-  static show(success, error = Function()) {
-    return window.axios.get(this.url() + '/me')
-      .then(({ data }) => success(data))
-      .catch(
-        e => error(e)
-      )
-  }
+import BaseModel from "./BaseModel";
 
-  static url() {
-    return window.apiUrl + '/users'
-  }
-
+export default class User extends BaseModel {
+    static basePath = 'users'
 }
-
-export default User

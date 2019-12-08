@@ -67,6 +67,7 @@
 <script>
 import Form from "../utilities/Form";
 import Question from "../models/Question";
+import AnswerModel from "../models/Answer";
 import Answer from "../component/form/Answer";
 import Iteration from "../models/Iteration";
 
@@ -99,11 +100,11 @@ export default {
     getReload() {
       this.loading = true;
       this.form.answers = [];
-      Iteration.show(this.$route.params.iteration_id, (data) => {
+      Iteration.show(this.$route.params.iteration_id).then(({ data }) => {
         this.iteration = data;
         this.loading = false;
       });
-      Question.show(this.$route.params.id, (data) => {
+      Question.show(this.$route.params.id).then(({ data }) => {
         if (data) {
           this.form.answers = [];
           this.question = data;
@@ -114,7 +115,7 @@ export default {
     },
     saveAnswer() {
       this.loading = true;
-      this.form.post(window.apiUrl + '/iteration_answers').then(data => {
+      this.form.post(AnswerModel.url()).then(data => {
         if (data) {
           this.$router.push({
             name: 'question',
@@ -132,7 +133,7 @@ export default {
         }
       })
     }
-  }
+  },
 }
 </script>
 
