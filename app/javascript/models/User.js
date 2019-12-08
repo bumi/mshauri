@@ -1,6 +1,6 @@
 import BaseRequest from "./BaseRequest";
 
-class User extends BaseRequest{
+class User extends BaseRequest {
     static basePath = 'users'
 }
 
