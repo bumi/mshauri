@@ -1,4 +1,4 @@
-class Service {
+export default class Service {
   static get(url, params = {}) {
     return this.request('get', url,params);
   }
@@ -18,5 +18,3 @@ class Service {
     )
   }
 }
-
-export default Service

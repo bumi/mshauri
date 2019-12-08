@@ -1,7 +1,5 @@
-import BaseRequest from "./BaseRequest";
+import BaseModel from "./BaseModel";
 
-class Recommendation extends BaseRequest {
+export default class Recommendation extends BaseModel {
      static basePath = "recommendations";
 }
-
-export default Recommendation

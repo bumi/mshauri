@@ -1,7 +1,5 @@
-import BaseRequest from "./BaseRequest";
+import BaseModel from "./BaseModel";
 
-class Question extends BaseRequest {
+export default class Question extends BaseModel {
     static basePath = "questions"
 }
-
-export default Question

@@ -1,7 +1,5 @@
-import BaseRequest from "./BaseRequest";
+import BaseModel from "./BaseModel";
 
-class User extends BaseRequest {
+export default class User extends BaseModel {
     static basePath = 'users'
 }
-
-export default User

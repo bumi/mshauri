@@ -64,7 +64,7 @@ export default {
   },
   mounted() {
     this.getUser();
-    this.getIteration();
+    this.getIterations();
 
   },
   methods: {
@@ -73,7 +73,7 @@ export default {
         this.user = data
       });
     },
-    getIteration() {
+    getIterations() {
       Iteration.index().then(({ data }) => {
         this.iterations = data
       })

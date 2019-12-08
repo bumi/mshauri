@@ -1,6 +1,6 @@
 import Service from "./Service"
 
-class BaseRequest {
+export default class BaseModel {
 
     static basePath;
 
@@ -17,8 +17,6 @@ class BaseRequest {
     }
 
     static url() {
-      return [this.basePath,...arguments].join('/')
+      return [this.basePath, ...arguments].join('/')
     }
 }
-
-export default BaseRequest

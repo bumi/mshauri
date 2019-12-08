@@ -1,9 +1,8 @@
-import BaseRequest from "./BaseRequest";
+import BaseModel from "./BaseModel";
 
-class Iteration extends BaseRequest {
+export default class Iteration extends BaseModel {
 
     static basePath = "iterations"
 
 }
 
-export default Iteration

@@ -1,7 +1,5 @@
-import BaseRequest from "./BaseRequest";
+import BaseModel from "./BaseModel";
 
-class Answer extends BaseRequest {
+export default class Answer extends BaseModel {
     static basePath = 'iteration_answers';
 }
-
-export default Answer

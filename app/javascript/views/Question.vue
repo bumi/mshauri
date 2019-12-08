@@ -86,6 +86,15 @@ export default {
 
     }
   },
+  computed: {
+    completionRate() {
+      return this.iteration.completion_rate ? this.iteration.completion_rate : 0;
+    }
+  },
+  mounted() {
+    this.getReload();
+    this.form.iteration_id = this.$route.params.iteration_id;
+  },
   methods: {
     getReload() {
       this.loading = true;
@@ -105,7 +114,7 @@ export default {
     },
     saveAnswer() {
       this.loading = true;
-      this.form.post(window.apiUrl + '/iteration_answers').then(data => {
+      this.form.post(Answer.url()).then(data => {
         if (data) {
           this.$router.push({
             name: 'question',
@@ -123,7 +132,7 @@ export default {
         }
       })
     }
-  }
+  },
 }
 </script>
 
