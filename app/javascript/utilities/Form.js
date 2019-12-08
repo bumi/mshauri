@@ -98,7 +98,7 @@ export default class Form {
   submit(requestType, url) {
     return new Promise(
       (resolve, reject) => {
-        Service.request(requestType,url,this.data()).then(
+        Service.request(requestType, url, this.data()).then(
           response => {
             this.onSuccess(response.data);
             resolve(response.data);

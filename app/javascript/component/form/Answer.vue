@@ -48,7 +48,7 @@ export default {
   props: {
     answer: {
       type: Object,
-      default: () =>{
+      default: () => {
         return {}
       }
     },
@@ -58,7 +58,7 @@ export default {
     },
     value: {
       type: Object,
-      default: () =>{
+      default: () => {
         return {}
       }
     },
@@ -86,7 +86,7 @@ export default {
   methods: {
     updateData() {
       if (this.checkbox || this.radioInput) {
-        return this.$emit('input',{
+        return this.$emit('input', {
           answer_id: this.answer.id,
           value: this.other
         });

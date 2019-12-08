@@ -9,7 +9,9 @@ module.exports = {
     'plugin:vue/recommended'
   ],
   rules: {
+    'arrow-spacing': ['error', { 'before': true, 'after': true }],
     'brace-style': 'error',
+    'comma-spacing': ['error', { 'before': false, 'after': true }],
     'indent': ['error', 2],
     'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }],
     'keyword-spacing': ['error', { 'before': true, 'after': true }],

@@ -27,7 +27,7 @@ export default {
   props: {
     recommendation: {
       type: Object,
-      default: ()=> {}
+      default: () => {}
     }
   }
 }
