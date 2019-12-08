@@ -5,7 +5,7 @@ module.exports = {
   ],
   rules: {
     'brace-style': 'error',
-    // 'indent': ['error', 2],
+    'indent': ['error', 2],
     'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }],
     'keyword-spacing': ['error', { 'before': true, 'after': true }],
     'no-extra-parens': ['error', 'all'],

@@ -43,58 +43,58 @@
 </template>
 
 <script>
-    import User from "../models/User";
-    import Iteration from "../models/Iteration";
-    import IterationCard from "../component/cards/IterationCard";
-    import Form from "../utilities/Form";
+import User from "../models/User";
+import Iteration from "../models/Iteration";
+import IterationCard from "../component/cards/IterationCard";
+import Form from "../utilities/Form";
 
-    export default {
-        name: "Home",
-        components: {
-            IterationCard
-        },
-        data() {
-            return {
-                user: {},
-                iterations: {},
+export default {
+  name: "Home",
+  components: {
+    IterationCard
+  },
+  data() {
+    return {
+      user: {},
+      iterations: {},
 
-                form: new Form({}),
+      form: new Form({}),
 
-            }
-        },
-        mounted() {
-            this.getUser();
-            this.getIteration();
-
-        },
-        methods: {
-            getUser() {
-                User.show((data) => {
-                    this.user = data
-                });
-            },
-            getIteration() {
-                Iteration.index((data) => {
-                    this.iterations = data
-                })
-            },
-            newIteration() {
-                Iteration.create(data => {
-                    this.openIteration(data);
-                    console.log(data)
-                })
-            },
-            openIteration(iteration) {
-                this.$router.push({
-                    name: 'question',
-                    params: {
-                        id: iteration.starting_question_id,
-                        iteration_id: iteration.id
-                    }
-                });
-            }
-        }
     }
+  },
+  mounted() {
+    this.getUser();
+    this.getIteration();
+
+  },
+  methods: {
+    getUser() {
+      User.show((data) => {
+        this.user = data
+      });
+    },
+    getIteration() {
+      Iteration.index((data) => {
+        this.iterations = data
+      })
+    },
+    newIteration() {
+      Iteration.create(data => {
+        this.openIteration(data);
+        console.log(data)
+      })
+    },
+    openIteration(iteration) {
+      this.$router.push({
+        name: 'question',
+        params: {
+          id: iteration.starting_question_id,
+          iteration_id: iteration.id
+        }
+      });
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -22,13 +22,13 @@
   </div>
 </template>
 <script>
-    export default {
-        name: "RecommendationCard",
-        props: {
-            recommendation: {
-                type: Object,
-                default: ()=> {}
-            }
-        }
+export default {
+  name: "RecommendationCard",
+  props: {
+    recommendation: {
+      type: Object,
+      default: ()=> {}
     }
+  }
+}
 </script>

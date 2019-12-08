@@ -29,13 +29,13 @@
 </template>
 
 <script>
-    export default {
-        name: 'IterationCard',
-        props: {
-            iteration: {
-                type: Object,
-                default: () => {}
-            }
-        }
+export default {
+  name: 'IterationCard',
+  props: {
+    iteration: {
+      type: Object,
+      default: () => {}
     }
+  }
+}
 </script>

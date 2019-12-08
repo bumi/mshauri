@@ -12,20 +12,20 @@
 </template>
 
 <script>
-    import Recommendation from "../../models/Recommendation"
-    export default {
-        name: 'RecommendationIndex',
-        data() {
-            return {
-                recommendations: [],
-            }
-        },
-
-        mounted() {
-            Recommendation.index(this.$route.params.iteration_id, (data) => {
-                this.recommendations = data;
-                console.log(data)
-            });
-        }
+import Recommendation from "../../models/Recommendation"
+export default {
+  name: 'RecommendationIndex',
+  data() {
+    return {
+      recommendations: [],
     }
+  },
+
+  mounted() {
+    Recommendation.index(this.$route.params.iteration_id, (data) => {
+      this.recommendations = data;
+      console.log(data)
+    });
+  }
+}
 </script>

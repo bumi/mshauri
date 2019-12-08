@@ -43,60 +43,60 @@
 </template>
 
 <script>
- export default {
-        name: "Answer",
-        props: {
-            answer: {
-                type: Object,
-                default: () =>{
-                    return {}
-                }
-            },
-            isMultiple: {
-                type: Boolean,
-                default: false
-            },
-            value: {
-                type: Object,
-                default: () =>{
-                    return {}
-                }
-            },
-        },
-        data() {
-          return {
-              other: '',
-              radioInput: '',
-              checkbox: ''
-          }
-        },
-        watch: {
-            checkbox: function(_val) {
-                this.updateData();
-            },
-            other: function(_val) {
-                this.updateData();
-            },
-            value: function(val) {
-                if (!this.isMultiple && (!val || val.answer_id != this.answer.id)) {
-                    this.radioInput = '';
-                }
-            }
-        },
-        methods: {
-            updateData() {
-                if (this.checkbox || this.radioInput) {
-                   return this.$emit('input',{
-                        answer_id: this.answer.id,
-                        value: this.other
-                    });
-                }
-                this.$emit('input');
-            },
-            updateRadio() {
-                this.radioInput = true;
-                this.updateData();
-            }
-        }
+export default {
+  name: "Answer",
+  props: {
+    answer: {
+      type: Object,
+      default: () =>{
+        return {}
+      }
+    },
+    isMultiple: {
+      type: Boolean,
+      default: false
+    },
+    value: {
+      type: Object,
+      default: () =>{
+        return {}
+      }
+    },
+  },
+  data() {
+    return {
+      other: '',
+      radioInput: '',
+      checkbox: ''
+    }
+  },
+  watch: {
+    checkbox: function(_val) {
+      this.updateData();
+    },
+    other: function(_val) {
+      this.updateData();
+    },
+    value: function(val) {
+      if (!this.isMultiple && (!val || val.answer_id != this.answer.id)) {
+        this.radioInput = '';
+      }
+    }
+  },
+  methods: {
+    updateData() {
+      if (this.checkbox || this.radioInput) {
+        return this.$emit('input',{
+          answer_id: this.answer.id,
+          value: this.other
+        });
+      }
+      this.$emit('input');
+    },
+    updateRadio() {
+      this.radioInput = true;
+      this.updateData();
+    }
+  }
 }
 </script>

@@ -10,8 +10,8 @@
   </div>
 </template>
 <script>
-    import Navbar from "./component/Navbar";
-    export default {
-        components: { Navbar }
-    }
+import Navbar from "./component/Navbar";
+export default {
+  components: { Navbar }
+}
 </script>

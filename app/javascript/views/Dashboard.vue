@@ -41,28 +41,28 @@
 </template>
 
 <script>
-    import User from "../models/User";
-    import Recommendation from "../models/Recommendation";
-    import RecommendationCard from "../component/cards/RecommendationCard";
+import User from "../models/User";
+import Recommendation from "../models/Recommendation";
+import RecommendationCard from "../component/cards/RecommendationCard";
 
-    export default {
-        name: "Dashboard",
-        components: { RecommendationCard },
-        data() {
-            return {
-                user: {},
-                recommendations: []
-            }
-        },
-        mounted() {
-            User.show((data) => {
-                this.user = data
-            });
-            Recommendation.index(this.$route.params.iteration_id, (data) => {
-                this.recommendations = data;
-            });
-        }
+export default {
+  name: "Dashboard",
+  components: { RecommendationCard },
+  data() {
+    return {
+      user: {},
+      recommendations: []
     }
+  },
+  mounted() {
+    User.show((data) => {
+      this.user = data
+    });
+    Recommendation.index(this.$route.params.iteration_id, (data) => {
+      this.recommendations = data;
+    });
+  }
+}
 </script>
 
 <style scoped>
