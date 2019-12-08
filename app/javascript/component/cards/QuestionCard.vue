@@ -1,19 +1,19 @@
 <template>
-    
+  <div>TODO</div>
 </template>
 
 <script>
-    export default {
-        name: "QuestionCard",
-        data() {
-          return{
+export default {
+  name: "QuestionCard",
+  data() {
+    return {
 
-          }
-        },
-        methods:{
-
-        }
     }
+  },
+  methods: {
+
+  }
+}
 </script>
 
 <style scoped>

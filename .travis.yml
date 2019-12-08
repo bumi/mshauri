@@ -1,7 +1,9 @@
 language: ruby
 rvm:
   - 2.6
-cache: bundler
+cache:
+  bundler: true
+  yarn: true
 
 services:
   - postgresql
@@ -12,7 +14,11 @@ branches:
 
 before_script:
   - psql -c 'create database mshauri_test;' -U postgres
+  - nvm install 8.16
+  - nvm use 8.16
+  - yarn install
 
 script:
+  - npm run lint
   - bundle exec rubocop
   - bundle exec rake

@@ -1,87 +1,100 @@
 <template>
-    <div class="bg-white py-5 min-h-screen -mt-8">
+  <div class="bg-white py-5 min-h-screen -mt-8">
+    <div class="w-80 mx-auto pt-3">
+      <h1 class="text-grey-darker text-5xl font-primary xs:text-3xl text-centered">
+        Hi, {{ user.name }}
+        <span class="w-90"><img
+          src="/assets/waving-hand.svg"
+          class="w-8 text-grey"
+        ></span>
+      </h1>
 
-        <div class="w-80 mx-auto pt-3">
-            <h1 class="text-grey-darker text-5xl font-primary xs:text-3xl text-centered">
-                Hi, {{user.name}}
-                <span class="w-90"><img src="/assets/waving-hand.svg" class="w-8 text-grey"></span>
-            </h1>
-
-            <h2 class="text-center text-weight-normal text-grey-dark text-2xl xs:text-lg">Welcome to Mshauri !</h2>
-        </div>
-        <div class="w-100 h-1 bg-primary"></div>
-        <div class="flex flex-wrap justify-content-center py-5">
-            <div @click="newIteration"
-                class="mt-3 w-25 mr-3 w-20 border-1 border-solid border-grey-lighter shadow-sm cursor-pointer">
-
-                <div class="px-3 py-2 text-center">
-                    <img src="/assets/plus.svg" class="w-35 pt-5 mx-auto text-center ">
-
-                    <h2 class="pt-3 text-xs text-grey-dark ">Start Iteration</h2>
-                </div>
-
-            </div>
-            <div @click="openIteration(iteration)" :key="iteration.id" class="mt-3 w-25 mr-3"
-                v-for="iteration  in iterations">
-                <iteration-card :iteration="iteration"></iteration-card>
-            </div>
-        </div>
+      <h2 class="text-center text-weight-normal text-grey-dark text-2xl xs:text-lg">
+        Welcome to Mshauri!
+      </h2>
     </div>
+    <div class="w-100 h-1 bg-primary" />
+    <div class="flex flex-wrap justify-content-center py-5">
+      <div
+        class="mt-3 w-25 mr-3 w-20 border-1 border-solid border-grey-lighter shadow-sm cursor-pointer"
+        @click="newIteration"
+      >
+        <div class="px-3 py-2 text-center">
+          <img
+            src="/assets/plus.svg"
+            class="w-35 pt-5 mx-auto text-center "
+          >
+
+          <h2 class="pt-3 text-xs text-grey-dark ">
+            Start Iteration
+          </h2>
+        </div>
+      </div>
+      <div
+        v-for="iteration in iterations"
+        :key="iteration.id"
+        class="mt-3 w-25 mr-3"
+        @click="openIteration(iteration)"
+      >
+        <iteration-card :iteration="iteration" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-    import User from "../models/User";
-    import Iteration from "../models/Iteration";
-    import IterationCard from "../component/cards/IterationCard";
-    import Form from "../utilities/Form";
+import User from "../models/User";
+import Iteration from "../models/Iteration";
+import IterationCard from "../component/cards/IterationCard";
+import Form from "../utilities/Form";
 
-    export default {
-        name: "Home",
-        components: {
-            IterationCard
-        },
-        data() {
-            return {
-                user: {},
-                iterations: {},
+export default {
+  name: "Home",
+  components: {
+    IterationCard
+  },
+  data() {
+    return {
+      user: {},
+      iterations: {},
 
-                form: new Form({}),
+      form: new Form({}),
 
-            }
-        },
-        methods: {
-            getUser() {
-                User.show((data) => {
-                    this.user = data
-                });
-            },
-            getIteration() {
-                Iteration.index((data) => {
-                    this.iterations = data
-                })
-            },
-            newIteration() {
-                Iteration.create(data => {
-                    this.openIteration(data);
-                    console.log(data)
-                })
-            },
-            openIteration(iteration) {
-                this.$router.push({
-                    name: 'question',
-                    params: {
-                        id: iteration.starting_question_id,
-                        iteration_id: iteration.id
-                    }
-                });
-            }
-        },
-        mounted() {
-            this.getUser();
-            this.getIteration();
-
-        }
     }
+  },
+  mounted() {
+    this.getUser();
+    this.getIteration();
+
+  },
+  methods: {
+    getUser() {
+      User.show((data) => {
+        this.user = data
+      });
+    },
+    getIteration() {
+      Iteration.index((data) => {
+        this.iterations = data
+      })
+    },
+    newIteration() {
+      Iteration.create(data => {
+        this.openIteration(data);
+        console.log(data)
+      })
+    },
+    openIteration(iteration) {
+      this.$router.push({
+        name: 'question',
+        params: {
+          id: iteration.starting_question_id,
+          iteration_id: iteration.id
+        }
+      });
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -4,7 +4,15 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 
-## Rubocop
+## Code style + linting
+
+### eslint
+
+```bash
+node_modules/.bin/eslint --ext .js,.vue app/javascript/ --fix # auto fix
+```
+
+### Rubocop
 
 The project uses [rubocop](https://github.com/rubocop-hq/rubocop) for code linting.
 
