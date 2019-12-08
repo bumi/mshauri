@@ -69,17 +69,17 @@ export default {
   },
   methods: {
     getUser() {
-      User.show((data) => {
+      User.show().then(({ data }) => {
         this.user = data
       });
     },
     getIteration() {
-      Iteration.index((data) => {
+      Iteration.index().then(({ data }) => {
         this.iterations = data
       })
     },
     newIteration() {
-      Iteration.create(data => {
+      Iteration.create().then(({ data }) => {
         this.openIteration(data);
         console.log(data)
       })
@@ -93,7 +93,7 @@ export default {
         }
       });
     }
-  }
+  },
 }
 </script>
 

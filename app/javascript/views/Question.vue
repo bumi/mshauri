@@ -86,24 +86,15 @@ export default {
 
     }
   },
-  computed: {
-    completionRate() {
-      return this.iteration.completion_rate ? this.iteration.completion_rate : 0;
-    }
-  },
-  mounted() {
-    this.getReload();
-    this.form.iteration_id = this.$route.params.iteration_id;
-  },
   methods: {
     getReload() {
       this.loading = true;
       this.form.answers = [];
-      Iteration.show(this.$route.params.iteration_id, (data) => {
+      Iteration.show(this.$route.params.iteration_id).then(({ data }) => {
         this.iteration = data;
         this.loading = false;
       });
-      Question.show(this.$route.params.id, (data) => {
+      Question.show(this.$route.params.id).then(({ data }) => {
         if (data) {
           this.form.answers = [];
           this.question = data;

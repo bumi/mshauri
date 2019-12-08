@@ -1,24 +1,7 @@
-class Question {
-  static index(success, error = Function()) {
-    return window.axios.get(this.url())
-      .then(({ data }) => success(data))
-      .catch(
-        e => error(e)
-      )
-  }
+import BaseRequest from "./BaseRequest";
 
-  static show(id, success, error = Function()) {
-    return window.axios.get(this.url() + '/' + id)
-      .then(({ data }) => success(data))
-      .catch(
-        e => error(e)
-      )
-  }
-
-  static url() {
-    return window.apiUrl + '/questions'
-  }
-
+class Question extends BaseRequest {
+    static basePath = "questions"
 }
 
 export default Question

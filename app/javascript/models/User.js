@@ -1,16 +1,7 @@
-class User {
-  static show(success, error = Function()) {
-    return window.axios.get(this.url() + '/me')
-      .then(({ data }) => success(data))
-      .catch(
-        e => error(e)
-      )
-  }
+import BaseRequest from "./BaseRequest";
 
-  static url() {
-    return window.apiUrl + '/users'
-  }
-
+class User extends BaseRequest{
+    static basePath = 'users'
 }
 
 export default User

@@ -55,10 +55,10 @@ export default {
     }
   },
   mounted() {
-    User.show((data) => {
+    User.show().then(({ data }) => {
       this.user = data
     });
-    Recommendation.index(this.$route.params.iteration_id, (data) => {
+    Recommendation.index(this.$route.params.iteration_id).then(({ data }) => {
       this.recommendations = data;
     });
   }

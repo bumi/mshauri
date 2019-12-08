@@ -1,13 +1,7 @@
-class Answer {
-  static create(success, error) {
-    return window.axios.post(this.url())
-      .then(({ data }) => success(data))
-      .catch(e => error(e))
-  }
+import BaseRequest from "./BaseRequest";
 
-  static url() {
-    return window.apiUrl + '/iteration_answers'
-  }
+class Answer extends BaseRequest {
+    static basePath = 'iteration_answers';
 }
 
 export default Answer
