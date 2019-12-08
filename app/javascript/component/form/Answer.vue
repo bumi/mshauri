@@ -71,10 +71,10 @@
           }
         },
         watch: {
-            checkbox: function(val) {
+            checkbox: function(_val) {
                 this.updateData();
             },
-            other: function(val) {
+            other: function(_val) {
                 this.updateData();
             },
             value: function(val) {

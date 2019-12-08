@@ -1,4 +1,6 @@
 <template>
+  <!-- eslint-disable vue/no-v-html -->
+
   <div class="bg-white w-100 mx-auto -mt-8 py-5">
     <div
       v-if="recommendation"

@@ -1,6 +1,6 @@
 class Recommendation {
     static index(iteration_id, success, error = Function()) {
-        return axios.get(this.url(), {
+        return window.axios.get(this.url(), {
                 params: {
                     iteration_id: iteration_id
                 }
@@ -12,7 +12,7 @@ class Recommendation {
     }
 
     static show(id, success, error = Function()) {
-        return axios.get(this.url() + '/' + id)
+        return window.axios.get(this.url() + '/' + id)
             .then(({ data }) => success(data))
             .catch(
                 e => error(e)
@@ -20,7 +20,7 @@ class Recommendation {
     }
 
     static url() {
-        return apiUrl + '/recommendations'
+        return window.apiUrl + '/recommendations'
     }
 
 }

@@ -1,6 +1,6 @@
 class User {
     static show(success, error = Function()) {
-        return axios.get(this.url() + '/me')
+        return window.axios.get(this.url() + '/me')
             .then(({ data }) => success(data))
             .catch(
                 e => error(e)
@@ -8,7 +8,7 @@ class User {
     }
 
     static url() {
-        return apiUrl + '/users'
+        return window.apiUrl + '/users'
     }
 
 }

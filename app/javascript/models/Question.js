@@ -1,6 +1,6 @@
 class Question {
     static index(success, error = Function()) {
-        return axios.get(this.url())
+        return window.axios.get(this.url())
             .then(({ data }) => success(data))
             .catch(
                 e => error(e)
@@ -8,7 +8,7 @@ class Question {
     }
 
     static show(id, success, error = Function()) {
-        return axios.get(this.url() + '/' + id)
+        return window.axios.get(this.url() + '/' + id)
             .then(({ data }) => success(data))
             .catch(
                 e => error(e)
@@ -16,7 +16,7 @@ class Question {
     }
 
     static url() {
-        return apiUrl + '/questions'
+        return window.apiUrl + '/questions'
     }
 
 }

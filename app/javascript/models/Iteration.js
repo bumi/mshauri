@@ -1,28 +1,24 @@
 class Iteration {
     static index(success, error = Function()) {
-        return axios.get(this.url())
+        return window.axios.get(this.url())
             .then(({ data }) => success(data))
-            .catch(
-                e => error(e)
-            )
+            .catch(e => error(e))
     }
 
     static show(id, success, error = Function()) {
-        return axios.get(this.url() + '/' + id)
+        return window.axios.get(this.url() + '/' + id)
             .then(({ data }) => success(data))
-            .catch(
-                e => error(e)
-            )
+            .catch(e => error(e))
     }
 
     static create(success, error) {
-      return axios.post(this.url())
+      return window.axios.post(this.url())
           .then(({ data }) => success(data))
-          .catch(e => error)
+          .catch(e => error(e))
     }
 
     static url() {
-        return apiUrl + '/iterations'
+        return window.apiUrl + '/iterations'
     }
 
 }

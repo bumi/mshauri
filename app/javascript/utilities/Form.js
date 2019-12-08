@@ -97,7 +97,7 @@ class Form {
     submit(requestType, url) {
         return new Promise(
             (resolve, reject) => {
-                axios(
+                window.axios(
                     {
                         method: requestType,
                         url: String(url),
@@ -125,7 +125,7 @@ class Form {
      *
      * @param {object} data
      */
-    onSuccess(data) {
+    onSuccess(_data) {
         // this.reset();
     }
 

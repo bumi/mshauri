@@ -34,7 +34,10 @@
     <div class="w-80 mx-auto relative">
       <div class="w-100 py-4 relative z-0">
         <div class="w-100 pt-3 pb-5">
-          <div v-for="(answer, index) in question.answers">
+          <div
+            v-for="(answer, index) in question.answers"
+            :key="answer.id"
+          >
             <answer
               :key="answer.id"
               v-model="form.answers[question.multiple ? index : 0]"
@@ -111,7 +114,7 @@
             },
             saveAnswer() {
                 this.loading = true;
-                this.form.post(apiUrl + '/iteration_answers').then(data => {
+                this.form.post(window.apiUrl + '/iteration_answers').then(data => {
                     if (data) {
                         this.$router.push({
                             name: 'question',
