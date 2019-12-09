@@ -19,4 +19,6 @@ class Question < ApplicationRecord
       methods: %i[answers]
     ))
   end
+
+  delegate :count, to: :question, prefix: true
 end
