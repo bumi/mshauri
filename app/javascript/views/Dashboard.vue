@@ -55,7 +55,7 @@ export default {
     }
   },
   mounted() {
-    User.show().then(({ data }) => {
+    User.show('me').then(({ data }) => {
       this.user = data
     });
     Recommendation.index(this.$route.params.iteration_id).then(({ data }) => {
