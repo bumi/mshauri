@@ -3,8 +3,8 @@ export default class Service {
     return this.request('get', url, {}, params);
   }
 
-  static post(url, params = {}) {
-    return this.request('post', url, params);
+  static post(url, data = {}) {
+    return this.request('post', url, data);
   }
 
   static request(type, url, data = {}, params = {}) {

@@ -4,8 +4,8 @@ export default class BaseModel {
 
     static basePath;
 
-    static index() {
-      return Service.get(this.url());
+    static index(options = {}) {
+      return Service.get(this.url(), options);
     }
 
     static show(id) {

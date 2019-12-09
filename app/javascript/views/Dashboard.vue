@@ -58,7 +58,9 @@ export default {
     User.show('me').then(({ data }) => {
       this.user = data
     });
-    Recommendation.index(this.$route.params.iteration_id).then(({ data }) => {
+    Recommendation.index({
+      'iteration_id': this.$route.params.iteration_id
+    }).then(({ data }) => {
       this.recommendations = data;
     });
   }
