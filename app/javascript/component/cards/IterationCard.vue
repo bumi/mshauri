@@ -19,11 +19,19 @@
       </h1>
 
       <h3 class="text-xs text-weight-light">
-        Started: 28 Jan 2019
+        {{iteration.created_at}}
+        
       </h3>
-      <button class="btn bg-primary py-1 text-xs mx-auto text-white w-100 rounded-sm">
+     
+      <button v-if="iteration.completion_rate < 100"  @click="openIteration(iteration)" class="btn bg-primary py-1 text-xs mx-auto text-white w-100 rounded-sm">
         Continue
       </button>
+      
+     <button v-if="iteration.completion_rate == 100" @click="viewRecommendations(iteration)" class="btn bg-red py-1 text-xs mx-auto text-white w-100 rounded-sm">
+         View Recommendations
+      </button>
+      
+
     </div>
   </div>
 </template>
@@ -35,6 +43,21 @@ export default {
     iteration: {
       type: Object,
       default: () => {}
+    }
+  }, methods:{
+      openIteration(iteration) {
+      this.$router.push({
+        name: 'question',
+        params: {
+          id: iteration.starting_question_id,
+          iteration_id: iteration.id
+        }
+      });
+    }, viewRecommendations(iteration){
+      this.$router.push({
+            name: 'dashboard',
+            params: { iteration_id: iteration.id }
+          });
     }
   }
 }

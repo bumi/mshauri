@@ -34,7 +34,7 @@
         v-for="iteration in iterations"
         :key="iteration.id"
         class="mt-3 w-25 mr-3"
-        @click="openIteration(iteration)"
+      
       >
         <iteration-card :iteration="iteration" />
       </div>
