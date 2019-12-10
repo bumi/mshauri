@@ -1,6 +1,6 @@
 <template>
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
-    <div class="w-70 mx-auto pt-5">
+    <div class="w-70 mx-auto pt-5" v-if="this.$route.params.iteration_id.completion_rate">
       <h1 class="mb-5 text-grey-darkest text-4xl font-primary text-center text-weight-semibold">
         Congratulations, <span class="text-weight-normal">{{ user.name }}</span>
         <span class="w-90"><img
