@@ -19,19 +19,24 @@
       </h1>
 
       <h3 class="text-xs text-weight-light">
-        {{iteration.created_at}}
-        
+        {{ iteration.created_at }}
       </h3>
-     
-      <button v-if="iteration.completion_rate < 100"  @click="openIteration(iteration)" class="btn bg-primary py-1 text-xs mx-auto text-white w-100 rounded-sm">
+
+      <button
+        v-if="iteration.completion_rate < 100"
+        class="btn bg-primary py-1 text-xs mx-auto text-white w-100 rounded-sm"
+        @click="openIteration(iteration)"
+      >
         Continue
       </button>
-      
-     <button v-if="iteration.completion_rate == 100" @click="viewRecommendations(iteration)" class="btn bg-red py-1 text-xs mx-auto text-white w-100 rounded-sm">
-         View Recommendations
-      </button>
-      
 
+      <button
+        v-if="iteration.completion_rate == 100"
+        class="btn bg-red py-1 text-xs mx-auto text-white w-100 rounded-sm"
+        @click="viewRecommendations(iteration)"
+      >
+        View Recommendations
+      </button>
     </div>
   </div>
 </template>
@@ -44,8 +49,9 @@ export default {
       type: Object,
       default: () => {}
     }
-  }, methods:{
-      openIteration(iteration) {
+  },
+  methods: {
+    openIteration(iteration) {
       this.$router.push({
         name: 'question',
         params: {
@@ -53,11 +59,12 @@ export default {
           iteration_id: iteration.id
         }
       });
-    }, viewRecommendations(iteration){
+    },
+    viewRecommendations(iteration) {
       this.$router.push({
-            name: 'dashboard',
-            params: { iteration_id: iteration.id }
-          });
+        name: 'dashboard',
+        params: { iteration_id: iteration.id }
+      });
     }
   }
 }
