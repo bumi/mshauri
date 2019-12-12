@@ -3,6 +3,7 @@ import Home from "../views/Home"
 import Question from "../views/Question"
 import RecommendationIndex from "../views/recommendations/Index"
 import RecommendationShow from "../views/recommendations/Show"
+import AdminIndex from "../views/admin/Index"
 
 export default {
   mode: "history",
@@ -32,6 +33,11 @@ export default {
       path: '/:user_slug/recommendations/:id/:title',
       component: RecommendationShow,
       name: 'recommendation-show'
+    },
+    {
+      path: '/:user_slug/admin',
+      component: AdminIndex,
+      name: 'admin-index'
     }
   ]
 }

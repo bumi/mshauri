@@ -2,7 +2,13 @@
 
 module Api
   class UsersController < BaseController
+
     before_action :require_current_user, only: [:me]
+    authorize @page
+    def index
+      questions = Question.all
+      render json: questions
+    end
 
     def me
       render json: current_user

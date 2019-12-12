@@ -2,6 +2,7 @@
 
 module Api
   class IterationsController < BaseController
+    include Pundit
     before_action :require_current_user
 
     # get all current user's iterations
