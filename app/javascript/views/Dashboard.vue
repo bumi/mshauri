@@ -1,7 +1,6 @@
 <template>
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
     <div
-      v-if="this.$route.params.iteration_id.completion_rate"
       class="w-70 mx-auto pt-5"
     >
       <h1 class="mb-5 text-grey-darkest text-4xl font-primary text-center text-weight-semibold">

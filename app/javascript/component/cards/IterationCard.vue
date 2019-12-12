@@ -62,7 +62,7 @@ export default {
     },
     viewRecommendations(iteration) {
       this.$router.push({
-        name: 'dashboard',
+        name: 'recommendations-index',
         params: { iteration_id: iteration.id }
       });
     }
