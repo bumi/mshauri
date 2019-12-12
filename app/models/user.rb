@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   # Validations for the model
   validates :slug, presence: true, uniqueness: true
+  validates_uniqueness_of :email, allow_blank: true
 
   def insert_slug
     self.slug ||= SecureRandom.hex
