@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :questions, only: [:show]
     resources :iterations, only: %i[index show create]
     resources :recommendations, only: %i[index show]
+    resources :admin, only: [:admin_dashboard]
   end
 
   # entry point for the vue.js
