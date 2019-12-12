@@ -5,8 +5,7 @@ class User < ApplicationRecord
   before_validation :insert_slug
 
   # Validations for the model
-  validates :name, presence: true
-  validates :email, :slug, presence: true, uniqueness: true
+  validates :slug, presence: true, uniqueness: true
 
   def insert_slug
     self.slug ||= SecureRandom.hex
