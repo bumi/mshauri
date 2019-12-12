@@ -17,9 +17,12 @@ class Iteration < ApplicationRecord
     answers.any? && answers.last.next_question_id.blank?
   end
 
-  # For now we always start with the first question
-  # This can later be easily changed by changing this method
+  # This method will return the first question in case the
+  # the iteration has no answer yet and then return the last answer's next question in
+  # case the iteration has answers
   def starting_question_id
+    return answers.last.next_question_id if answers.any?
+
     Question.first.id
   end
 
