@@ -9,8 +9,19 @@ module Api
     end
 
     def create
-      user = User.create!
-      redirect_to controller: '/home', action: :index, user_slug: user.slug
+      user = User.new(name: request_params[:name], email: request_params[:email])
+      if user.save
+        redirect_to controller: '/home', action: :index, user_slug: user.slug
+      else
+
+        render json: user.errors, status: :unprocessable_entity
+      end
+    end
+
+    private
+
+    def request_params
+      params.permit(:email, :name)
     end
   end
 end
