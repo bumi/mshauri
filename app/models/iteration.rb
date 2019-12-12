@@ -20,6 +20,8 @@ class Iteration < ApplicationRecord
   # For now we always start with the first question
   # This can later be easily changed by changing this method
   def starting_question_id
+    return answers.last.next_question_id if answers.any?
+
     Question.first.id
   end
 
