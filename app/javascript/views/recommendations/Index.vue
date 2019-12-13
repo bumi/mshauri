@@ -14,8 +14,8 @@
     >
       <div class="flex flex-wrap">
         <recommendation-card
-          v-for="(recommendation, index) in recommendations"
-          :key="index"
+          v-for="recommendation in recommendations"
+          :key="recommendation.id"
           :recommendation="recommendation"
         />
       </div>
