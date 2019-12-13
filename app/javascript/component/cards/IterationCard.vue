@@ -19,7 +19,7 @@
       </h1>
 
       <h3 class="text-xs text-weight-light">
-        {{ iteration.created_at }}
+        Started on {{ startedOn }}
       </h3>
 
       <button
@@ -66,6 +66,11 @@ export default {
         params: { iteration_id: iteration.id }
       });
     }
-  }
+  },computed: {
+      startedOn(){
+          let date = new Date(this.iteration.created_at);
+          return date.getDate()+'-'+(date.getMonth()+ 1)+'-'+date.getFullYear();
+      }
+  },
 }
 </script>
