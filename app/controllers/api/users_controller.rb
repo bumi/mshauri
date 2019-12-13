@@ -9,9 +9,8 @@ module Api
     end
 
     def create
-      user = User.new(name: request_params[:name], email: request_params[:email])
+      user = User.new(user_params)
       if user.save
-        UserMailer.with(user: user).welcome_email.deliver_now if user.email.present?
         redirect_to controller: '/home', action: :index, user_slug: user.slug
       else
 
@@ -21,7 +20,7 @@ module Api
 
     private
 
-    def request_params
+    def user_params
       params.permit(:email, :name)
     end
   end
