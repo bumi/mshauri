@@ -2,7 +2,7 @@
 
 module Api
   class QuestionsController < BaseController
-    authorize @page
+    authorize @user
     def index
       questions = Question.all
       render json: questions
