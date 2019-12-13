@@ -1,10 +1,10 @@
 <template>
-   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
+  <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
     <div
       class="w-70 mx-auto pt-5"
     >
       <h2 class="mt-0 mb-4 text-center text-weight-normal font-nunito text-grey-dark text-xl">
-       Some recommendations
+        Some recommendations
       </h2>
     </div>
     <div class="w-100 h-1 bg-primary" />
