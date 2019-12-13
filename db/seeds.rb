@@ -20,6 +20,18 @@ Dir['./data/questions/*.yml'].each do |filename|
   questions[category] = YAML.safe_load(File.read(filename))
 end
 
+Dir['./data/recommendations/*.yml'].each do |filename|
+  identifier = File.basename(filename, '.yml')
+  recommendation_data = YAML.safe_load(File.read(filename))
+  next if recommendation_data.nil?
+
+  recommendation = Recommendation.where(identifier: identifier).first_or_initialize
+  recommendation.title = recommendation_data['title']
+  recommendation.description = recommendation_data['description']
+  recommendation.priority = recommendation_data['priority']
+  recommendation.save!
+end
+
 puts 'Creating questions'
 # create all questions first
 questions.each do |_category, category_questions|
@@ -47,6 +59,8 @@ questions.each do |_category, category_questions|
                              else
                                Question.find_by(identifier: question.identifier.to_i + 1)
                              end
+
+      answer.recommendation = Recommendation.find_by(identifier: answer_data['recommendation'])
       answer.save!
     end
   end

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Recommendation < ApplicationRecord
-  belongs_to :answer
-  validates :title, :description, presence: true
+  has_many :answers, dependent: :nullify
+
+  validates :title, :description, :identifier, presence: true
+  validates :identifier, uniqueness: true
 end

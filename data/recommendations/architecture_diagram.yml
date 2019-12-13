@@ -1,0 +1,17 @@
+---
+id: architecture_diagram
+title: Architecture diagram
+intro:
+description: |
+  Often part of the developer documentation is a system architecture documentation that explains all components
+  of a system and how they relate to each other.
+
+  This is an important part of the documentation that explains and visualizes how a system works as a whole.
+
+
+  This is also required for certain regulatory approval processes or external system audit processes.
+
+
+  ### Links
+
+  * [Wikipedia: System context diagram](https://en.wikipedia.org/wiki/System_context_diagram)

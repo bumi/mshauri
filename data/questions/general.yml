@@ -2,6 +2,7 @@
 -
   id: 3
   title: What programming languages are you using?
+  multiple: true
   answers:
     - PHP
     - Java
@@ -18,6 +19,7 @@
 -
   id: 4
   title: Are you using any (web) framework? If so, which one?
+  multiple: true
   answers:
     - Laravel
     - CodeIgniter
@@ -35,6 +37,7 @@
 -
   id: 5
   title: What database system are you using?
+  multiple: true
   answers:
     - MySQL
     - PostgreSQL
@@ -56,6 +59,7 @@
       next_question: 6a
     -
       value: "No"
+      recommendation: git
       next_question: 7
 -
   id: 6a
@@ -194,7 +198,7 @@
     -
       value: "No"
       recommendation: testing
-      next_question: 1
+      next_question: 14
     -
       value: "Yes"
       next_question: 13a
@@ -252,4 +256,3 @@
     -
       value: Code linting
       next_question: 14
-
