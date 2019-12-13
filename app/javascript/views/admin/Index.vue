@@ -1,6 +1,6 @@
 <template>
     <div>
-     
+     lewis
     </div>
 </template>
 
@@ -16,12 +16,13 @@ export default {
             questions:[],
         }
     },methods:{
-            getUsers(){
-           User.index().then(({ data }) => {
+       getUsers(){
+         User.index().then(({data}) => {
         this.users = data
+        console.log(data)
       })
             },getQuestions(){
-               Question.index().then(({ datat}) =>{
+               Question.index().then(({data}) =>{
                     this.questions = data
                     console.log(data)
                 })
