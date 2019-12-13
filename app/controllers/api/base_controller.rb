@@ -2,9 +2,10 @@
 
 module Api
   class BaseController < ActionController::API
+    include Pundit
+
     protected
 
-    include Pundit
     def current_user
       @current_user ||= User.find_by(slug: (request.headers['X-USER-SLUG'] || params[:user_slug]))
     end
