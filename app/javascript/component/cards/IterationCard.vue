@@ -47,7 +47,7 @@ export default {
       return date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
     },
     isComplete() {
-      return this.iteration.completion_rate == 100
+      return this.iteration.completion_rate === 100
     },
     buttonLabel: function() {
       return this.isComplete ? 'View Recommendations' : 'Continue';
