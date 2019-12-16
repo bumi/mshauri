@@ -13,7 +13,7 @@
         />
       </div>
     </div>
-    <div class="w-90 py-5">
+    <div class="w-90 py-3">
       <router-link
         tag="div"
         class="cursor-pointer"

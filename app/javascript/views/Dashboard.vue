@@ -33,6 +33,11 @@
           </h3>
         </div>
       </div>
+      <div class="w-80 mx-auto flex relative py-5 -mt-12">
+        <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
+          <div class="h-100 w-05 bg-grey-light" />
+        </div>
+      </div>
       <div class="flex flex-wrap">
         <recommendation-card
           v-for="recommendation in recommendations"
