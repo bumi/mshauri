@@ -2,16 +2,13 @@
   <div class="bg-white py-2 min-h-screen -mt-8">
     <div class="w-80 mx-auto ">
       <h1 class="text-grey-darker text-5xl font-primary xs:text-3xl text-centered">
-        Hi, {{ user.name }}
+        Hi {{ user.name }}
         <span class="w-90"><img
           src="/assets/waving-hand.svg"
           class="w-8 text-grey"
         ></span>
       </h1>
 
-      <h2 class="text-center text-weight-normal text-grey-dark text-2xl xs:text-lg">
-        Welcome to Mshauri!
-      </h2>
     </div>
     <div class="w-100 h-1 bg-primary" />
     <div class="w-90 ml-auto xs:mx-auto py-5">
@@ -26,7 +23,7 @@
           >
 
           <h2 class="pt-3 text-xs text-grey-dark ">
-            Start Iteration
+            Start survey and get recommendations
           </h2>
         </div>
       </div>
@@ -38,7 +35,7 @@
 
     <div class="w-90 xs:w-95 text-left ml-auto">
       <h6 class="my-4 text-xl font-semibold">
-        Recent iterations
+        Recent answers
       </h6>
     </div>
     <div class="flex flex-wrap xs:block xs:w-90 xs:mx-auto justify-content-center md:w-90 md:mx-auto py-4">
