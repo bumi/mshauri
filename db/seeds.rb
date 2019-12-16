@@ -27,6 +27,7 @@ Dir['./data/recommendations/*.yml'].each do |filename|
 
   recommendation = Recommendation.where(identifier: identifier).first_or_initialize
   recommendation.title = recommendation_data['title']
+  recommendation.intro = recommendation_data['intro']
   recommendation.description = recommendation_data['description']
   recommendation.priority = recommendation_data['priority']
   recommendation.save!
