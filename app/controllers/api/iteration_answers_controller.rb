@@ -7,7 +7,7 @@ module Api
 
     def index
       authorize @current_user
-      render json: current_iteration.answers
+      @iteration_answers = current_iteration.iteration_answers
     end
 
     def create
