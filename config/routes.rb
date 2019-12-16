@@ -3,14 +3,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do
-    resources :users, only: %i[show create] do
+    resources :users, only: %i[show create index] do
       collection do
         get :me
       end
     end
     resources :answers, only: [:create]
     resources :iteration_answers, only: [:create]
-    resources :questions, only: [:show]
+    resources :questions, only: %i[index show]
     resources :iterations, only: %i[index show create]
     resources :recommendations, only: %i[index show]
   end

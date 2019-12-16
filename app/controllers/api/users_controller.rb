@@ -7,8 +7,8 @@ module Api
 
     authorize @user
     def index
-      questions = Question.all
-      render json: questions
+      users = User.all
+      render json: users
     end
 
     def me
