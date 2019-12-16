@@ -5,6 +5,11 @@ module Api
     before_action :require_current_user
     before_action :require_current_iteration
 
+    def index
+      authorize @current_user
+      render json: current_iteration.answers
+    end
+
     def create
       @iteration_answers = params[:answers].map do |a|
         answer = Answer.find(a[:answer_id])

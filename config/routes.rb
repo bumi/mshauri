@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       end
     end
     resources :answers, only: [:create]
-    resources :iteration_answers, only: [:create]
+    resources :iteration_answers, only: %i[index create]
     resources :questions, only: %i[index show]
     resources :iterations, only: %i[index show create]
     resources :recommendations, only: %i[index show]
