@@ -14,7 +14,7 @@ class Iteration < ApplicationRecord
   end
 
   def completed?
-    answers.any? && answers.last.next_question_id.blank?
+    iteration_answers.any? && iteration_answers.last.answer.next_question_id.blank?
   end
 
   # This method will return the first question in case the
