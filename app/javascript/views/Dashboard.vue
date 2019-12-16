@@ -1,8 +1,6 @@
 <template>
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
-    <div
-      class="w-70 mx-auto pt-5"
-    >
+    <div class="w-70 mx-auto pt-5">
       <h1 class="mb-5 text-grey-darkest text-4xl font-primary text-center text-weight-semibold">
         Congratulations, <span class="text-weight-normal">{{ user.name }}</span>
         <span class="w-90"><img
@@ -28,9 +26,18 @@
       v-if="recommendations.length"
       class="w-90 mx-auto pt-4 pb-5"
     >
-      <h4 class="text-center mb-5">
-        Some recommendations
-      </h4>
+      <div class="relative pt-5">
+        <div class="w-90 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
+          <h3 class="text-primary text-2xl py-4 my-1 pl-5">
+            Some recommendations
+          </h3>
+        </div>
+      </div>
+      <div class="w-80 mx-auto flex relative py-5 -mt-12">
+        <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
+          <div class="h-100 w-05 bg-grey-light" />
+        </div>
+      </div>
       <div class="flex flex-wrap">
         <recommendation-card
           v-for="recommendation in recommendations"
@@ -49,7 +56,9 @@ import RecommendationCard from "../component/cards/RecommendationCard";
 
 export default {
   name: "Dashboard",
-  components: { RecommendationCard },
+  components: {
+    RecommendationCard
+  },
   data() {
     return {
       user: {},
@@ -57,12 +66,16 @@ export default {
     }
   },
   mounted() {
-    User.show('me').then(({ data }) => {
+    User.show('me').then(({
+      data
+    }) => {
       this.user = data
     });
     Recommendation.index({
       'iteration_id': this.$route.params.iteration_id
-    }).then(({ data }) => {
+    }).then(({
+      data
+    }) => {
       this.recommendations = data;
     });
   }

@@ -1,17 +1,21 @@
 <template>
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
-    <div
-      class="w-70 mx-auto pt-5"
-    >
-      <h2 class="mt-0 mb-4 text-center text-weight-normal font-nunito text-grey-dark text-xl">
-        Some recommendations
-      </h2>
+    <div class="relative pt-5">
+      <div class="w-80 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
+        <h1 class="text-primary text-2xl py-4 my-2 pl-5">
+          Recommendations
+        </h1>
+      </div>
     </div>
-    <div class="w-100 h-1 bg-primary" />
     <div
       v-if="recommendations.length"
-      class="w-90 mx-auto pt-4 pb-5"
+      class="mx-auto pb-5"
     >
+      <div class="w-80 mx-auto flex relative py-5 -mt-12">
+        <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
+          <div class="h-100 w-05 bg-grey-light" />
+        </div>
+      </div>
       <div class="flex flex-wrap">
         <recommendation-card
           v-for="recommendation in recommendations"
@@ -40,7 +44,9 @@ export default {
   mounted() {
     Recommendation.index({
       'iteration_id': this.$route.params.iteration_id
-    }).then(({ data }) => {
+    }).then(({
+      data
+    }) => {
       this.recommendations = data;
       console.log(data)
     });
