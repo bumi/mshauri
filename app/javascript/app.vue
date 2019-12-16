@@ -4,7 +4,8 @@
     class="bg-grey-lighter min-h-screen"
   >
     <navbar />
-    <div class="w-80 mx-auto py-4">
+
+    <div class="w-80 xs:w-100 mx-auto py-4">
       <router-view />
     </div>
   </div>
