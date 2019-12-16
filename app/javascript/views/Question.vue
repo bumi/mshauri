@@ -1,5 +1,5 @@
 <template>
-  <div class="w-90 mx-auto py-3 my-5 bg-white rounded-lg">
+  <div class="w-90 md:w-100 xs:w-100 sm:w-100 mx-auto py-3 my-5 xs:my-0 bg-white rounded-lg">
     <div class="w-80 mx-auto">
       <div class="text-left my-3">
         <button
@@ -19,10 +19,10 @@
       </div>
       <div class="w-100 relative">
         <div class="py-4 relative z-0">
-          <h4 class="my-1 font-medium">
+          <h4 class="my-1 font-medium xs:text-xl">
             {{ question.title }}
           </h4>
-          <p class="my-0 text-sm opacity-80">
+          <p class="my-0 text-sm  opacity-80">
             {{ question.description }}
           </p>
         </div>
