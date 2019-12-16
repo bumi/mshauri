@@ -21,7 +21,7 @@ class Iteration < ApplicationRecord
   # the iteration has no answer yet and then return the last answer's next question in
   # case the iteration has answers
   def starting_question_id
-    return answers.last.next_question_id if answers.any?
+    return iteration_answers.last.answer.next_question_id if iteration_answers.any?
 
     Question.first.id
   end
