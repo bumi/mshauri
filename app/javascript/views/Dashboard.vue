@@ -2,23 +2,12 @@
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
     <div class="w-70 mx-auto pt-5">
       <h1 class="mb-5 text-grey-darkest text-4xl font-primary text-center text-weight-semibold">
-        Congratulations, <span class="text-weight-normal">{{ user.name }}</span>
-        <span class="w-90"><img
-          src="/assets/clap.svg"
-          class="w-8 text-grey"
-        ></span>
+        Thank you for completing the questionnaire.
       </h1>
 
-      <p class="text-center p-0 m-0">
-        <img
-          src="/assets/new-product%201.png"
-          class="w-20"
-        >
-      </p>
-
       <h2 class="mt-0 mb-4 text-center text-weight-normal font-nunito text-grey-dark text-xl">
-        You’ve successfully
-        completed all the questions
+        Based on your answers we have the following recommendations and 
+        inspirations for you.
       </h2>
     </div>
     <div class="w-100 h-1 bg-primary" />
@@ -29,7 +18,7 @@
       <div class="relative pt-5">
         <div class="w-90 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
           <h3 class="text-primary text-2xl py-4 my-1 pl-5">
-            Some recommendations
+            Our recommendtions for your software development best practices.
           </h3>
         </div>
       </div>

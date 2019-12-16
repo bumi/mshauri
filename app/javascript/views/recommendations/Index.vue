@@ -2,9 +2,12 @@
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
     <div class="relative pt-5">
       <div class="w-80 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
-        <h1 class="text-primary text-2xl py-4 my-2 pl-5">
-          Recommendations
+        <h1 class="text-primary text-2xl pt-4 my-2 pl-5">
+          Our recommendtions for your software development best practices.
         </h1>
+        <p class="pl-5 pb-4 my-0 text-sm opacity-80">
+          Based on your answers we have the following recommendations and inspirations for you.
+        </p>
       </div>
     </div>
     <div
