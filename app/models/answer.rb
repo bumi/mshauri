@@ -5,9 +5,9 @@ class Answer < ApplicationRecord
 
   belongs_to :question
   belongs_to :next_question, class_name: 'Question', optional: true
+  belongs_to :recommendation, optional: true
   has_many :iteration_answers, dependent: :destroy
   has_many :iterations, through: :iteration_answers
-  has_many :recommendations, dependent: :destroy
 
   validates :value, presence: true
 

@@ -154,6 +154,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redcarpet (3.5.0)
     regexp_parser (1.6.0)
     rspec-core (3.9.0)
       rspec-support (~> 3.9.0)
@@ -253,6 +254,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma
   rails (~> 6.0.1)
+  redcarpet
   rspec-rails
   rubocop (= 0.76)
   rubocop-rails (= 2.3)

@@ -1,0 +1,33 @@
+---
+id: gitflow
+title: Gitflow - software development workflow
+intro: A standardized development workflow like GitFlow helps to structure development work. A GitFlow like process is applied by many development teams.
+description: |
+
+  GitFlow is a branching model for Git which has attracted a lot of attention because it is very well suited to collaboration and scaling the development team.
+
+  It is ideal for software development teams that work in parallel on different features.
+  The GitFlow idea isolates new code from finished work. New development (such as features and non-emergency bug fixes)
+  is done in feature branches, and is only merged back into main body of code when the developer(s) is happy that the code is ready for release.
+
+  Features branches make it easy to follow what each developer is doing and to review each other's work.
+
+  We recommend such a process to best collaborate on code and to allow code reviews which increase the quality of the software and increases
+  knowledge sharing among the team.
+
+  ### GitFlow in a nutshell:
+
+  The essential part is to create individual branches for each feature/todo a developer is working on and to share every step of the development with others.
+
+  1. Update master to latest upstream code
+  2. Create a feature branch git checkout -b myFeatureBranch
+  3. Do the feature/work
+  4. Push feature branch to origin
+  5. Create pull request from origin/ -> upstream/master
+  6. Review, fix raised comments, merge your PR or even better, get someone else to.
+
+  ### More details
+
+  * [Gitflow descripton by Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+  * [GitHub flow by GitHub](https://guides.github.com/introduction/flow/index.html)
+  * [Git branching model in detail](https://nvie.com/posts/a-successful-git-branching-model/)

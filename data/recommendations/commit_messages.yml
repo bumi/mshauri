@@ -1,0 +1,13 @@
+---
+id: commit_messages
+title: Version control commit messages
+description: |
+  Whatever version control system is used, it is helpful to write descriptive commit messages.
+  The commit message explains the changes and should be seen as documentation for the committed code changes.
+
+  Good descriptions help team members to review the code changes and make the code easier to understand in the future.
+  The message can be of any length (longer, with more details is mostly better) and
+  should describe why a change is needed and how a change addresses that issue.
+
+  * [How to write a Git commit message](https://chris.beams.io/posts/git-commit/)
+  * [5 Useful Tips For A Better Commit Message](https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message)

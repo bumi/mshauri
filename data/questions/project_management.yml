@@ -22,6 +22,7 @@
 -
   id: 21
   title: Before you start developing the products, what do you do?
+  multiple: true
   answers:
     -
       value: Create wireframes/mockups of the user interface
@@ -49,6 +50,7 @@
 -
   id: 22
   title: How are you organizing your tasks and requirements?
+  multiple: true
   answers:
     - Paper list
     - Physical task board
@@ -62,6 +64,7 @@
 -
   id: 23
   title: How are you collecting your bugs and change requests?
+  multiple: true
   answers:
     -
       value: email, phone, etc.

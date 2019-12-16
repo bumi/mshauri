@@ -11,7 +11,7 @@
       </h1>
       <div
         class="font-light my-4"
-        v-html="recommendation.description"
+        v-html="recommendation.description_formatted"
       />
     </div>
   </div>
