@@ -5,7 +5,6 @@ class UserMailer < ApplicationMailer
 
   def welcome_email
     @user = params[:user]
-    @url  =  url_for(controller: '/home', action: :index, user_slug: @user.slug, host: ENV['MAIL_HOST'] || '0.0.0.0:3000')
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
 end
