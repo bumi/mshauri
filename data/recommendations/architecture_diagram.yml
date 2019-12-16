@@ -1,0 +1,27 @@
+---
+id: architecture_diagram
+title: Architecture diagram
+intro: A graphical representation of a software system which makes it easier to understand the system as a whole.
+  description: |
+    An architecture diagram is a graphical representation of a software system that contains all components and their relation to each other.  
+    Such a high-level diagram provides an overview of the whole system and allows system developers to understand, clarify, and communicate the various required components.
+
+    The architecture diagram is an important part of the documentation and depending on the industry it is required for certain regulatory approval and external system audits.
+
+    There is no fixed definition on how an architecture diagram must look like, and there is no wrong way to do it. 
+    As English idiom which says "a picture is worth a thousand words" any image makes a complex idea or system easier to understand and conveys its meaning or essence more effectively than a description does.
+
+    ### Example
+
+    ![](https://developers.soundcloud.com/blog/static/1a6422e826679f9dcc889cdb99f83952/67d4f/product-engineering-diagram-4.jpg)
+
+    ### Links
+
+    * [Wikipedia: System context diagram](https://en.wikipedia.org/wiki/System_context_diagram)
+    * [The Art of Crafting Architectural Diagrams](https://www.infoq.com/articles/crafting-architectural-diagrams/)
+
+    ### Tools to draw diagrams:
+
+    * [creatly.com](https://creately.com/)
+    * [draw.io](https://www.draw.io/)
+    * [lucidchart.com](https://www.lucidchart.com/)

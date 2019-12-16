@@ -11,7 +11,7 @@
         </h5>
         <div class="my-3 text-left">
           <div>
-            {{ recommendation.description }}
+            {{ recommendation.intro }}
           </div>
         </div>
       </div>

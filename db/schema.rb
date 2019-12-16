@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_180507) do
+ActiveRecord::Schema.define(version: 2019_12_16_111402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_180507) do
     t.float "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "recommendation_id"
     t.index ["next_question_id"], name: "index_answers_on_next_question_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
@@ -56,12 +57,14 @@ ActiveRecord::Schema.define(version: 2019_12_02_180507) do
   end
 
   create_table "recommendations", force: :cascade do |t|
-    t.bigint "answer_id", null: false
     t.string "title"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["answer_id"], name: "index_recommendations_on_answer_id"
+    t.string "category"
+    t.integer "priority"
+    t.string "identifier"
+    t.text "intro"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,5 +83,4 @@ ActiveRecord::Schema.define(version: 2019_12_02_180507) do
   add_foreign_key "iteration_answers", "iterations"
   add_foreign_key "iteration_answers", "questions"
   add_foreign_key "iterations", "users"
-  add_foreign_key "recommendations", "answers"
 end

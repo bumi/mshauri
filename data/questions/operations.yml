@@ -13,6 +13,7 @@
   id: 15
   title: How do you track user activity?
   answers:
+    - Log files
     - Google Analytics
     - Fathom
     - Mixpanel
@@ -22,7 +23,7 @@
 
 -
   id: 16
-  title: Do you get notifications if your application encouters errors? Or something does not work for the user?
+  title: Do you get notifications if your application encounters errors? Or something does not work for the user?
   answers:
     -
       value: "Yes"
@@ -45,9 +46,9 @@
 - id: 17a
   title: What tools do you use for system monitoring?
   answers:
-    - exception tracking tool
-    - system resource monitoring by third-party tool
-    - log files monitoring
+    - Exception tracking tool
+    - System resource monitoring by third-party tool
+    - Log files monitoring
     -
       value: None
       recommendation: monitoring

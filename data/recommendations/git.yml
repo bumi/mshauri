@@ -1,0 +1,31 @@
+---
+id: git
+title: Version control systems
+intro: A version control system allows teams to collaborate and work on code together. We recommend Git as it has become most widely used in recent years.
+description: |
+  A version control system tracks the history of changes of source code and
+  allows teams to collaborate on code together and work and change files at the same time.
+
+  Using a version control system allows to review new changes side by side rollbacks to any previous version is easily possible.
+
+  In recent years [Git](https://git-scm.com/) has become one of the most widely used and recommended tools to manage and develop source code in a team.
+
+  We recommend to any development team to use Git to manage source code and any related files.
+
+
+  ### Links to more information
+
+  * [Wikipedia: Version control](https://en.wikipedia.org/wiki/Version_control)
+  * [Wikipedia: Git](https://en.wikipedia.org/wiki/Git)
+  * [Git Handbook by GitHub](https://guides.github.com/introduction/git-handbook/)
+  * [Git guide](http://rogerdudler.github.io/git-guide/)
+  * [Migrate to Git from SVN](https://www.atlassian.com/git/tutorials/migrating-overview)
+
+  ### Useful tools
+
+  There are different services that provide hosting for software development version control, for example:
+
+  * [GitHub](https://github.com) (free version)
+  * [Gitea](https://gitea.io/en-us/) (Open Source)
+  * [GitLab](https://gitlab.com)
+  * [Bitbucket](https://bitbucket.org/)
