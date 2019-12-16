@@ -10,6 +10,12 @@ module Api
       render json: users
     end
 
+    def show
+      authorize @current_user
+      user = User.find(params[:id])
+      render json: user.iterations
+    end
+
     def me
       render json: current_user
     end
