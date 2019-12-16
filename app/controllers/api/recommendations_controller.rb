@@ -11,7 +11,6 @@ module Api
 
     def show
       @recommendation = Recommendation.find(params[:id])
-      render json: @recommendation
     end
   end
 end

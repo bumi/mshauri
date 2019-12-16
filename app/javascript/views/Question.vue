@@ -15,7 +15,7 @@
             {{ question.title }}
           </h4>
           <p class="my-0 text-sm opacity-80">
-            {{ question.description }}
+            <span v-html="question.description_formatted"></span>
           </p>
         </div>
         <div
