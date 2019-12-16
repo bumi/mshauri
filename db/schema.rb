@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_13_135552) do
+ActiveRecord::Schema.define(version: 2019_12_16_111402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_12_13_135552) do
     t.string "category"
     t.integer "priority"
     t.string "identifier"
+    t.text "intro"
   end
 
   create_table "users", force: :cascade do |t|
