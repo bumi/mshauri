@@ -6,7 +6,7 @@
       </h1>
 
       <h2 class="mt-0 mb-4 text-center text-weight-normal font-nunito text-grey-dark text-xl">
-        Based on your answers we have the following recommendations and 
+        Based on your answers we have the following recommendations and
         inspirations for you.
       </h2>
     </div>

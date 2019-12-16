@@ -8,7 +8,6 @@
           class="w-8 text-grey"
         ></span>
       </h1>
-
     </div>
     <div class="w-100 h-1 bg-primary" />
     <div class="w-90 ml-auto xs:mx-auto py-5">
