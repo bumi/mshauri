@@ -19,10 +19,14 @@
       </h1>
 
       <h3 class="text-xs text-weight-light">
-        Started: 28 Jan 2019
+        Started on {{ startedOn }}
       </h3>
-      <button class="btn bg-primary py-1 text-xs mx-auto text-white w-100 rounded-sm">
-        Continue
+      <button
+        class="btn py-1 text-xs mx-auto text-white w-100 rounded-sm"
+        :class="[isComplete ? 'bg-red' : 'bg-primary']"
+        @click="handleClick"
+      >
+        {{ buttonLabel }}
       </button>
     </div>
   </div>
@@ -36,6 +40,39 @@ export default {
       type: Object,
       default: () => {}
     }
-  }
+  },
+  computed: {
+    startedOn() {
+      let date = new Date(this.iteration.created_at);
+      return date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
+    },
+    isComplete() {
+      return this.iteration.completion_rate === 100
+    },
+    buttonLabel: function() {
+      return this.isComplete ? 'View Recommendations' : 'Continue';
+    }
+  },
+  methods: {
+    handleClick: function() {
+      let options;
+
+      if (this.isComplete) {
+        options = {
+          name: 'recommendations-index',
+          params: { iteration_id: this.iteration.id }
+        };
+      } else {
+        options = {
+          name: 'question',
+          params: {
+            id: this.iteration.starting_question_id,
+            iteration_id: this.iteration.id
+          }
+        };
+      }
+      this.$router.push(options);
+    }
+  },
 }
 </script>

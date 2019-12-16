@@ -1,6 +1,8 @@
 <template>
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
-    <div class="w-70 mx-auto pt-5">
+    <div
+      class="w-70 mx-auto pt-5"
+    >
       <h1 class="mb-5 text-grey-darkest text-4xl font-primary text-center text-weight-semibold">
         Congratulations, <span class="text-weight-normal">{{ user.name }}</span>
         <span class="w-90"><img
@@ -31,8 +33,8 @@
       </h4>
       <div class="flex flex-wrap">
         <recommendation-card
-          v-for="(recommendation, index) in recommendations"
-          :key="index"
+          v-for="recommendation in recommendations"
+          :key="recommendation.id"
           :recommendation="recommendation"
         />
       </div>
