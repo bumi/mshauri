@@ -2,13 +2,13 @@
   <div class="w-90 mx-auto py-3 my-5 bg-white rounded-lg">
     <div class="w-80 mx-auto">
       <div class="text-left my-3">
-          <button
-            
-            class="btn bg-grey-light rounded py-2 text-base"  
-          >
-            Home
-          </button>
-        </div>
+        <button
+
+          class="btn bg-grey-light rounded py-2 text-base"
+        >
+          Home
+        </button>
+      </div>
       <div class="w-100 mt-4">
         <div class="h-3 w100 bg-grey-lighter rounded-full">
           <div

@@ -14,8 +14,8 @@
       </h2>
     </div>
     <div class="w-100 h-1 bg-primary" />
-<div class="w-90 ml-auto py-5"> 
-  <div
+    <div class="w-90 ml-auto py-5">
+      <div
         class="mt-3 w-25 mr-3 w-20 border-1 border-solid border-grey-lighter shadow-sm cursor-pointer"
         @click="newIteration"
       >
@@ -30,15 +30,18 @@
           </h2>
         </div>
       </div>
-</div>
-<div class="w-100 bg-grey-lighter" style="height:2px" ></div>
- 
+    </div>
+    <div
+      class="w-100 bg-grey-lighter"
+      style="height:2px"
+    />
+
     <div class="w-90 text-left ml-auto">
-      <h6 class="my-4 text-xl font-semibold">Recent iterations</h6>
+      <h6 class="my-4 text-xl font-semibold">
+        Recent iterations
+      </h6>
     </div>
     <div class="flex flex-wrap justify-content-center ">
-    
-      
       <div
         v-for="iteration in iterations"
         :key="iteration.id"
