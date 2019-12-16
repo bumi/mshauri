@@ -22,8 +22,10 @@
           <h4 class="my-1 font-medium xs:text-xl">
             {{ question.title }}
           </h4>
-          <div class="my-0 text-sm opacity-80" v-html="question.description_formatted">
-          </div>
+          <div
+            class="my-0 text-sm opacity-80"
+            v-html="question.description_formatted"
+          />
         </div>
         <div
           v-if="loading"
