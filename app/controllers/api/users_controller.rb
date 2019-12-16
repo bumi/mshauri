@@ -2,11 +2,10 @@
 
 module Api
   class UsersController < BaseController
-
     before_action :require_current_user, only: [:me]
 
-    authorize @user
     def index
+      authorize @current_user
       users = User.all
       render json: users
     end

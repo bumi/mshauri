@@ -2,8 +2,11 @@
 
 module Api
   class QuestionsController < BaseController
-    authorize @user
+    before_action :require_current_user, only: [:index]
+
     def index
+      @user = current_user
+      authorize @user
       questions = Question.all
       render json: questions
     end
