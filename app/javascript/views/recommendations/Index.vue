@@ -1,10 +1,12 @@
 <template>
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
     <div class="relative pt-5">
-     <div class="w-80 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
-                <h1 class="text-primary text-2xl py-4 my-2 pl-5">Recommendations</h1>
-            </div>
-   </div>
+      <div class="w-80 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
+        <h1 class="text-primary text-2xl py-4 my-2 pl-5">
+          Recommendations
+        </h1>
+      </div>
+    </div>
     <div
       v-if="recommendations.length"
       class="w-90 mx-auto pb-5"
