@@ -22,8 +22,8 @@
         Started on {{ startedOn }}
       </h3>
       <button
-        class="btn py-1 text-xs mx-auto text-white w-100 rounded-sm"
-        :class="[isComplete ? 'bg-red' : 'bg-primary']"
+        class="btn py-1 text-xs mx-auto w-100 rounded"
+        :class="[isComplete ? 'bg-primary text-white' : 'bg-grey-light text-black']"
         @click="handleClick"
       >
         {{ buttonLabel }}

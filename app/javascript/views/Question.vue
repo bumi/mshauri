@@ -1,7 +1,15 @@
 <template>
-  <div class="w-90 mx-auto py-5 my-5 bg-white rounded-lg">
+  <div class="w-90 mx-auto py-3 my-5 bg-white rounded-lg">
     <div class="w-80 mx-auto">
-      <div class="w-100">
+      <div class="text-left my-3">
+          <button
+            
+            class="btn bg-grey-light rounded py-2 text-base"  
+          >
+            Home
+          </button>
+        </div>
+      <div class="w-100 mt-4">
         <div class="h-3 w100 bg-grey-lighter rounded-full">
           <div
             class="h-100 bg-primary rounded-full"
@@ -52,7 +60,7 @@
             class="btn btn-primary rounded py-2 text-base"
             @click="saveAnswer"
           >
-            Save
+            Next
           </button>
         </div>
       </div>
