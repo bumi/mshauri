@@ -1,7 +1,15 @@
 <template>
-  <div class="w-90 mx-auto py-5 my-5 bg-white rounded-lg">
+  <div class="w-90 md:w-100 xs:w-100 sm:w-100 mx-auto py-3 my-5 xs:my-0 bg-white rounded-lg">
     <div class="w-80 mx-auto">
-      <div class="w-100">
+      <div class="text-left my-3">
+        <button
+
+          class="btn bg-grey-light rounded py-2 text-base"
+        >
+          Home
+        </button>
+      </div>
+      <div class="w-100 mt-4">
         <div class="h-3 w100 bg-grey-lighter rounded-full">
           <div
             class="h-100 bg-primary rounded-full"
@@ -11,7 +19,7 @@
       </div>
       <div class="w-100 relative">
         <div class="py-4 relative z-0">
-          <h4 class="my-1 font-medium">
+          <h4 class="my-1 font-medium xs:text-xl">
             {{ question.title }}
           </h4>
           <div class="my-0 text-sm opacity-80" v-html="question.description_formatted">
@@ -51,7 +59,7 @@
             class="btn btn-primary rounded py-2 text-base"
             @click="saveAnswer"
           >
-            Save
+            Next
           </button>
         </div>
       </div>
