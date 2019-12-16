@@ -22,17 +22,24 @@
                                     for a college education, i
                                     can learn basics here.</p>
 
-                                <div class="py-4">
-                                    <button class="btn text-white font-roboto rounded px-5 shadow-primary"
-                                        style="background-color: #55D36D">Start survey
-                                        <i class="fas fa-long-arrow-alt-right"></i>
-                                    </button>
+                                <div class="py-4 w-50">
+                                    <%= form_with url: api_users_path(@user),model: @user do |f| %>
+                                         <%= f.email_field :email, class: 'form-input mb-4 px-4 rounded', placeholder: 'Email (optional)', autocomplete: "email" %>
+                                        <button type="submit"
+                                            class="btn text-white font-roboto rounded w-100 shadow-primary bg-primary relative px-4 text-left">Start
+                                            survey
+                                            <i class="fas fa-long-arrow-alt-right float-right mt-1"></i>
+                                        </button>
+                                    <% end %>
+
                                 </div>
                             </div>
 
                         </div>
-                        <div class="flex align-items-center relative w-40 md:w-45 min-h-screen bg-primary lg:mt-10 sm:mt-0 sm:pt-3 pt-5">
-                            <div class="absolute  z-999 t-10 max-w-" style="right: 22%;width: 45rem;max-width:  initial;">
+                        <div
+                            class="flex align-items-center relative w-40 md:w-45 min-h-screen bg-primary lg:mt-10 sm:mt-0 sm:pt-3 pt-5">
+                            <div class="absolute  z-999 t-10 max-w-"
+                                style="right: 22%;width: 45rem;max-width:  initial;">
                                 <%= image_tag "brain-shape.svg" %>
                             </div>
                         </div>
@@ -47,43 +54,46 @@
             class="panel-body text-left xl:w-90 lg:w-65 md:w-75 xs:w-90 sm:w-90 py-5 mx-auto relative hidden xl:block lg:block">
             <h1 class="text-2xl text-black">How it works</h1>
             <div class="flex w-100 p-0 mt-70">
-                <div class="w-25 mx-auto lg:h-64 md:h-64 mt-10 lg:mt-4 hover:shadow-lg md:w-100 sm:w-100 transition-1s md:mt-0 sm:mt-0 rounded-lg bg-white   relative  lg:l-1 xs:hidden">
-                        <div
-                            class="rounded-full h-18 w-rem-18 bg-green-lightest text-center ml-4 mt-4 flex align-items-center justify-content-center text-2xl text-green-dark">
-                            <span>
-                                <i class="fas fa-mobile"></i>
-                            </span>
-                        </div>
-                        <h2 class="mx-4 text-xl text-black pt-4 font-bold">Ask Questions</h2>
-                        <p class="mx-4 text-sm pt-3 leading-loose pb-4">I don't have the time or money
-                            for a college education, i
-                            can learn basics here.</p>
+                <div
+                    class="w-25 mx-auto lg:h-64 md:h-64 mt-10 lg:mt-4 hover:shadow-lg md:w-100 sm:w-100 transition-1s md:mt-0 sm:mt-0 rounded-lg bg-white   relative  lg:l-1 xs:hidden">
+                    <div
+                        class="rounded-full h-18 w-rem-18 bg-green-lightest text-center ml-4 mt-4 flex align-items-center justify-content-center text-2xl text-green-dark">
+                        <span>
+                            <i class="fas fa-mobile"></i>
+                        </span>
+                    </div>
+                    <h2 class="mx-4 text-xl text-black pt-4 font-bold">Ask Questions</h2>
+                    <p class="mx-4 text-sm pt-3 leading-loose pb-4">I don't have the time or money
+                        for a college education, i
+                        can learn basics here.</p>
                 </div>
-                <div class="w-25 mx-auto lg:h-64 md:h-64 mt-10 lg:mt-4 md:w-100 sm:w-100  md:mt-0 sm:mt-0 rounded-lg bg-transparent shadow-primary relative  lg:l-1 xs:hidden" >
-                        <div
-                            class="rounded-full h-18 w-rem-18 bg-green-lightest text-center ml-4 mt-4 flex align-items-center justify-content-center text-2xl text-green-dark">
-                            <span>
-                                <i class="fas fa-mobile"></i>
-                            </span>
-                        </div>
-                        <h2 class="mx-4 text-xl text-black pt-4 font-bold">Ask Questions</h2>
-                        <p class="mx-4 text-sm pt-3 leading-loose pb-4">I don't have the time or money
-                            for a college education, i
-                            can learn basics here.</p>
+                <div
+                    class="w-25 mx-auto lg:h-64 md:h-64 mt-10 lg:mt-4 md:w-100 sm:w-100  md:mt-0 sm:mt-0 rounded-lg bg-transparent shadow-primary relative  lg:l-1 xs:hidden">
+                    <div
+                        class="rounded-full h-18 w-rem-18 bg-green-lightest text-center ml-4 mt-4 flex align-items-center justify-content-center text-2xl text-green-dark">
+                        <span>
+                            <i class="fas fa-mobile"></i>
+                        </span>
+                    </div>
+                    <h2 class="mx-4 text-xl text-black pt-4 font-bold">Ask Questions</h2>
+                    <p class="mx-4 text-sm pt-3 leading-loose pb-4">I don't have the time or money
+                        for a college education, i
+                        can learn basics here.</p>
 
-                        <div class="p-1 rounded-b-full align-items-end" style="background-color: #55D36D;"></div>
+                    <div class="p-1 rounded-b-full align-items-end" style="background-color: #55D36D;"></div>
                 </div>
-                <div class="w-25  mx-auto lg:h-64 md:h-64 hover:shadow-lg mt-10 lg:mt-4 md:w-100 sm:w-100  md:mt-0 sm:mt-0 rounded-lg bg-transparent   relative  lg:l-1 xs:hidden">
-                        <div
-                            class="rounded-full h-18 w-rem-18 bg-green-lightest text-center ml-4 mt-4 flex align-items-center justify-content-center text-2xl text-green-dark">
-                            <span>
-                                <i class="fas fa-mobile"></i>
-                            </span>
-                        </div>
-                        <h2 class="mx-4 text-xl text-black pt-4 font-bold">Ask Questions</h2>
-                        <p class="mx-4 text-sm pt-3 leading-loose pb-4">I don't have the time or money
-                            for a college education, i
-                            can learn basics here.</p>
+                <div
+                    class="w-25  mx-auto lg:h-64 md:h-64 hover:shadow-lg mt-10 lg:mt-4 md:w-100 sm:w-100  md:mt-0 sm:mt-0 rounded-lg bg-transparent   relative  lg:l-1 xs:hidden">
+                    <div
+                        class="rounded-full h-18 w-rem-18 bg-green-lightest text-center ml-4 mt-4 flex align-items-center justify-content-center text-2xl text-green-dark">
+                        <span>
+                            <i class="fas fa-mobile"></i>
+                        </span>
+                    </div>
+                    <h2 class="mx-4 text-xl text-black pt-4 font-bold">Ask Questions</h2>
+                    <p class="mx-4 text-sm pt-3 leading-loose pb-4">I don't have the time or money
+                        for a college education, i
+                        can learn basics here.</p>
                 </div>
             </div>
         </div>
