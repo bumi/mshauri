@@ -21,9 +21,9 @@
                               
                                 <div class="py-4 w-50">
                             
-                                    <%= form_with url: api_users_path, model: @user |f| %>
+                                    <%= form_with url: api_users_path, model: @user do |f| %>
                                        
-                                          <%= @user.errors.full_messages.first if @user.errors.any? %>
+                                     
 
                                         <%= f.email_field :email, class: 'form-input mb-4 px-4 rounded', placeholder: 'Email (optional)', autocomplete: "email" %>
                                         <button type="submit" class="btn text-white font-roboto rounded w-100 shadow-primary bg-primary relative px-4 text-left">
