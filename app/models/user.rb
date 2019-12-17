@@ -2,6 +2,10 @@
 
 class User < ApplicationRecord
   has_many :iterations, dependent: :destroy
+  has_many :iteration_answers, through: :iterations
+  has_many :answers, through: :iteration_answers
+  has_many :recommendations, through: :answers
+
   before_validation :insert_slug
   after_save :send_welcome_email, if: :email_changed?
 
