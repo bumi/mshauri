@@ -39,13 +39,6 @@ ActiveRecord::Schema.define(version: 2019_12_17_132740) do
     t.index ["question_id"], name: "index_iteration_answers_on_question_id"
   end
 
-  create_table "iteration_recommendations", force: :cascade do |t|
-    t.bigint "iteration_id", null: false
-    t.bigint "recommendation_id", null: false
-    t.index ["iteration_id"], name: "index_iteration_recommendations_on_iteration_id"
-    t.index ["recommendation_id"], name: "index_iteration_recommendations_on_recommendation_id"
-  end
-
   create_table "iterations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -90,7 +83,5 @@ ActiveRecord::Schema.define(version: 2019_12_17_132740) do
   add_foreign_key "iteration_answers", "answers"
   add_foreign_key "iteration_answers", "iterations"
   add_foreign_key "iteration_answers", "questions"
-  add_foreign_key "iteration_recommendations", "iterations"
-  add_foreign_key "iteration_recommendations", "recommendations"
   add_foreign_key "iterations", "users"
 end
