@@ -2,14 +2,18 @@
   <!-- eslint-disable vue/no-v-html -->
 
   <div class="bg-white w-100 mx-auto -mt-8 py-5">
-  
-  <button @click="updateAnswer" class="btn btn-primary">Save</button>
+    <button
+      class="btn btn-primary"
+      @click="updateAnswer"
+    >
+      Save
+    </button>
 
     <div
       v-if="recommendation"
-      class="w-90 mx-auto my-3"
+      class="w-90 xs:w-85 mx-auto my-3"
     >
-      <h1 class="text-center font-bold text-3xl font-primary my-4">
+      <h1 class="text-center font-bold text-3xl xs:text-xl font-primary my-4">
         {{ recommendation.title }}
       </h1>
       <div
@@ -29,18 +33,19 @@ export default {
     return {
       recommendation: {},
     }
-  },methods:{
-     updateAnswer(){
-       IterationAnswer.update(this.$route.params.iteration_id).then(({ data }) =>{
-         console.log("lewis");
-       })
-     }
   },
   mounted() {
     Recommendation.show(this.$route.params.id).then(({ data }) => {
       this.recommendation = data;
     });
+  },
+  methods: {
+    updateAnswer() {
+      IterationAnswer.update(this.$route.params.iteration_id).then(({ data }) => {
+        console.log("lewis");
+      })
+    }
   }
-  
+
 }
 </script>

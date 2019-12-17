@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :recommendations, only: %i[index show]
   end
 
+  resources :users, only: [:create]
   # entry point for the vue.js
   get '/:user_slug', to: 'home#index', as: :home
   get '/:user_slug/i/:iteration_id/questions/:question_id', to: 'home#index', as: :iteration_question

@@ -43,6 +43,9 @@
       value: Write user stories
       recommendation:
     -
+      value: Nothing / I don't know
+      recommendation: 
+    -
       value: Other
       input: true
       recommendation:
@@ -67,13 +70,13 @@
   multiple: true
   answers:
     -
-      value: email, phone, etc.
+      value: E-mail, phone, etc.
       recommendation: bugtracking
     -
-      value: google document
+      value: Google document
       recommendation: bugtracking
     -
-      value: paper list
+      value: Paper list
       recommendation: bugtracking
     - Trello
     - Jira
