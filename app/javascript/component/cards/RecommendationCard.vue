@@ -40,7 +40,7 @@ export default {
       default: () => {}
     },
     iterationId: {
-      type: Number,
+      type: [Number, String],
       default: null
     }
   }

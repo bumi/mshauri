@@ -20,8 +20,11 @@ module Api
     def update
       @iteration_answer = current_user.iteration_answers.find(params[:id])
       @iteration_answer.recommendation_resolved_at = DateTime.now
-      @iteration_answer.save!
-      render json: 'successful'
+      if @iteration_answer.save
+        render json: 'successful'
+      else
+        render json: @iteration_answer.errors, status: :unprocessable_entity
+      end
     end
 
     private
