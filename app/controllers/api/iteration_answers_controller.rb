@@ -17,6 +17,13 @@ module Api
       end
     end
 
+    def update
+      @iteration_answer = IterationAnswer.find(params[:id])
+      @iteration_answer.recommendation_resolved_at = DateTime.now
+      @iteration_answer.save!
+      render json: 'successful'
+    end
+
     private
 
     def request_params

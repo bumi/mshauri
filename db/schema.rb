@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_170209) do
+ActiveRecord::Schema.define(version: 2019_12_17_132740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +33,17 @@ ActiveRecord::Schema.define(version: 2019_12_16_170209) do
     t.bigint "question_id", null: false
     t.bigint "answer_id", null: false
     t.string "value"
+    t.datetime "recommendation_resolved_at"
     t.index ["answer_id"], name: "index_iteration_answers_on_answer_id"
     t.index ["iteration_id"], name: "index_iteration_answers_on_iteration_id"
     t.index ["question_id"], name: "index_iteration_answers_on_question_id"
+  end
+
+  create_table "iteration_recommendations", force: :cascade do |t|
+    t.bigint "iteration_id", null: false
+    t.bigint "recommendation_id", null: false
+    t.index ["iteration_id"], name: "index_iteration_recommendations_on_iteration_id"
+    t.index ["recommendation_id"], name: "index_iteration_recommendations_on_recommendation_id"
   end
 
   create_table "iterations", force: :cascade do |t|
@@ -82,5 +90,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_170209) do
   add_foreign_key "iteration_answers", "answers"
   add_foreign_key "iteration_answers", "iterations"
   add_foreign_key "iteration_answers", "questions"
+  add_foreign_key "iteration_recommendations", "iterations"
+  add_foreign_key "iteration_recommendations", "recommendations"
   add_foreign_key "iterations", "users"
 end

@@ -17,7 +17,7 @@
       <router-link
         tag="div"
         class="cursor-pointer"
-        :to="{name: 'recommendation-show', params:{id: recommendation.id, title: recommendation.title}}"
+        :to="{name: 'recommendation-show', params:{id: recommendation.id, title: recommendation.title, iteration_id:iteration_id}}"
       >
         <div class="w-95 ml-auto bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
           <h4 class="text-lg pt-4 pb-2 p-0 m-0 pl-5 font-bold">
@@ -38,6 +38,9 @@ export default {
     recommendation: {
       type: Object,
       default: () => {}
+    },iteration_id:{
+      type: Number,
+      default: null
     }
   }
 }

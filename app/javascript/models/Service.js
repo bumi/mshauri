@@ -7,6 +7,9 @@ export default class Service {
     return this.request('post', url, data);
   }
 
+  static patch(url, data = {}) {
+    return this.request('patch', url, data);
+  }
   static request(type, url, data = {}, params = {}) {
     return window.axios(
       {

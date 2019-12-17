@@ -16,6 +16,10 @@ export default class BaseModel {
       return Service.post(this.url(), params);
     }
 
+    static update(id, params = {}) {
+      return Service.patch(this.url(id), params);
+    }
+
     static url() {
       return [this.basePath, ...arguments].join('/')
     }

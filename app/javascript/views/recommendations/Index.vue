@@ -24,6 +24,7 @@
           v-for="recommendation in recommendations"
           :key="recommendation.id"
           :recommendation="recommendation"
+          :iteration_id= "iterationId"
         />
       </div>
     </div>
@@ -41,6 +42,7 @@ export default {
   data() {
     return {
       recommendations: [],
+    
     }
   },
 
@@ -53,6 +55,10 @@ export default {
       this.recommendations = data;
       console.log(data)
     });
+  },computed:{
+      iterationId(){
+        return this.$route.params.iteration_id;
+      }
   }
 }
 </script>
