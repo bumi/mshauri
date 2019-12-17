@@ -10,5 +10,5 @@ if Rails.env.production?
     authentication: :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.raise_delivery_errors = false
 end
