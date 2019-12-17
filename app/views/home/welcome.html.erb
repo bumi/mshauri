@@ -13,33 +13,32 @@
                         <div class="flex align-items-center relative w-60 md:w-55 pb-4 xs:w-95 mr-auto">
                             <div
                                 class="xs:w-100 relative xl:w-75 lg:w-90 ml-auto md:w-100 sm:w-95 md:mt-70  xl:mt-70 xl:mx-auto sm:mt-5 xl:pt-70  xs:mx-auto  xs:mt-70  xs:pt-70">
-                                <h1 class="text-black w-60 lg:w-70 lg:text-4xl text-5xl">Software Development Best Practices</h1>
+                                <h1 class="text-black w-60 lg:w-70 lg:text-4xl text-5xl">Software Development Best
+                                    Practices</h1>
                                 <p class="text-xl pt-4 w-70">
-                                    Take the software development survey and get individual recommendations and 
+                                    Take the software development survey and get individual recommendations and
                                     inspirations on how to improve your software development processes.
                                 </p>
-                              
                                 <div class="py-4 w-50">
-                            
-                                    <%= form_with url: api_users_path, model: @user do |f| %>
-                                       
-                                     
-
-                                        <%= f.email_field :email, class: 'form-input mb-4 px-4 rounded', placeholder: 'Email (optional)', autocomplete: "email" %>
-                                        <button type="submit" class="btn text-white font-roboto rounded w-100 shadow-primary bg-primary relative px-4 text-left">
-                                            Start survey
-                                            <i class="fas fa-long-arrow-alt-right float-right mt-1"></i>
-                                        </button>
+                                    <%= form_with url: api_users_path, model: @user  |f| %>
+                                    <ul>
+                                        <% @user.errors.full_messages.each do |msg| %>
+                                        <li><%= msg %></li>
+                                        <% end %>
+                                    </ul>
+                                    <%= f.email_field :email, class: 'form-input mb-4 px-4 rounded', placeholder: 'Email (optional)', autocomplete: "email" %>
+                                    <button type="submit"
+                                        class="btn text-white font-roboto rounded w-100 shadow-primary bg-primary relative px-4 text-left">
+                                        Start survey
+                                        <i class="fas fa-long-arrow-alt-right float-right mt-1"></i>
+                                    </button>
                                     <% end %>
-
                                 </div>
                             </div>
-
                         </div>
                         <div
                             class="flex align-items-center relative w-40 md:w-45 min-h-screen bg-primary  sm:pt-3 pt-5">
-                            <div class="absolute  z-999 t-10 "
-                                style="right: 25.5%;width: 43rem;max-width:  initial;">
+                            <div class="absolute  z-999 t-10 " style="right: 25.5%;width: 43rem;max-width:  initial;">
                                 <%# image_tag "brain-shape.svg" %>
                             </div>
                         </div>
