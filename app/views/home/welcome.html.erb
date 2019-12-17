@@ -19,6 +19,11 @@
                                     about software engineering best practices to improve your workflows.
                                 </p>
                                 <div class="py-4 w-50">
+                                    <% if flash[:notice].present? %>
+                                      <p class="text-success font-bold">
+                                          <%= flash[:notice] %>
+                                      </p>
+                                    <% end %>
                                     <%= form_with model: @user, local: true do  |f| %>
                                     <div class="mb-4">
                                     <%= f.email_field :email, class: 'form-input px-4 rounded', placeholder: 'Email (optional)', autocomplete: "email" %>
