@@ -1,6 +1,7 @@
 ---
 id: gitflow
-title: Gitflow - software development workflow
+title: GitFlow - Software Development Workflow
+prioroty: 100
 intro: A standardized development workflow like GitFlow helps to structure development work. A GitFlow like process is applied by many development teams.
 description: |
 

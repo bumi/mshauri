@@ -1,10 +1,11 @@
 ---
 id: knowledge_base
-title: Developer knowledge base
-intro: 
+title: Developer Knowledge Base
+intro: Shared knowledge bases like company internal wikis help to collect all important knowledge and allow new employees to learn quickly
+priority: 50
 description: |
   A knowledge base is a library of information about your company, product, service or any topic that is important to your team. 
-  It helps you to document and collect any information important to fulfill your company’s tasks and to share information within your team or with customers. 
+  It helps you to document and collect any information that is important to fulfill your company’s tasks and to share information within your team or with customers. 
   
   A knowledge base can include FAQs, troubleshooting guides, and any other nitty gritty details you may want or need to know.
   

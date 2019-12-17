@@ -2,6 +2,7 @@
 id: github
 title: GitHub - a source code development platform
 intro: GitHub is a source code hosting platform that provides many features to make software development easy and efficient. To collaborate we recommend a service like GitHub, Gitlab, Gitea,or similar.
+priority: 100
 description: |
   Services like [GitHub](https://github.com/) provide code hosting solutions that make collaborating on source code in teams easy and efficient.
   They provide features to track and review code changes. Development workflows like [GitHub flow](https://guides.github.com/introduction/flow/)

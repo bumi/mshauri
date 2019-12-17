@@ -2,6 +2,7 @@
 id: exception_tracking
 title: Monitoring & Exception tracking
 intro: Monitoring and notifications about bugs and issues on the production system are helpful to identify and fix problems
+priority: 50
 description: |
   Monitoring and error logging tools help to get important insights when running applications in production. It is important to get informed about errors and potential problems as well as performance insights of the application. 
   Especially error/exception notification tools are important to identify bugs that occur while customers are using the application and thus allow to quickly fix such problems.

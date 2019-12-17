@@ -1,13 +1,14 @@
 ---
 id: deployment
-title: Automated deployment process
+title: Automated Deployment Process
 intro: Manual deployment processes can be error-prone and slow. We recommend to automate the deployment process as much as possible using scripts or CI/CD methodologies.
+priority: 50
 description: |
-  The ability to automatically and reliably deploy and release your applications is a key factor to optimizing the average time it requires to take features from idea to the hands of your (paying) customers.
+  The ability to automatically and reliably deploy and release your applications is a key factor to shorten the average time it requires to take features from idea to the hands of your (paying) customers.
 
   Deployment automation makes the release of new versions reliable and fast.
 
-  We recommend to automate the release process as much as possible.
+  We recommend to automate the release process as much as possible using scripts or [continuous integration and delivery tools](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment)
 
   ### More information:
 
