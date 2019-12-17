@@ -6,7 +6,7 @@
         class="text-2xl my-0 font-primary cursor-pointer"
         tag="p"
       >
-        Mshauri
+        Rwanda Tech Guide
       </router-link>
     </div>
   </nav>
