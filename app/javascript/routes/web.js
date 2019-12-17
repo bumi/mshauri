@@ -29,7 +29,7 @@ export default {
       name: 'recommendations-index'
     },
     {
-      path: '/:user_slug/recommendations/:id/:title',
+      path: '/:user_slug/recommendations/:id',
       component: RecommendationShow,
       name: 'recommendation-show'
     }
