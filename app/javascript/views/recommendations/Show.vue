@@ -1,33 +1,48 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
-
-  <div class="w-100 mx-auto py-5">
-    <div class="w-100 mx-auto py-5 bg-white">
-      <div
-        v-if="recommendation"
-        class="w-90 xs:w-85 mx-auto my-3 "
-      >
-        <div class="p-3 bg-grey-lighter w-auto inline-block rounded-xl mb-5">
-          <p class="text-xs my-0">
-            <!-- TODO: update link to recommendations index -->
-            <router-link
-              tag="div"
-              class="cursor-pointer"
-              :to="{name: 'recommendation-show', params:{id: recommendation.id}}"
-            >
-              Recommendations <i class="fas fa-chevron-right mx-1" />
-            </router-link>
-            <span>{{ recommendation.title }}</span>
-          </p>
-        </div>
-
-        <h1 class="text-center font-bold text-3xl xs:text-xl font-primary my-4">
-          {{ recommendation.title }}
+  <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
+    <div class="relative pt-5">
+      <div class="w-80 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
+        <h1 class="text-primary text-2xl pt-4 my-2 pl-5 xs:pl-0 xs:px-3 xs:text-xl xs:pt-2 md:text-xl md:pl-0 md:px-5 md:pt-2">
+          Our recommendations for your software development best practices.
         </h1>
-        <div
-          class="font-light my-4"
-          v-html="recommendation.description_formatted"
-        />
+        <p class="pl-5 pb-4 my-0 text-sm opacity-80 xs:pl-0 xs:px-3 md:pl-0 md:px-5">
+          Based on your answers we have the following recommendations and inspirations for you.
+        </p>
+      </div>
+    </div>
+
+    <div class="w-80 mx-auto flex relative py-5 -mt-12">
+      <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
+        <div class="h-100 w-05 bg-grey-light" />
+      </div>
+    </div>
+    <div class="flex flex-wrap">
+
+      <div class="w-80 mx-auto flex relative py-2">
+        <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
+          <div class="h-100 w-05 bg-grey-light" />
+        </div>
+        <div class="w-10 z-99 flex align-items-center justify-content-center">
+          <div
+            class="rounded-full h-16 w-rem-16 xs:h-8 xs:w-rem-8 md:h-12 md:w-rem-12 sm:h-10 sm:w-rem-10 bg-white border-solid border-1 border-grey-lighter shadow z-9999 flex align-items-center justify-content-center text-2xl"
+          >
+            <div
+              class="rounded-full h-4 bg-grey-darker"
+              style="width: 1rem"
+            />
+          </div>
+        </div>
+        <div class="w-90 py-3">
+          <div class="w-95 ml-auto bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
+            <h4 class="text-lg pt-4 pb-2 p-0 m-0 pl-5 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 font-bold">
+              {{ recommendation.title }}
+            </h4>
+            <div class="text-sm p-0 m-0 pl-5 pb-4 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 font-roboto font-light"
+              v-html="recommendation.description_formatted"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
