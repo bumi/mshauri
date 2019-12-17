@@ -3,10 +3,6 @@
     <div class="w-80 mx-auto ">
       <h1 class="text-grey-darker text-5xl font-primary xs:text-3xl text-centered">
         Hi {{ user.name }}
-        <span class="w-90"><img
-          src="/assets/waving-hand.svg"
-          class="w-8 text-grey"
-        ></span>
       </h1>
     </div>
     <div class="w-100 h-1 bg-primary" />
@@ -17,7 +13,7 @@
       >
         <div class="px-3 py-2 text-center">
           <img
-            src="/assets/plus.svg"
+            src="/plus.svg"
             class="w-35 pt-5 mx-auto text-center "
           >
 
