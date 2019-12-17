@@ -24,7 +24,7 @@
           v-for="recommendation in recommendations"
           :key="recommendation.id"
           :recommendation="recommendation"
-          :iteration_id="iterationId"
+          :iteration-id="iterationId"
         />
       </div>
     </div>

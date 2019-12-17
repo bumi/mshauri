@@ -42,7 +42,8 @@ export default {
   methods: {
     updateAnswer() {
       IterationAnswer.update(this.$route.params.iteration_id).then(({ data }) => {
-        console.log("lewis");
+        // TODO: Handle Recommendation done behavior
+        console.log(data);
       })
     }
   }
