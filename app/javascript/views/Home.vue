@@ -1,11 +1,5 @@
 <template>
   <div class="bg-white py-2 min-h-screen -mt-8">
-    <div class="w-80 mx-auto ">
-      <h1 class="text-grey-darker text-5xl font-primary xs:text-3xl text-centered">
-        Hi {{ user.name }}
-      </h1>
-    </div>
-    <div class="w-100 h-1 bg-primary" />
     <div class="w-90 ml-auto xs:mx-auto py-5">
       <div
         class="mt-3 w-25 mr-3 xs:w-100 sm:w-40 md:w-40 border-1 border-solid border-grey-lighter shadow-sm cursor-pointer"
