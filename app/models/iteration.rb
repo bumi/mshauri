@@ -23,7 +23,7 @@ class Iteration < ApplicationRecord
   def starting_question_id
     return iteration_answers.last.answer.next_question_id if iteration_answers.any?
 
-    Question.first.id
+    Question.find_by(identifier: '1').id
   end
 
   def completion_rate
