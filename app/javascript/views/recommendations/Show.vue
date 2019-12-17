@@ -4,9 +4,9 @@
   <div class="bg-white w-100 mx-auto -mt-8 py-5">
     <div
       v-if="recommendation"
-      class="w-90 mx-auto my-3"
+      class="w-90 xs:w-85 mx-auto my-3"
     >
-      <h1 class="text-center font-bold text-3xl font-primary my-4">
+      <h1 class="text-center font-bold text-3xl xs:text-xl font-primary my-4">
         {{ recommendation.title }}
       </h1>
       <div
