@@ -21,7 +21,7 @@
                               
                                 <div class="py-4 w-50">
                             
-                                    <%= form_with url: api_users_path, model: @user ||= User.new do |f| %>
+                                    <%= form_with url: api_users_path, model: @user |f| %>
                                        
                                           <%= @user.errors.full_messages.first if @user.errors.any? %>
 
