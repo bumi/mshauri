@@ -18,24 +18,33 @@
                                     Take the software development survey and get individual recommendations and and ideas 
                                     about software engineering best practices to improve your workflows.
                                 </p>
-
                                 <div class="py-4 w-50">
-                                    <%= form_with url: api_users_path, model: User.new do |f| %>
-                                        <%= f.email_field :email, class: 'form-input mb-4 px-4 rounded', placeholder: 'Email (optional)', autocomplete: "email" %>
-                                        <button type="submit" class="btn text-white font-roboto rounded w-100 shadow-primary bg-primary relative px-4 text-left">
-                                            Start survey
-                                            <i class="fas fa-long-arrow-alt-right float-right mt-1"></i>
-                                        </button>
+                                    <% if flash[:notice].present? %>
+                                      <p class="text-success font-bold">
+                                          <%= flash[:notice] %>
+                                      </p>
                                     <% end %>
-
+                                    <%= form_with model: @user, local: true do  |f| %>
+                                    <div class="mb-4">
+                                    <%= f.email_field :email, class: 'form-input px-4 rounded', placeholder: 'Email (optional)', autocomplete: "email" %>
+                                    <ul class="list-type-0 list-reset">
+                                        <% @user.errors.full_messages.each do |msg| %>
+                                           <li class="text-xs text-danger"><%= msg %></li>
+                                        <% end %>
+                                    </ul>
+                                    </div>
+                                    <button type="submit"
+                                        class="btn text-white font-roboto rounded w-100 shadow-primary bg-primary relative px-4 text-left">
+                                        Start survey
+                                        <i class="fas fa-long-arrow-alt-right float-right mt-1"></i>
+                                    </button>
+                                    <% end %>
                                 </div>
                             </div>
-
                         </div>
                         <div
                             class="flex align-items-center relative w-40 md:w-45 min-h-screen bg-primary  sm:pt-3 pt-5">
-                            <div class="absolute  z-999 t-10 "
-                                style="right: 25.5%;width: 43rem;max-width:  initial;">
+                            <div class="absolute  z-999 t-10 " style="right: 25.5%;width: 43rem;max-width:  initial;">
                                 <%# image_tag "brain-shape.svg" %>
                             </div>
                         </div>
