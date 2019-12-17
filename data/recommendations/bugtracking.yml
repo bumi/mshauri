@@ -1,0 +1,25 @@
+---
+id: bugtracking
+title: Ticket Management / Project Management / Bug tracking
+intro: Ticket management and bug tracking tools allow you to collect all information in one place and improve communication between all stakeholders.
+description: |
+  A ticket management system is a tool / a piece of software used to organize issues and ToDos relevant to the software development process. 
+  
+  The goal is to collect all information in one place, eliminate manual processes, and improve communication between all involved stakeholders (company and customers).
+  
+  The ticket management system is the basic requirement to apply any efficient [software development process](https://en.wikipedia.org/wiki/Software_development_process). 
+  It can be part of general [project management tools](https://en.wikipedia.org/wiki/Project_management_software) that help to plan, organize and manage any kind of project.
+
+
+  ### Links
+  
+  * [Issue tracking system - wikipedia](https://en.wikipedia.org/wiki/Issue_tracking_system)
+
+  ### Tools
+  
+  * [Taiga](https://taiga.io/) (open source)
+  * [Trello](https://trello.com/) (free version)
+  * [GitHub Issues](https://github.com/)
+  * [Jira](https://www.atlassian.com/software/jira)
+  * [Basecamp](https://basecamp.com/)
+  * [OpenProject](https://www.openproject.org/) (open source)
