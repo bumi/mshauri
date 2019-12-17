@@ -9,12 +9,11 @@ module Api
     end
 
     def create
-      user = User.new(user_params)
-      if user.save && user.iterations.build.save # TODO: refactor iteration creation and redirect to iteration
-        redirect_to iteration_question_url(user_slug: user.slug, iteration_id: user.iterations.last.id, question_id: Question.first.id)
+      @user = User.new(user_params)
+      if @user.save && user.iterations.build.save # TODO: refactor iteration creation and redirect to iteration
+        redirect_to iteration_question_url(user_slug: @user.slug, iteration_id: @user.iterations.last.id, question_id: Question.first.id)
       else
-
-        render json: user.errors, status: :unprocessable_entity
+        render json: @user.errors, status: :unprocessable_entity
       end
     end
 
