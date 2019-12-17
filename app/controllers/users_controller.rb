@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   private
 
   def login
+    return false if user_params[:email].blank?
+
     @user = User.find_by(email: user_params[:email])
     return false unless @user
 
