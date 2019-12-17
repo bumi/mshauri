@@ -20,7 +20,7 @@
                                     inspirations on how to improve your software development processes.
                                 </p>
                                 <div class="py-4 w-50">
-                                    <%= form_with url: api_users_path, model: @user do  |f| %>
+                                    <%= form_with url: api_users_path, model: @user, local: true do  |f| %>
                                     <ul>
                                         <% @user.errors.full_messages.each do |msg| %>
                                         <li><%= msg %></li>
