@@ -27,6 +27,7 @@
     - Ruby on Rails
     - Play
     - Spring
+    - Django
     -
       value: Other
       input: true
@@ -42,9 +43,11 @@
     - MySQL
     - PostgreSQL
     - MariaDB
+    - SQLite
     - MongoDB
     - Oracle
     - Microsoft SQL Server
+    - Redis
     - None
     -
       value: Other
@@ -255,4 +258,12 @@
       next_question: 14
     -
       value: Code linting
+      next_question: 14
+    -
+      value: Other
+      input: true
+      next_question: 14
+    -
+      value: None
+      recommendation: test_automation
       next_question: 14
