@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 questions = {}
 Dir['./data/questions/*.yml'].each do |filename|
   category = File.basename(filename, '.yml')

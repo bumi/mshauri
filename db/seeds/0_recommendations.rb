@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Dir['./data/recommendations/*.yml'].each do |filename|
   identifier = File.basename(filename, '.yml')
   puts "Creating recommendation #{identifier}"
