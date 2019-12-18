@@ -26,7 +26,7 @@ module Api
     def notify_user
       if current_user.update(user_params)
         current_iteration.notify_completion
-        render status: :ok
+        render json: 'Success', status: :ok
       else
         render status: :unprocessable_entity
       end
@@ -35,7 +35,7 @@ module Api
     private
 
     def user_params
-      params.require(:user).permit(:email)
+      params.permit(:email)
     end
   end
 end
