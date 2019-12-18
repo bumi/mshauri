@@ -1,0 +1,23 @@
+---
+id: data_access_policy
+title: Data access policies
+intro: Documenting data access policies that describe who is granted to what data within the company helps protecting sensitive data.
+description: |
+  A data access policy establishes and defines the responsibilities and roles of users who are granted access to any kind of data within a company or software system.
+
+  The purpose of specified data access policies is to protect any kind of data stored in a software system.
+  It tries to protect the stored data from unauthorized access (internal and external).
+
+  Those policies define who can through which process data of a system can be accessed.  
+  Access should be granted selectively and should have a default expiry period after which the access has to be renewed and e.g. passwords have to be changed.
+
+  Permissions and policies must be different on every environment (e.g. production vs. test environment).
+
+  ### Audit Logs for System Activities
+  
+  In order to monitor data access and modification systems should generate comprehensive audit logs. Such logs help to analyze and monitor each activity on the system and quickly identify anomalies and potential breaches. 
+
+  ### Links
+
+  * [Data security best practices](https://www.darkreading.com/operations/back-to-basics-10-security-best-practices/a/d-id/1322053)
+  * [Information security - wikipedia](https://en.wikipedia.org/wiki/Information_security)

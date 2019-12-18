@@ -12,5 +12,7 @@ class HomeController < ApplicationController
   end
 
   # page rendered as root - when no user slug is given
-  def welcome; end
+  def welcome
+    @user = User.new
+  end
 end
