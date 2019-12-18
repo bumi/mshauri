@@ -20,24 +20,24 @@
                                 </p>
                                 <div class="py-4 w-50 xs:w-100 md:w-100 sm:w-90">
                                     <% if flash[:notice].present? %>
-                                      <p class="text-success font-bold">
-                                          <%= flash[:notice] %>
-                                      </p>
+                                        <p class="text-success font-bold">
+                                            <%= flash[:notice] %>
+                                        </p>
                                     <% end %>
                                     <%= form_with model: @user, local: true do  |f| %>
-                                    <div class="mb-4">
-                                    <%= f.email_field :email, class: 'form-input px-4 rounded', placeholder: 'Email (optional)', autocomplete: "email" %>
-                                    <ul class="list-type-0 list-reset">
-                                        <% @user.errors.full_messages.each do |msg| %>
-                                           <li class="text-xs text-danger"><%= msg %></li>
-                                        <% end %>
-                                    </ul>
-                                    </div>
-                                    <button type="submit"
-                                        class="btn text-white font-roboto rounded w-100 shadow-primary bg-primary relative px-4 text-left">
-                                        Start survey
-                                        <i class="fas fa-long-arrow-alt-right float-right mt-1"></i>
-                                    </button>
+                                        <div class="mb-4">
+                                            <%= f.email_field :email, class: 'form-input px-4 rounded', placeholder: 'Email (optional)', autocomplete: "email" %>
+                                            <ul class="list-type-0 list-reset">
+                                                <% @user.errors.full_messages.each do |msg| %>
+                                                    <li class="text-xs text-danger"><%= msg %></li>
+                                                <% end %>
+                                            </ul>
+                                        </div>
+                                        <button type="submit"
+                                            class="btn text-white font-roboto rounded w-100 shadow-primary bg-primary relative px-4 text-left">
+                                            Start survey
+                                            <i class="fas fa-long-arrow-alt-right float-right mt-1"></i>
+                                        </button>
                                     <% end %>
                                 </div>
                             </div>
