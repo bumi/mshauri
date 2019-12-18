@@ -11,7 +11,6 @@ module Api
 
     def show
       @iteration = current_user.iterations.find(params[:id])
-      render json: @iteration
     end
 
     def create
