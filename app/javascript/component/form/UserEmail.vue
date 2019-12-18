@@ -46,7 +46,7 @@ export default {
     return {
       form: new Form({
         email: ''
-      }),
+      }, 'user'),
       submitted: false,
     }
   },

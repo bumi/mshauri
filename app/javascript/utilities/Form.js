@@ -8,8 +8,9 @@ export default class Form {
      *
      * @param {object} data
      */
-  constructor(data) {
+  constructor(data, scope) {
     this.originalData = data;
+    this.scope = scope;
 
     for (let field in data) {
       this[field] = data[field];
@@ -28,7 +29,13 @@ export default class Form {
     for (let property in this.originalData) {
       data[property] = this[property];
     }
-
+    // if a scope is set, we nest the data
+    if (this.scope) {
+      let scoped = {};
+      scoped[this.scope] = data
+      data = scoped;
+    }
+    console.log(data);
     return data;
   }
 

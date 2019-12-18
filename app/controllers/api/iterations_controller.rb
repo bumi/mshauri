@@ -27,14 +27,14 @@ module Api
         current_iteration.notify_completion
         render json: 'Success', status: :ok
       else
-        render status: :unprocessable_entity
+        render json: current_user.errors, status: :unprocessable_entity
       end
     end
 
     private
 
     def user_params
-      params.permit(:email)
+      params.require(:user).permit(:email)
     end
   end
 end
