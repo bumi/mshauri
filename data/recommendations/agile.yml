@@ -1,0 +1,57 @@
+---
+id: agile
+title: Agile Software Develpment Methodologies
+intro: Many software teams are moving toward an iterative/adaptive methodology and agile processes and away from static waterfall like methodologies. We recommend applying agile methodologies.
+description: |
+  There isn’t a single “perfect” methodology that you can apply across all companies and projects. However, many software teams are moving toward an iterative/adaptive methodology and agile processes and away from a static [waterfall methodology](https://en.wikipedia.org/wiki/Waterfall_model).
+
+  Agile software development is an umbrella term for a set of frameworks and practices based on the values and principles expressed in the [Manifesto for Agile Software Development](https://www.agilealliance.org/agile101/the-agile-manifesto/)  and the [12 Principles](https://www.agilealliance.org/agile101/12-principles-behind-the-agile-manifesto/) behind it.
+
+  It describes an approach to software development under which requirements and solutions evolve through the collaborative effort. On of the main goals is to allow and embrace changes during the development process and allow the adoption of changed requirements.
+
+  Agile methodologies are designed to accommodate change. They break product development work into small increments that minimize the amount of up-front planning.
+  Iterations, or sprints, are short time frames. At the end of the iteration a working product is demonstrated to stakeholders. This minimizes overall risk and allows the product to adapt to changes quickly.
+
+  [Scrum](https://en.wikipedia.org/wiki/Scrum_(software_development)) ([Scrum guides](https://www.scrumguides.org/)) is one of the most widely used agile processes in software development.
+
+  Another widely used approach to manage work/todo items is [Kanban](https://en.wikipedia.org/wiki/Kanban_(development)) which organizes and visualizes items on a [Kanban board](https://en.wikipedia.org/wiki/Kanban_(development)#Kanban_boards_for_software_development).
+
+  To successfully apply such agile methodologies it is important to implement some practices described above. E.g.:
+
+  -   Have a defined roadmap of your product with goals that you work towards. This helps you to plan your development iterations and review if you are on track to reaching these goals. Ideally you can base your reviews and decision on actual data that you gather.
+  -   You need to have a ticket management system to plan the features and ToDos you are working on during an iteration and to collect ideas and plan future iterations.
+  -   You need to have a version control system to collaboratively work on the source code for each of your ToDos.
+
+  The ideal agile process depends on each team and each team has identified what works best for them.
+
+  ### Ideas on how to get started
+  Sometimes it is hard and overwhelming to change the development workflow. Here are a few ideas on how you can easily get started and see what works for you.
+
+  #### Divide a bigger project into sprints
+  Even if the project or client does not work agile your team can divide work packages into small sprints of 1-2 weeks. The team can decide together what is most important to work on in a sprint and plan issues for that time. After the sprint you can do a retrospective to see how well the sprint was completed and what can be optimized for the next one.
+
+  Learn more about sprints: 
+  * [What is a sprint? by atlassian](https://www.atlassian.com/agile/scrum/sprints)
+  * [Scrum.org: Sprints](https://www.scrum.org/resources/what-is-a-sprint-in-scrum)
+
+  #### Do daily stand-ups
+  A core idea of agile methodologies like Scrum is to focus on people and communication within the team. Daily [stand-ups meetings](https://en.wikipedia.org/wiki/Stand-up_meeting) are a great way to get everybody up to date. It is a very short meeting where everybody shares what they are working and and if they need help. 
+
+  Learn more about stand-ups: 
+  * [Stand-ups for agile teams](https://www.atlassian.com/agile/scrum/standups)
+  * [Patterns for Daily Standup Meetings](https://martinfowler.com/articles/itsNotJustStandingUp.html)
+
+  #### Create regular (sprint) reports
+  Sprint reports are a great way to keep track of the progress and review if you are still on track to meet the overall goal. 
+  Sprint reports are status reports while the project is ongoing. It documents what has been accomplished in the previous sprint and what is planned next. 
+
+  ### Links
+  -   [Twelve principles behind the agile manifesto](http://agilemanifesto.org/principles.html)
+  -   [edX: Agile Software Development](https://www.edx.org/course/agile-software-development-2)
+  -   [coursera: Software Development Lifecycle](https://www.coursera.org/specializations/software-development-lifecycle)
+  -   [Wikipedia: Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development)
+  -   [Understanding the Agile Software Development Lifecycle and Process Workflow](https://www.smartsheet.com/understanding-agile-software-development-lifecycle-and-process-workflow)
+  -   [UX Collective: Product Design Playbook](https://uxdesign.cc/product-design-playbook-103d3a5cf2e3)
+  -   [Guiding principles of lean development](https://leankit.com/learn/lean/principles-of-lean-development/)
+  -   [coursera: Lean Software Development](https://www.coursera.org/learn/lean-software-development)
+  -   [Understanding how Design Thinking, Lean and Agile Work Together](https://www.mindtheproduct.com/2017/09/understanding-design-thinking-lean-agile-work-together/)

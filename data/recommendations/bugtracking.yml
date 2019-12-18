@@ -4,20 +4,26 @@ title: Ticket Management / Project Management / Bug Tracking
 intro: Ticket management and bug tracking tools allow you to collect all information in one place and improve communication between all stakeholders.
 priority: 500
 description: |
-  A ticket management system is a tool / a piece of software used to organize issues and ToDos relevant to the software development process. 
+  A ticket management system is a tool / a piece of software used to organize issues and ToDos relevant to the software development process.
   
-  The goal is to collect all information in one place, eliminate manual processes, and improve communication between all involved stakeholders (company and customers).
+  The goal is to collect all information in one place, eliminate manual processes, and improve communication between all involved stakeholders - company and customers.
   
-  The ticket management system is the basic requirement to apply any efficient [software development process](https://en.wikipedia.org/wiki/Software_development_process). 
+  The ticket management system is the basic requirement to apply any efficient [software development process](https://en.wikipedia.org/wiki/Software_development_process).
   It can be part of general [project management tools](https://en.wikipedia.org/wiki/Project_management_software) that help to plan, organize and manage any kind of project.
-
-
-  ### Links
   
+  ### How to get started
+  To get started you need to simply follow a simple idea: write every todo/issue/bug down. It does not matter if you use a tool
+  or simply pen & paper. Important is that you create small, specific tickets from everything that the team needs to to do.
+
+  You can stick your tickets then to a wall, like on this Kanban board:
+  ![](/files/kanban.jpg)
+
+  Or you can organize those tickets on one of the tools mentioned below.
+
+  Each ticket then is passed through different stages, e.g. "planned", "doing", "review", "done" and any relevant information can be collected in the ticket.
+
+  ### Links & Tools
   * [Issue tracking system - wikipedia](https://en.wikipedia.org/wiki/Issue_tracking_system)
-
-  ### Tools
-  
   * [Taiga](https://taiga.io/) (open source)
   * [Trello](https://trello.com/) (free version)
   * [GitHub Issues](https://github.com/)
