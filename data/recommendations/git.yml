@@ -1,6 +1,6 @@
 ---
 id: git
-title: Version Control System: Git
+title: "Version Control System: Git"
 priority: 1000
 intro: A version control system allows teams to collaborate and work on code together. We recommend Git as it has become most widely used in recent years.
 description: |
