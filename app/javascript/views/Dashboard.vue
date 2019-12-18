@@ -10,7 +10,7 @@
         inspirations for you.
       </h2>
       <user-email-form
-        v-if="!user.email"
+        v-if="user.id && !user.email"
         :iteration-id="iterationId"
       />
     </div>
