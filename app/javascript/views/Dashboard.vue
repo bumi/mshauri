@@ -9,10 +9,16 @@
         Based on your answers we have the following recommendations and
         inspirations for you.
       </h2>
-      <user-email-form v-if="!user.email" :iteration-id="iterationId"></user-email-form>
+      <user-email-form
+        v-if="!user.email"
+        :iteration-id="iterationId"
+      />
     </div>
     <div class="w-100 h-1 bg-primary" />
-    <div v-if="recommendations.length" class="w-90 mx-auto pt-4 pb-5">
+    <div
+      v-if="recommendations.length"
+      class="w-90 mx-auto pt-4 pb-5"
+    >
       <div class="relative pt-5">
         <div class="w-90 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
           <h3 class="text-primary text-2xl py-4 my-1 pl-5">
@@ -26,51 +32,54 @@
         </div>
       </div>
       <div class="flex flex-wrap">
-        <recommendation-card v-for="recommendation in recommendations" :key="recommendation.id"
-          :recommendation="recommendation" />
+        <recommendation-card
+          v-for="recommendation in recommendations"
+          :key="recommendation.id"
+          :recommendation="recommendation"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import User from "../models/User";
-  import UserEmailForm from "../component/form/UserEmail";
-  import Recommendation from "../models/Recommendation";
-  import RecommendationCard from "../component/cards/RecommendationCard";
+import User from "../models/User";
+import UserEmailForm from "../component/form/UserEmail";
+import Recommendation from "../models/Recommendation";
+import RecommendationCard from "../component/cards/RecommendationCard";
 
-  export default {
-    name: "Dashboard",
-    components: {
-      RecommendationCard,
-      UserEmailForm,
-    },
-    data() {
-      return {
-        user: {},
-        recommendations: []
-      }
-    },
-    mounted() {
-      User.show('me').then(({
-        data
-      }) => {
-        this.user = data
-      });
-      Recommendation.index({
-        'iteration_id': this.$route.params.iteration_id
-      }).then(({
-        data
-      }) => {
-        this.recommendations = data;
-      });
-    },
-    computed: {
-      iterationId() {
-        return this.$route.params.iteration_id;
-      }
+export default {
+  name: "Dashboard",
+  components: {
+    RecommendationCard,
+    UserEmailForm,
+  },
+  data() {
+    return {
+      user: {},
+      recommendations: []
     }
+  },
+  computed: {
+    iterationId() {
+      return this.$route.params.iteration_id;
+    }
+  },
+  mounted() {
+    User.show('me').then(({
+      data
+    }) => {
+      this.user = data
+    });
+    Recommendation.index({
+      'iteration_id': this.$route.params.iteration_id
+    }).then(({
+      data
+    }) => {
+      this.recommendations = data;
+    });
   }
+}
 </script>
 
 <style scoped>
