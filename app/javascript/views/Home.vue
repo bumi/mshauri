@@ -1,20 +1,18 @@
 <template>
   <div class="bg-white py-2 min-h-screen -mt-8">
-    <div class="w-90 ml-auto xs:mx-auto py-5">
+    <div class="w-80 mx-auto xs:mx-auto py-5 flex xs:block sm:w-85">
+      <div class="w-80 xs:w-100 ">
+        <h5 class="my-0">You Can Add New Iterations</h5>
+        <span class="text-xs text-grey">to </span><span class="text-primary text-xs">your lessons</span>
+      </div>
+
       <div
-        class="mt-3 w-25 mr-3 xs:w-100 sm:w-40 md:w-40 border-1 border-solid border-grey-lighter shadow-sm cursor-pointer"
+        class="w-20 xs:w-100 sm:w-40 md:w-40 xs:mt-3"
         @click="newIteration"
       >
-        <div class="px-3 py-2 text-center">
-          <img
-            src="/plus.svg"
-            class="w-35 pt-5 mx-auto text-center "
-          >
-
-          <h2 class="pt-3 text-xs text-grey-dark ">
-            Start survey and get recommendations
-          </h2>
-        </div>
+        <button class=" btn btn-primary rounded-lg py-2 text-lg w-100 xs:text-2xl shadow-sm cursor-pointer">
+            Add Iteration
+        </button>
       </div>
     </div>
     <div
