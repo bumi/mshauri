@@ -1,7 +1,8 @@
 ---
 id: architecture_diagram
-title: Architecture diagram
+title: Architecture Diagram
 intro: A graphical representation of a software system which makes it easier to understand the system as a whole. To document the software system we recommend creating an architecture diagram.
+priority: 200
 description: |
   An architecture diagram is a graphical representation of a software system that contains all components and their relation to each other.  
   Such a high-level diagram provides an overview of the whole system and allows system developers to understand, clarify, and communicate the various required components.

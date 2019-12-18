@@ -37,4 +37,10 @@ class Iteration < ApplicationRecord
       methods: %i[starting_question_id completion_rate completed?]
     ))
   end
+
+  def notify_completion
+    return if !completed? || user.email.blank?
+
+    UserMailer.with(iteration: self).recommendations.deliver_now
+  end
 end

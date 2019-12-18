@@ -1,6 +1,6 @@
 ---
 -
-  id: 20
+  id: 19
   title: Do you follow any defined Software Development Life Cycle?
   answers:
     -
@@ -14,13 +14,13 @@
     -
       value: "Agile Software Development: Kanban"
     -
-      value: Agile adaption for our own process"
+      value: "Agile adaption for our own process"
     -
       value: Other
       input: true
 
 -
-  id: 21
+  id: 20
   title: Before you start developing the products, what do you do?
   multiple: true
   answers:
@@ -44,14 +44,14 @@
       recommendation:
     -
       value: Nothing / I don't know
-      recommendation: 
+      recommendation:
     -
       value: Other
       input: true
       recommendation:
 
 -
-  id: 22
+  id: 21
   title: How are you organizing your tasks and requirements?
   multiple: true
   answers:
@@ -65,7 +65,7 @@
       input: true
 
 -
-  id: 23
+  id: 22
   title: How are you collecting your bugs and change requests?
   multiple: true
   answers:
@@ -80,19 +80,22 @@
       recommendation: bugtracking
     - Trello
     - Jira
+    -
+      value: Other
+      input: true
 
 -
-  id: 24
+  id: 23
   title: How often do you align the progress with the customers?
   answers:
     -
-      value: daily
+      value: Daily
     -
-      value: weekly
+      value: Weekly
     -
-      value: monthly
+      value: Monthly
     -
-      value: after the project is finished
+      value: After the project is finished
     -
       value: Other
       input: true

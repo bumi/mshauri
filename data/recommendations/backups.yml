@@ -1,15 +1,16 @@
 ---
 id: backups
-title: System backups
+title: System Backups
 intro: It is important to have backup strategies and disaster recovery processes in place to be able to get a system running again with minimum downtime and impact.
+priority: 900
 description: |
-  Software systems will fail and errors will happen. It is important to havebackup strategies and disaster recovery processes in place to be able to get a system running again with minimum downtime and impact. 
+  Software systems will fail and errors will happen. It is important to have backup strategies and disaster recovery processes in place to be able to get a system running again with minimum downtime and impact. 
   There are no standard tools or processes that can be used but has to be considered and described for each system individually.
   Documented system architectures and developer processes help to identify potential risks.
 
-  We recommend to have extensive and up to date [backups](https://en.wikipedia.org/wiki/Backup) of all system components and especially all databases. 
+  We recommend to have extensive and up to date [backups](https://en.wikipedia.org/wiki/Backup) of all system components and especially all databases.
 
   Backups need to be verified and up to date.
 
   Incident response playbooks define steps and actions to be executed on certain incidents and help to mitigate the potentially negative effects of certain incidents. 
-  It is recommended to think about potential incidents and downtimes and how to react in such cases. 
+  It is recommended to think about potential incidents and downtimes and how to react in such cases.

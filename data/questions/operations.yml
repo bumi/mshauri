@@ -5,13 +5,16 @@
   answers:
     -
       value: "Yes"
+      next_question: 14a
     -
       value: "No"
       recommendation: analytics
+      next_question: 15
 
 -
-  id: 15
+  id: 14a
   title: How do you track user activity?
+  multiple: true
   answers:
     - Log files
     - Google Analytics
@@ -22,7 +25,7 @@
       input: true
 
 -
-  id: 16
+  id: 15
   title: Do you get notifications if your application encounters errors? Or something does not work for the user?
   answers:
     -
@@ -32,19 +35,20 @@
       recommendation: exception_tracking
 
 -
-  id: 17
+  id: 16
   title: Do you monitor the system usage?
   answers:
     -
       value: "Yes"
-      next_question: 17a
+      next_question: 16a
     -
       value: "No"
       recommendation: monitoring
-      next_question: 18
+      next_question: 17
 
-- id: 17a
+- id: 16a
   title: What tools do you use for system monitoring?
+  multiple: true
   answers:
     - Exception tracking tool
     - System resource monitoring by third-party tool
@@ -57,64 +61,64 @@
       input: true
 
 -
-  id: 18
+  id: 17
   title: Do you have regular backups of your whole system?
   answers:
     -
       value: "Yes"
-      next_question: 18a
+      next_question: 17a
     -
       value: "No"
       recommendation: backups
-      next_question: 19
+      next_question: 18
 
 -
-  id: 18a
+  id: 17a
   title: How often do you backup your system?
   answers:
     -
       value: "< 1 hour"
-      next_question: 18b
+      next_question: 17b
     -
       value: "> 1 hour but < 1 day"
-      next_question: 18b
+      next_question: 17b
     -
       value: "> 1 day but < 1 week"
       recommendation: backups
-      next_question: 18b
+      next_question: 17b
 
 -
-  id: 18b
+  id: 17b
   title: What do you backup?
   multiple: true
   answers:
     -
       value: Database
-      next_question: 18c
+      next_question: 17c
     -
       value: Code
-      next_question: 18c
+      next_question: 17c
     -
       value: Server configuration
-      next_question: 18c
+      next_question: 17c
 
 -
-  id: 18c
+  id: 17c
   title: How long does it take to recover your system from a backup?
   answers:
     -
       value: < 1 hour
-      next_question: 19
+      next_question: 18
     -
       value: < 1 day
-      next_question: 19
+      next_question: 18
     -
       value: longer
       recommendation: backups
-      next_question: 19
+      next_question: 18
 
 -
-  id: 19
+  id: 18
   title: Do you have defined data access policy? / who can access the data?
   answers:
     - "Yes"

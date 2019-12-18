@@ -1,0 +1,54 @@
+---
+id: sdlc
+title: Software Development Life Cycle (SDLC)
+intro: Any SDLC aims to produce a high-quality software that meets or exceeds customer expectations, reaches completion within times and cost estimates. We recommend to follow a well-defined process following agile methodologies.
+priority: 500
+description: |
+  [SDLC or the Software Development Life Cycle](https://en.wikipedia.org/wiki/Systems_development_life_cycle) is a process that produces software with the highest quality and lowest cost in the shortest time.
+  SDLC includes a detailed plan for how to develop, alter, maintain, and replace a software system.
+
+  SDLC involves several distinct stages, including planning, design, building, testing, and deployment. Popular SDLC models include the [waterfall model](https://en.wikipedia.org/wiki/Waterfall_model), [spiral model](https://en.wikipedia.org/wiki/Spiral_model), and [agile model](https://en.wikipedia.org/wiki/Agile_software_development).
+  But many software teams are moving toward an iterative/adaptive methodology and agile processes and away from a static waterfall methodology.
+
+  Independently of the actual methodology that is applied we recommend to have a defined process that the team follows.
+
+  ### Typical stages of any SDLC
+
+  * **Identify** the current problems - “What don’t we want?” This stage of SDLC means getting input from all stakeholders, including customers, salespeople, industry experts, and programmers. Learn the strengths and weaknesses of the current system with improvement as the goal.
+  * **Plan** - “What do we want?" In this stage of SDLC, the team defines the requirements of the new software and determines the cost and resources required. It also details the risks involved and provides sub-plans for softening those risks. In this stage, a Software Requirement Specification document is created.
+  * **Design** - “How will we get what we want?” This phase of SDLC starts by turning the software specifications into a design plan called the Design Specification. All stakeholders then review this plan and offer feedback and suggestions. It’s crucial to have a plan for collecting and incorporating stakeholder input into this document. 
+  * **Build** - “Let’s create what we want.” This SDLC stage develops the software by generating all the actual code.
+  * **Test** - “Did we get what we want?” In this stage, we test for defects and deficiencies. We fix those issues until the product meets the original specifications.
+  * **Deploy** - “Let’s start using what we got.” Often, this part of the SDLC process happens in a limited way at first.
+  * **Maintain** - “Let’s get this closer to what we want.” The plan almost never turns out perfect when it meets reality. Further, as conditions in the real world change, we need to update and advance the software to match.
+
+  In an agile or iterative life cycle these steps are repeated over and over again.
+  The product is divided into small iterations that minimize the amount of up-front planning and deliver a working product after each iteration.
+  Developers create a version very quickly and for relatively little cost, then test and improve it through rapid and successive versions. This minimizes overall risk and allows the product to adapt to changes quickly.
+
+  We generally recommend following an agile life cycle.
+
+  [Scrum](https://en.wikipedia.org/wiki/Scrum_(software_development)) ([Scrum guides](https://www.scrumguides.org/)) is one of the most widely used agile processes in software development.
+  Another widely used approach to manage work/todo items is [Kanban](https://en.wikipedia.org/wiki/Kanban_(development)) which organizes and visualizes items on a [Kanban board](https://en.wikipedia.org/wiki/Kanban_(development)#Kanban_boards_for_software_development).
+
+  To successfully apply such agile methodologies it is important to implement some practices described above. E.g.:
+
+  - Have a defined roadmap of your product with goals that you work towards. This helps you to plan your development iterations and review if you are on track to reaching these goals. Ideally you can base your reviews and decision on actual data that you gather.
+  - You need to have a ticket management system to plan the features and ToDos you are working on during an iteration and to collect ideas and plan future iterations.
+  - You need to have a version control system to collaboratively work on the source code for each of your ToDos.
+
+  The ideal agile process depends on each team and each team has identified what works best for them.
+
+  ### Links
+
+  - [Systems develoment life cycle - wikipedia](https://en.wikipedia.org/wiki/Systems_development_life_cycle)
+  - [What is SDLC? Understand the Software Development Life Cycle](https://stackify.com/what-is-sdlc/)
+  - [Twelve principles behind the agile manifesto](http://agilemanifesto.org/principles.html)
+  - [edX: Agile Software Development](https://www.edx.org/course/agile-software-development-2)
+  - [coursera: Software Development Lifecycle](https://www.coursera.org/specializations/software-development-lifecycle)
+  - [Wikipedia: Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development)
+  - [Understanding the Agile Software Development Lifecycle and Process Workflow](https://www.smartsheet.com/understanding-agile-software-development-lifecycle-and-process-workflow)
+  - [Guiding principles of lean development](https://leankit.com/learn/lean/principles-of-lean-development/)
+  - [coursera: Lean Software Development](https://www.coursera.org/learn/lean-software-development)
+  - [Understanding how Design Thinking, Lean and Agile Work Together](https://www.mindtheproduct.com/2017/09/understanding-design-thinking-lean-agile-work-together/)
+
