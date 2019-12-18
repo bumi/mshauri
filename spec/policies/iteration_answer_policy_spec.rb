@@ -40,7 +40,7 @@ RSpec.describe IterationAnswerPolicy do
       expect(resolved_scope).to include(iteration_answer_record)
     end
 
-    it { is_expected.to forbid_actions(%i[create show update destroy]) }
+    it { is_expected.to forbid_actions(%i[show update destroy]) }
   end
 
   context 'when being a admin' do

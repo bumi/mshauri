@@ -2,6 +2,8 @@
 
 class IterationAnswerPolicy < ApplicationPolicy
   def create?
+    return false unless user
+
     record.iteration.user_id == user.id
   end
 
