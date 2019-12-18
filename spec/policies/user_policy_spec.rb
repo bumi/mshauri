@@ -11,7 +11,7 @@ RSpec.describe UserPolicy do
 
   let(:user_record) { FactoryBot.create(:user) }
 
-  context 'being a visitor' do
+  context 'when being a visitor' do
     let(:user) { nil }
 
     it 'excludes user_record in resolved scope' do
@@ -22,7 +22,7 @@ RSpec.describe UserPolicy do
     it { is_expected.to forbid_actions(%i[show update destroy]) }
   end
 
-  context 'being a user' do
+  context 'when being a user' do
     let(:user) { FactoryBot.create(:user) }
 
     it 'excludes user_record in resolved scope' do
@@ -33,7 +33,7 @@ RSpec.describe UserPolicy do
     it { is_expected.to forbid_actions(%i[show update destroy]) }
   end
 
-  context 'being the user' do
+  context 'when being the user' do
     let(:user) { FactoryBot.create(:user) }
     let(:user_record) { user }
 
@@ -45,7 +45,7 @@ RSpec.describe UserPolicy do
     it { is_expected.to forbid_actions(%i[update destroy]) }
   end
 
-  context 'being a admin' do
+  context 'when being a admin' do
     let(:user) { FactoryBot.create(:user, admin: true) }
 
     it 'includes user_record in resolved scope' do

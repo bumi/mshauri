@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Rails/LexicallyScopedActionFilter
 module Api
   class BaseController < ActionController::API
     include Pundit
@@ -18,3 +19,4 @@ module Api
     end
   end
 end
+# rubocop:enable Rails/LexicallyScopedActionFilter

@@ -9,25 +9,28 @@ module Api
     end
 
     def create
-      iteration = Iteration.find(params[:iteration_id])
-      @iteration_answers = params[:answers].map do |a|
-        answer = Answer.find(a[:answer_id])
-        iteration_answer = IterationAnswer.new(iteration: iteration, answer: answer, question: answer.question, value: a[:value])
+      iteration_answers = build_iteration_answers.map { |iteration_answer| authorize iteration_answer }
 
-        authorize iteration_answer
-      end
-
-      if @iteration_answers.all?(&:valid?) && @iteration_answers.each(&:save!)
-        render json: @iteration_answers.first.answer.next_question_id
+      if iteration_answers.all?(&:valid?) && iteration_answers.each(&:save!)
+        render json: iteration_answers.first.answer.next_question_id
       else
-        render json: @iteration_answers.map(&:errors), status: :unprocessable_entity
+        render json: iteration_answers.map(&:errors), status: :unprocessable_entity
       end
     end
 
     private
 
-    def request_params
-      params.permit(:answers, :iteration_id)
+    def build_iteration_answers
+      iteration = Iteration.find(params[:iteration_id])
+
+      iteration_answer_params[:answers].map do |a|
+        answer = Answer.find(a[:answer_id])
+        IterationAnswer.new(iteration: iteration, answer: answer, question: answer.question, value: a[:value])
+      end
+    end
+
+    def iteration_answer_params
+      params.permit(answers: %i[answer_id value])
     end
   end
 end

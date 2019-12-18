@@ -11,7 +11,7 @@ RSpec.describe IterationPolicy do
 
   let(:iteration_record) { FactoryBot.create(:iteration) }
 
-  context 'being a visitor' do
+  context 'when being a visitor' do
     let(:user) { nil }
 
     it 'excludes iteration_record in resolved scope' do
@@ -21,7 +21,7 @@ RSpec.describe IterationPolicy do
     it { is_expected.to forbid_actions(%i[create show update destroy]) }
   end
 
-  context 'being a user' do
+  context 'when being a user' do
     let(:user) { FactoryBot.create(:user) }
     let!(:iteration_record) { FactoryBot.create(:iteration) }
 
@@ -32,7 +32,7 @@ RSpec.describe IterationPolicy do
     it { is_expected.to forbid_actions(%i[create show update destroy]) }
   end
 
-  context 'being the user' do
+  context 'when being the user' do
     let(:user) { FactoryBot.create(:user) }
     let!(:iteration_record) { FactoryBot.create(:iteration, user: user) }
 
@@ -44,7 +44,7 @@ RSpec.describe IterationPolicy do
     it { is_expected.to forbid_actions(%i[update destroy]) }
   end
 
-  context 'being a admin' do
+  context 'when being a admin' do
     let(:user) { FactoryBot.create(:user, admin: true) }
 
     it 'includes iteration_record in resolved scope' do

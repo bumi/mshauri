@@ -11,7 +11,7 @@ RSpec.describe RecommendationPolicy do
 
   let(:recommendation_record) { FactoryBot.create(:recommendation) }
 
-  context 'being a visitor' do
+  context 'when being a visitor' do
     let(:user) { nil }
 
     it 'excludes recommendation_record in resolved scope' do
@@ -19,7 +19,7 @@ RSpec.describe RecommendationPolicy do
     end
   end
 
-  context 'being a user' do
+  context 'when being a user' do
     let(:user) { FactoryBot.create(:user) }
     let!(:iteration) { FactoryBot.create(:iteration) }
     let!(:answer) { FactoryBot.create(:answer) }
@@ -31,7 +31,7 @@ RSpec.describe RecommendationPolicy do
     end
   end
 
-  context 'being the user' do
+  context 'when being the user' do
     let(:user) { FactoryBot.create(:user) }
     let!(:iteration) { FactoryBot.create(:iteration, user: user) }
     let!(:answer) { FactoryBot.create(:answer) }
@@ -43,7 +43,7 @@ RSpec.describe RecommendationPolicy do
     end
   end
 
-  context 'being a admin' do
+  context 'when being a admin' do
     let(:user) { FactoryBot.create(:user, admin: true) }
 
     it 'includes recommendation_record in resolved scope' do
