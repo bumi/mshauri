@@ -14,7 +14,7 @@
     -
       value: "Agile Software Development: Kanban"
     -
-      value: Agile adaption for our own process"
+      value: "Agile adaption for our own process"
     -
       value: Other
       input: true
@@ -80,6 +80,9 @@
       recommendation: bugtracking
     - Trello
     - Jira
+    -
+      value: Other
+      input: true
 
 -
   id: 23
