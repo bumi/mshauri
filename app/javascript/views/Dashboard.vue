@@ -1,13 +1,12 @@
 <template>
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
     <div class="w-70 mx-auto pt-5">
-      <h1 class="mb-5 text-grey-darkest text-4xl font-primary text-center text-weight-semibold">
+      <h1 class="mb-2 text-grey-darkest text-4xl font-primary text-center text-weight-semibold">
         Thank you for completing the questionnaire.
       </h1>
 
-      <h2 class="mt-0 mb-4 text-center text-weight-normal font-nunito text-grey-dark text-xl">
-        Based on your answers we have the following recommendations and
-        inspirations for you.
+      <h2 class="mt-0 mb-3 text-center text-weight-normal font-nunito text-grey-dark text-xl">
+        Based on your answers we have the following recommendations and inspirations for you.
       </h2>
       <user-email-form
         v-if="user.id && !user.email"

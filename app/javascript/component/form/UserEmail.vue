@@ -4,7 +4,7 @@
       v-if="submitted"
       class="text-green"
     >
-      An email has been sent to you !
+      An email has been sent to you.
     </p>
     <div v-if="!submitted">
       <p>Do you want these recommendations via email ?</p>
@@ -14,6 +14,7 @@
             <input
               v-model="form.email"
               class="form-input border-none px-3 py-2 text-base h-auto min-h-auto shadow-none"
+              type="email"
               placeholder="Email"
             >
           </div>
