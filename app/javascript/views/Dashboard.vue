@@ -9,6 +9,10 @@
         Based on your answers we have the following recommendations and
         inspirations for you.
       </h2>
+      <user-email-form
+        v-if="user.id && !user.email"
+        :iteration-id="iterationId"
+      />
     </div>
     <div class="w-100 h-1 bg-primary" />
     <div
@@ -40,18 +44,25 @@
 
 <script>
 import User from "../models/User";
+import UserEmailForm from "../component/form/UserEmail";
 import Recommendation from "../models/Recommendation";
 import RecommendationCard from "../component/cards/RecommendationCard";
 
 export default {
   name: "Dashboard",
   components: {
-    RecommendationCard
+    RecommendationCard,
+    UserEmailForm,
   },
   data() {
     return {
       user: {},
       recommendations: []
+    }
+  },
+  computed: {
+    iterationId() {
+      return this.$route.params.iteration_id;
     }
   },
   mounted() {
