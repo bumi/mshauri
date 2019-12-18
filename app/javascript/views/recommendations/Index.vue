@@ -12,7 +12,7 @@
     </div>
     <div
       v-if="!iteration.completed"
-      class="mx-autoG"
+      class="mx-auto"
     >
       <div class="w-80 mx-auto flex relative py-5 -mt-12">
         <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
@@ -20,7 +20,10 @@
         </div>
       </div>
       <div class="flex flex-wrap">
-        <div class="w-80 mx-auto flex relative py-2">
+        <div
+          v-if="!iteration.completed"
+          class="w-80 mx-auto flex relative py-2"
+        >
           <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
             <div class="h-100 w-05 bg-grey-light" />
           </div>
@@ -28,7 +31,7 @@
             <div
               class="rounded-full h-16 w-rem-16 xs:h-8 xs:w-rem-8 md:h-12 md:w-rem-12 sm:h-10 sm:w-rem-10 bg-yellow border-solid border-1 border-grey-lighter shadow z-9999 flex align-items-center justify-content-center text-2xl"
             >
-              <i class="fas fa-exclamation-triangle text-white"></i>
+              <i class="fas fa-exclamation-triangle text-white" />
             </div>
           </div>
           <div class="w-90 py-3">
@@ -41,25 +44,12 @@
                 <h4 class="text-lg pt-4 pb-2 p-0 m-0 pl-5 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 font-bold">
                   Please complete the questionnaire to get all recommendations
                 </h4>
-                <p class=" text-sm p-0 m-0 pl-5 pb-4 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 font-roboto font-light">
-                </p>
+                <p class=" text-sm p-0 m-0 pl-5 pb-4 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 font-roboto font-light" />
               </div>
             </router-link>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div
-      v-if="recommendations.length"
-      class="mx-auto pb-5"
-    >
-      <div class="w-80 mx-auto flex relative py-5 -mt-12">
-        <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
-          <div class="h-100 w-05 bg-grey-light" />
-        </div>
-      </div>
-      <div class="flex flex-wrap">
         <recommendation-card
           v-for="recommendation in recommendations"
           :key="recommendation.id"

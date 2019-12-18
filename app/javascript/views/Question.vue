@@ -56,13 +56,16 @@
             Next
           </button>
         </div>
-        <div class="text-right xs:block mt-2 text-grey-dark">
+        <div
+          v-if="iteration.recommendations_count > 0"
+          class="text-right xs:block mt-2 text-grey-dark"
+        >
           <router-link
             tag="div"
             class="cursor-pointer"
             :to="{name: 'recommendations-index', params:{iteration_id: iteration.id}}"
           >
-          See recommendations
+            See recommendations
           </router-link>
         </div>
       </div>
