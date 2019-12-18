@@ -1,7 +1,8 @@
 ---
 id: bugtracking
-title: Ticket Management / Project Management / Bug tracking
+title: Ticket Management / Project Management / Bug Tracking
 intro: Ticket management and bug tracking tools allow you to collect all information in one place and improve communication between all stakeholders.
+priority: 500
 description: |
   A ticket management system is a tool / a piece of software used to organize issues and ToDos relevant to the software development process. 
   

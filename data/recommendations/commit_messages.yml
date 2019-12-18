@@ -1,6 +1,8 @@
 ---
 id: commit_messages
-title: Version control commit messages
+title: Version Control Commit Messages
+intro: Good commit messages make following and reviewing code changes easy for every team member.
+priority: 10
 description: |
   Whatever version control system is used, it is helpful to write descriptive commit messages.
   The commit message explains the changes and should be seen as documentation for the committed code changes.

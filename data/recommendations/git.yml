@@ -1,6 +1,7 @@
 ---
 id: git
-title: Version control systems
+title: "Version Control System: Git"
+priority: 1000
 intro: A version control system allows teams to collaborate and work on code together. We recommend Git as it has become most widely used in recent years.
 description: |
   A version control system tracks the history of changes of source code and
@@ -11,7 +12,6 @@ description: |
   In recent years [Git](https://git-scm.com/) has become one of the most widely used and recommended tools to manage and develop source code in a team.
 
   We recommend to any development team to use Git to manage source code and any related files.
-
 
   ### Links to more information
 

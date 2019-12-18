@@ -6,7 +6,7 @@ module Api
     before_action :require_current_iteration
 
     def index
-      render json: current_iteration.recommendations.all
+      render json: current_iteration.recommendations.order(priority: :desc).distinct.all
     end
 
     def show

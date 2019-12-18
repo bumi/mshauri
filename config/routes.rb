@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # entry point for the vue.js
   get '/:user_slug', to: 'home#index', as: :home
   get '/:user_slug/i/:iteration_id/questions/:question_id', to: 'home#index', as: :iteration_question
+  get '/:user_slug/i/:iteration_id/recommendations', to: 'home#index', as: :recommendations
   get '/:user_slug/*path', to: 'home#index'
 
   root to: 'home#welcome'
