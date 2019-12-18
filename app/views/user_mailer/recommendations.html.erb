@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Rwanda Tech Guide</h1>
+    <h3>Thank you for completing the survey</h3>
+
+    <p>
+      We have <%= link_to "#{@recommendations.count} recommendations", recommendations_url(user_slug: @user.slug, iteration_id: @iteration.id) %> for your software development workflow.
+    <p>
+
+    <p>
+      Click <%= link_to "here", recommendations_url(user_slug: @user.slug, iteration_id: @iteration.id) %> see the full list of recommendations and related information:<br>
+      <%= link_to nil, recommendations_url(user_slug: @user.slug, iteration_id: @iteration.id) %>
+    </p>
+  </body>
+</html>

@@ -6,7 +6,15 @@ class IterationAnswer < ApplicationRecord
   belongs_to :iteration
   belongs_to :question
 
+  after_create :notify_completion, if: proc { |a| a.iteration.completed? }
+
   delegate :next_question, to: :answer
+
+  def notify_completion
+    return unless iteration.completed?
+
+    iteration.notify_completion
+  end
 
   def as_json(args = {})
     super(args.merge(
