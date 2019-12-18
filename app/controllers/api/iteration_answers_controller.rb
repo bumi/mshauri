@@ -3,18 +3,18 @@
 module Api
   class IterationAnswersController < Api::BaseController
     before_action :require_current_user
-    before_action :require_current_iteration
-    skip_after_action :verify_authorized, only: %i[create]
 
     def index
-      @iteration_answers = policy_scope(IterationAnswer).where(iteration_id: current_iteration.id)
+      @iteration_answers = policy_scope(IterationAnswer).where(iteration_id: params[:iteration_id])
     end
 
-    # TODO: Think about how to authorize this
     def create
+      iteration = Iteration.find(params[:iteration_id])
       @iteration_answers = params[:answers].map do |a|
         answer = Answer.find(a[:answer_id])
-        current_iteration.iteration_answers.build(answer: answer, question: answer.question, value: a[:value])
+        iteration_answer = IterationAnswer.new(iteration: iteration, answer: answer, question: answer.question, value: a[:value])
+
+        authorize iteration_answer
       end
 
       if @iteration_answers.all?(&:valid?) && @iteration_answers.each(&:save!)

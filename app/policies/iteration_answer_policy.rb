@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class IterationAnswerPolicy < ApplicationPolicy
+  def create?
+    record.iteration.user_id == user.id
+  end
+
   class Scope < Scope
     def resolve
       return scope.none unless user
