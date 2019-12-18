@@ -4,9 +4,19 @@ module Api
   class RecommendationsController < BaseController
     before_action :require_current_user
     before_action :require_current_iteration
+    skip_after_action :verify_authorized, only: %i[show]
 
     def index
-      render json: current_iteration.recommendations.order(priority: :desc).distinct.all
+      recommendations = policy_scope(Recommendation)
+
+      if params[:iteration_id]
+        recommendations = recommendations.joins(:iterations)
+                                         .where(iterations: { id: params[:iteration_id] })
+                                         .order(priority: :desc)
+                                         .distinct
+      end
+
+      render json: recommendations
     end
 
     def show
