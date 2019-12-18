@@ -1,7 +1,7 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
   <div class="w-100 my-4">
-    <div class="w-85 mx-auto">
+    <div class="w-85 md:w-100 xs:w-100 mx-auto">
       <div class="bg-white min-h-screen overflow-hidden my-4 rounded-lg py-5">
         <div class="relative pt-4 z-10">
           <div
@@ -18,13 +18,13 @@
           </div>
         </div>
 
-        <div class="w-80 mx-auto flex relative py-5 -mt-12 z-0">
+        <div class="w-80 xs:w-90 mx-auto flex relative py-5 -mt-12 z-0">
           <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
             <div class="h-100 w-05 bg-grey-light" />
           </div>
         </div>
         <div class="flex flex-wrap pb-4">
-          <div class="w-80 mx-auto flex relative py-2">
+          <div class="w-80 xs:w-90 mx-auto flex relative py-2">
             <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
               <div class="h-100 w-05 bg-grey-light" />
             </div>

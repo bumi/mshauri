@@ -1,7 +1,7 @@
 <template>
   <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
-    <div class="w-70 mx-auto pt-5">
-      <h1 class="mb-5 text-grey-darkest text-4xl font-primary text-center text-weight-semibold">
+    <div class="w-70 xs:w-95 mx-auto pt-5 xs:px-3">
+      <h1 class="mb-5 text-grey-darkest text-4xl  xs:text-2xl font-primary text-center text-weight-semibold">
         Thank you for completing the questionnaire.
       </h1>
 
@@ -17,7 +17,7 @@
     >
       <div class="relative pt-5">
         <div class="w-90 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
-          <h3 class="text-primary text-2xl py-4 my-1 pl-5">
+          <h3 class="text-primary text-2xl xs:text-xl xs:pl-0 xs:px-3 py-4 my-1 pl-5">
             Our recommendtions for your software development best practices.
           </h3>
         </div>
