@@ -11,7 +11,6 @@
       </div>
     </div>
     <div
-      v-if="!iteration.completed"
       class="mx-auto"
     >
       <div class="w-80 mx-auto flex relative py-5 -mt-12">
@@ -72,7 +71,7 @@ export default {
   data() {
     return {
       recommendations: [],
-      iteration: {}
+      iteration: { completed: true } // make sure the completion notice is hidden in the beginning
     }
   },
 
@@ -86,6 +85,7 @@ export default {
     });
     Iteration.show(this.$route.params.iteration_id).then(({ data }) => {
       this.iteration = data;
+      console.log(data);
     });
   }
 }
