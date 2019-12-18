@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_170209) do
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true, where: "((email IS NOT NULL) AND ((email)::text <> ''::text))"
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
