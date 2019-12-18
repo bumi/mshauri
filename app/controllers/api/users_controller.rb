@@ -3,16 +3,16 @@
 module Api
   class UsersController < BaseController
     before_action :require_current_user, only: %i[index me show]
+    skip_after_action :verify_authorized, only: %i[me]
 
     def index
-      authorize @current_user
-      users = User.all
+      users = policy_scope(User)
       render json: users
     end
 
     def show
-      authorize @current_user
       @user = User.find(params[:id])
+      authorize @user
     end
 
     def me

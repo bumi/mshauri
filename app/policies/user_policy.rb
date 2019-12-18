@@ -1,11 +1,25 @@
 # frozen_string_literal: true
 
 class UserPolicy < ApplicationPolicy
-  def index?
-    @user.admin?
+  def create?
+    true
   end
 
   def show?
-    @user.admin?
+    return false unless user
+
+    user.admin? || user.id == record.id
+  end
+
+  class Scope < Scope
+    def resolve
+      return scope.none unless user
+
+      if user.admin?
+        scope.all
+      else
+        scope.where(id: user.id)
+      end
+    end
   end
 end
