@@ -1,24 +1,29 @@
 <template>
   <div>
-    lewis
+    <user-card
+      v-for="user in users"
+      :key="user.id"
+      :user="user"
+    />
   </div>
 </template>
 
 <script>
-import Question from "../../models/Question";
 import User from "../../models/User"
+import UserCard from "../../component/cards/UserCard"
 
 export default {
   name: 'AdminIndex',
+  components: {
+    UserCard
+  },
   data() {
     return {
       users: [],
-      questions: [],
     }
   },
   mounted() {
     this.getUsers();
-    this.getQuestions();
   },
   methods: {
     getUsers() {
@@ -27,12 +32,6 @@ export default {
         console.log(data)
       })
     },
-    getQuestions() {
-      Question.index().then(({ data }) => {
-        this.questions = data
-        console.log(data)
-      })
-    }
   }
 }
 </script>

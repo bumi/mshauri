@@ -4,6 +4,7 @@ import Question from "../views/Question"
 import RecommendationIndex from "../views/recommendations/Index"
 import RecommendationShow from "../views/recommendations/Show"
 import AdminIndex from "../views/admin/Index"
+import UserShow from "../views/user/Show"
 
 export default {
   mode: "history",
@@ -38,6 +39,10 @@ export default {
       path: '/:user_slug/admin',
       component: AdminIndex,
       name: 'admin-index'
+    }, {
+      path: '/:user_slug/user/:id',
+      component: UserShow,
+      name: 'user-show'
     }
   ]
 }

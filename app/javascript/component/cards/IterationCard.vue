@@ -22,6 +22,7 @@
         Started on {{ startedOn }}
       </h3>
       <button
+        v-if="!admin"
         class="btn py-1 text-xs mx-auto w-100 rounded"
         :class="[isComplete ? 'bg-primary text-white' : 'bg-grey-light text-black']"
         @click="handleClick"
@@ -39,6 +40,10 @@ export default {
     iteration: {
       type: Object,
       default: () => {}
+    },
+    admin: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
