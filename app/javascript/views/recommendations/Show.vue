@@ -1,14 +1,11 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
-  <div class="w-100 mx-auto bg-white min-h-screen -mt-8">
-    <div class="relative pt-5">
-      <div class="w-80 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
-        <h1 class="text-primary text-2xl pt-4 my-2 pl-5 xs:pl-0 xs:px-3 xs:text-xl xs:pt-2 md:text-xl md:pl-0 md:px-5 md:pt-2">
-          Our recommendations for your software development best practices.
+  <div class="w-85 mx-auto bg-white min-h-screen overflow-hidden my-4 rounded-lg py-5">
+    <div class="relative pt-4">
+      <div class="w-85 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 overflow-hidden">
+        <h1 class="text-primary text-2xl  my-4 pl-5 xs:pl-0 xs:px-3 xs:text-xl xs:pt-2 md:text-xl md:pl-0 md:px-5 md:pt-2">
+         {{ recommendation.title }}
         </h1>
-        <p class="pl-5 pb-4 my-0 text-sm opacity-80 xs:pl-0 xs:px-3 md:pl-0 md:px-5">
-          Based on your answers we have the following recommendations and inspirations for you.
-        </p>
       </div>
     </div>
 
@@ -17,7 +14,7 @@
         <div class="h-100 w-05 bg-grey-light" />
       </div>
     </div>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap pb-4">
 
       <div class="w-80 mx-auto flex relative py-2">
         <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
@@ -35,10 +32,7 @@
         </div>
         <div class="w-90 py-3">
           <div class="w-95 ml-auto bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
-            <h4 class="text-lg pt-4 pb-2 p-0 m-0 pl-5 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 font-bold">
-              {{ recommendation.title }}
-            </h4>
-            <div class="text-sm p-0 m-0 pl-5 pb-4 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 font-roboto font-light"
+            <div class="text-sm p-0 m-0 px-5 py-4 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 font-roboto font-light"
               v-html="recommendation.description_formatted"
             />
           </div>
