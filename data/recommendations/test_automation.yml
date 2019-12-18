@@ -17,6 +17,20 @@ description: |
   Functional testing is conducted to evaluate the compliance of a system or component with specified functional requirements.
 
   ### How to get started
+  The easiest way to get started with automating tests is to use your manual test cases and turn them into automated functional tests.
 
+  Using tools like [mabl.com](https://www.mabl.com/) or [Selenium IDE](https://selenium.dev/selenium-ide/) help you to record any test
+  interaction with your web application and to reply those automatically to test everything works.
+
+  Sadly so far this only works for web applications and not iOS or Android applications.
+  For Android applications [Genymotion](https://www.genymotion.com/test-automation/) or [Appium by Saucelabs](https://saucelabs.com/platform/automation-tools/appium) for iOS and Android can be helpful.
+
+  It is recommended to keep test cases very small and specific to one functionality, e.g.:
+  * Successful login with valid credentials
+  * Unsuccessful login with invalid credentials
+  * Signup with correct data
+
+  #### Learn more about those tools here: 
   * [mabl](https://www.mabl.com/) - mabl offers automated self-healing tests that are easy to record and run.
+  * [mabl step-by-step guide](https://www.mabl.com/mabl-u-tutorials-lesson-1)
   * [Selenium IDE](https://selenium.dev/selenium-ide/) - open source record and playback test automation for the web"

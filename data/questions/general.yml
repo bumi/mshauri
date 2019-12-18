@@ -166,7 +166,7 @@
     - Automated through CI/CD
 -
   id: 10
-  title: Do you have an architecture diagram of your system?
+  title: Do you have an architecture diagram of your software system?
   answers:
     -
       value: "No"
@@ -176,7 +176,7 @@
 
 -
   id: 11
-  title: Do you have getting started guide for new developers?
+  title: Do you have a getting started guide for new developers?
   answers:
     -
       value: "No"
@@ -186,7 +186,7 @@
 
 -
   id: 12
-  title: Do you maintain a general documentation of the software system?
+  title: Do you maintain a general documentation of your software system?
   answers:
     -
       value: "No"
@@ -196,7 +196,7 @@
 
 -
   id: 13
-  title: Do you have a defined process to test your software in place?
+  title: Do you have a defined process to test your software?
   answers:
     -
       value: "No"

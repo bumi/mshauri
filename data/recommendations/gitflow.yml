@@ -1,8 +1,8 @@
 ---
 id: gitflow
 title: GitFlow - Software Development Workflow
-prioroty: 100
 intro: A standardized development workflow like GitFlow helps to structure development work. A GitFlow like process is applied by many development teams.
+priority: 100
 description: |
 
   GitFlow is a branching model for Git which has attracted a lot of attention because it is very well suited to collaboration and scaling the development team.
@@ -27,6 +27,13 @@ description: |
   5. Create pull request from origin/ -> upstream/master
   6. Review, fix raised comments, merge your PR or even better, get someone else to.
 
+  ### How to get started
+
+  Try the [GitHub flow](https://guides.github.com/introduction/flow/index.html) and before starting a new feature create a new branch.
+  You can push your changes in that branch regularly to the shared repository for the team to review. This allows to share and review code without affecting the main branch of the software.
+
+  Once finished you can merge that branch back to the master branch.
+  
   ### More details
 
   * [Gitflow descripton by Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
