@@ -40,8 +40,10 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pundit-matchers', '~> 1.6.0'
   gem 'rspec-rails'
   gem 'rubocop', '0.76', require: false
+  gem 'rubocop-faker', require: false
   gem 'rubocop-rails', '2.3', require: false
   gem 'rubocop-rspec', '1.36', require: false
 end
