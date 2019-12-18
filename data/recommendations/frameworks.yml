@@ -1,7 +1,8 @@
 ---
 id: frameworks
-title: Web application frameworks
+title: Web Application Frameworks
 intro: Web frameworks provide skeletons to build applications in a standard way. We recommend the use of open source frameworks for efficient development.
+priority: 1000
 description: |
 
   A web framework (WF) or web application framework (WAF) is a software framework that is designed to support the development

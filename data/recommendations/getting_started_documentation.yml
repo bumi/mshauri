@@ -1,14 +1,16 @@
 ---
 id: getting_started_documentation
-title: Getting started documentation
+title: Getting Started Documentation
 intro: A getting started documentation provides and easy way to answer questions that developers will likely have regarding installation and usage of any software project. We recommend to create a getting started readme for each project and system component.
+priority: 200
 description: |
   A getting started documentation - often in form of a README file - provides a basic introduction and explanation for a project.
 
-  It is a starting point for (new) developers to learn about a piece of software and is a way to quickly get the system running and  to start working on its code. 
+  It is a starting point for (new) developers to learn about a piece of software and is a way to quickly get the system running and  to start working on code.
 
   ### Links
   
   * [How to write a great README - Thoughtbot](https://thoughtbot.com/blog/how-to-write-a-great-readme)
+  * [Awesome README](https://github.com/matiassingers/awesome-readme) - a big list of good examples and helpful documents
   * [Makeareadme.com](https://www.makeareadme.com/)
   * [Write a project README](https://openclassrooms.com/en/courses/3975796-contribute-to-open-source-on-github/3975803-write-a-project-readme)

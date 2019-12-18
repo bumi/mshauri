@@ -120,7 +120,7 @@
       next_question: 6c
 -
   id: 6c
-  title: What describes your development process best
+  title: What describes your development process best?
   answers:
     -
       value: Developers push every change directly into the shared code repository
@@ -186,7 +186,7 @@
 
 -
   id: 12
-  title: Do you maintain a general software development knowledge base?
+  title: Do you maintain a general documentation of the software system?
   answers:
     -
       value: "No"
