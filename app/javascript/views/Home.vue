@@ -1,17 +1,19 @@
 <template>
-  <div class="bg-white py-2 min-h-screen -mt-8">
-    <div class="w-80 mx-auto xs:mx-auto py-5 flex xs:block sm:w-85">
+  <div class="bg-white py-2 pb-5 my-5 w-90 mx-auto rounded-xl">
+    <div class="w-80 mx-auto xs:mx-auto py-4 flex xs:block sm:w-85">
       <div class="w-80 xs:w-100 ">
-        <h5 class="my-0">You Can Add New Iterations</h5>
-        <span class="text-xs text-grey">to </span><span class="text-primary text-xs">your lessons</span>
+        <h5 class="my-0">
+          Hey, You Can Start Or Resume Surveys
+        </h5>
+        <span class="text-xs text-grey-dark">Complete surveys to view recommendations</span>
       </div>
 
       <div
         class="w-20 xs:w-100 sm:w-40 md:w-40 xs:mt-3"
         @click="newIteration"
       >
-        <button class=" btn btn-primary rounded-lg py-2 text-lg w-100 xs:text-2xl shadow-sm cursor-pointer">
-            Add Iteration
+        <button class=" btn btn-primary rounded-lg py-2 text-base cursor-pointer w-100 xs:text-2xl shadow-sm cursor-pointer">
+          Start New Iteration
         </button>
       </div>
     </div>
