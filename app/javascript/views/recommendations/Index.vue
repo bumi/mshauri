@@ -10,17 +10,16 @@
         </p>
       </div>
     </div>
-    <div
-      v-if="!iteration.completed"
-      class="mx-auto pb-5"
-    >
+
+    <div class="mx-auto pb-5">
       <div class="w-80 mx-auto flex relative py-5 -mt-12">
         <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
           <div class="h-100 w-05 bg-grey-light" />
         </div>
       </div>
       <div class="flex flex-wrap">
-        <div class="w-80 mx-auto flex relative py-2">
+
+        <div class="w-80 mx-auto flex relative py-2" v-if="!iteration.completed">
           <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
             <div class="h-100 w-05 bg-grey-light" />
           </div>
@@ -50,19 +49,7 @@
             </router-link>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div
-      v-if="recommendations.length"
-      class="mx-auto pb-5"
-    >
-      <div class="w-80 mx-auto flex relative py-5 -mt-12">
-        <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
-          <div class="h-100 w-05 bg-grey-light" />
-        </div>
-      </div>
-      <div class="flex flex-wrap">
         <recommendation-card
           v-for="recommendation in recommendations"
           :key="recommendation.id"
