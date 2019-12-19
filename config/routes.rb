@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     resources :answers, only: [:create]
     resources :iteration_answers, only: %i[index create]
     resources :questions, only: %i[index show]
-    resources :iterations, only: %i[index show create]
+    resources :iterations, only: %i[index show create] do
+      member do
+        put :notify_user
+      end
+    end
     resources :recommendations, only: %i[index show]
   end
 

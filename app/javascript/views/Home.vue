@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white py-2 min-h-screen -mt-8">
+  <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-1 my-3 xs:my-0 bg-white rounded-xl">
     <div class="w-90 ml-auto xs:mx-auto py-5">
       <div
         class="mt-3 w-25 mr-3 xs:w-100 sm:w-40 md:w-40 border-1 border-solid border-grey-lighter shadow-sm cursor-pointer"
@@ -27,11 +27,11 @@
         Recent answers
       </h6>
     </div>
-    <div class="flex flex-wrap xs:block xs:w-90 xs:mx-auto justify-content-center md:w-90 md:mx-auto py-4">
+    <div class="flex flex-wrap xs:block xs:w-90 xs:mx-auto justify-content-center md:w-90 md:mx-auto pt-4 pb-5">
       <div
         v-for="iteration in iterations"
         :key="iteration.id"
-        class="mt-3 w-25 xs:w-100 md:w-40 sm:w-40 mr-3 mx-3 xs:mx-0 xs:mr-0"
+        class="my-3 w-25 xs:w-100 md:w-40 sm:w-40 mr-3 mx-3 xs:mx-0 xs:mr-0"
       >
         <iteration-card :iteration="iteration" />
       </div>

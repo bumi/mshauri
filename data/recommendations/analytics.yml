@@ -17,4 +17,8 @@ description: |
   * [Google Analytics](https://analytics.google.com/analytics/web/)
   * [Mixpanel](https://mixpanel.com/")
 
+  ### How to get started
+
+  Getting started with most analytics tools for web and mobile applications is pretty easy and requires mainly to include a tracking library into your application.
+  For web applications this is a small piece of JavaScript. 
 

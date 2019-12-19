@@ -2,6 +2,7 @@
 -
   id: 19
   title: Do you follow any defined Software Development Life Cycle?
+  multiple: true
   answers:
     -
       value: No / I don't know
