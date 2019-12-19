@@ -10,9 +10,13 @@ description: |
 
   We recommend to have extensive and up to date [backups](https://en.wikipedia.org/wiki/Backup) of all system components and especially all databases.
 
-  Backups need to be verified and up to date.
+  Backups need to be verified and up to date. And as backups contain all data of your application it needs to be stored securely and only accessible to authorized staff.
 
   Incident response playbooks define steps and actions to be executed on certain incidents and help to mitigate the potentially negative effects of certain incidents. 
   It is recommended to think about potential incidents and downtimes and how to react in such cases.
+
+  ### How to get started
+  If you don't have a backup then the start with taking regular exports of your database, for example using the dump/export tools of your database system - for example [mysqldump for MySQL](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)  
+  Make sure to store those exports securely and document on how to restore the database from a backup.
 
 

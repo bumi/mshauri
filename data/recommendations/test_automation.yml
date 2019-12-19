@@ -26,9 +26,15 @@ description: |
   For Android applications [Genymotion](https://www.genymotion.com/test-automation/) or [Appium by Saucelabs](https://saucelabs.com/platform/automation-tools/appium) for iOS and Android can be helpful.
 
   It is recommended to keep test cases very small and specific to one functionality, e.g.:
+
   * Successful login with valid credentials
   * Unsuccessful login with invalid credentials
   * Signup with correct data
+
+  Another great way to get started is writing [unit tests](https://en.wikipedia.org/wiki/Unit_testing) for every new piece of code.
+  You can use the unit testing tool for your programming language (e.g. [PHPUnit for PHP](https://phpunit.de/)) to write a small check/unit test
+  to validate that a function in your code executes as expected. (see [PHPUnit example](https://phpunit.readthedocs.io/en/8.5/writing-tests-for-phpunit.html#writing-tests-for-phpunit-examples-stacktest-php))
+
 
   #### Learn more about those tools here: 
   * [mabl](https://www.mabl.com/) - mabl offers automated self-healing tests that are easy to record and run.

@@ -1,0 +1,26 @@
+---
+id: code_linting
+title: Code Linting / Code Style Guide
+intro: Following general community coding style guides helps to write better maintainable code and makes collabortion easier. We recommend to use code linters to follow best coding practices.
+priority: 80
+generarl: true
+description: |
+  Following international coding style guides and following certain best practices and standards for any programming language makes it easier to collaborate together and makes source code more maintainable and readable. 
+
+  We recommended to use style guides of companies like Google, AirBnB as examples: 
+
+  * [PHP-FIG Basic Coding Standard](https://www.php-fig.org/psr/psr-1/)
+  * [AirBnB JavaScript Style Guide](https://github.com/airbnb/javascript)
+  * [AirBnB Ruby Style Guide](https://github.com/airbnb/ruby)
+  * [The Ruby Style Guide](https://rubystyle.guide/)
+  * [wikipedia: Best Coding Practices](https://en.wikipedia.org/wiki/Best_coding_practices)
+
+
+  There are linting tools that help you to validate the coding stlye in your projects:
+
+  * [PHPLint - PHP linter](https://github.com/overtrue/phplint)
+  * [ESLint - JavaScript linter](https://eslint.org/)
+  * [Rubocop - Ruby linter and formatter](https://docs.rubocop.org/en/latest/)
+
+
+  Get started by adding a linting tool for your programming language to your project.
