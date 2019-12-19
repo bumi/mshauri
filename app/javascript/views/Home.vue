@@ -1,8 +1,8 @@
 <template>
   <div class="xs:py-1">
-    <div class="bg-white py-2 pb-5 my-5 w-90 mx-auto rounded-xl">
-      <div class="w-80 mx-auto xs:mx-auto py-4 flex xs:block sm:w-85">
-        <div class="w-80 xs:w-100 ">
+    <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-5 my-3 xs:my-0 bg-white rounded-xl">
+      <div class="w-90 mx-auto xs:mx-auto pb-4 flex xs:block sm:w-85">
+        <div class="w-90 xs:w-100 ">
           <h5 class="my-0">
             Rwanda Tech Guide
           </h5>

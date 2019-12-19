@@ -29,3 +29,16 @@ description: |
   * [Gitea](https://gitea.io/en-us/) (Open Source)
   * [GitLab](https://gitlab.com)
   * [Bitbucket](https://bitbucket.org/)
+
+  ### How to get started
+
+  Even though Git tries to make it easy to get started it might be hard to switch to a new version control system.
+  We recommend starting with a small, new project to get started and learn about Git and how it works for your team.
+
+  Once that goes well and the team is confident you can run version control systems side by side and then fully migrate to Git.
+
+  * [Migrating to Git](https://git-scm.com/book/en/v2/Git-and-Other-Systems-Migrating-to-Git)
+  * [Migrating from SVN to Git](https://www.atlassian.com/git/tutorials/migrating-overview)
+  * [Migrating existing repositories to GitHub](https://lab.github.com/githubtraining/migrating-your-repository-to-github)
+
+

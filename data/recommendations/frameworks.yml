@@ -4,7 +4,6 @@ title: Web Application Frameworks
 intro: Web frameworks provide skeletons to build applications in a standard way. We recommend the use of open source frameworks for efficient development.
 priority: 1000
 description: |
-
   A web framework (WF) or web application framework (WAF) is a software framework that is designed to support the development
   of web applications including web services, web resources, and web APIs. Web frameworks provide a standard way to build and
   deploy web applications.
@@ -15,7 +14,6 @@ description: |
 
   We highly recommend to use a standard web framework to build applications.
 
-
   ### Some benefits of using web frameworks are the following:
 
   * Eliminate the need to write a lot of repetitive code that you will find being used in many different applications
@@ -25,7 +23,6 @@ description: |
   * Simplify maintenance due to common standards and best practices
   * Allow re-usage of common components (like database integration, data validations, session management, authorization system, etc.)
   * Can be extended with many community contributed features and thus require less development work
-
 
   ### Example web application frameworks
 

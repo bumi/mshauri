@@ -2,7 +2,7 @@
 id: testing
 title: Software testing
 intro: Thorough testing is vital for quality assurance and to ensure that a software is workig as expected. We recommend detailed documented testcases.
-priority: 1000
+priority: 900
 description: |
   Software testing is defined as an activity to check whether the actual results match the expected results and to ensure that the software is working as expected.
   It involves execution of a software component or system component to evaluate the various functionalities.
@@ -11,9 +11,35 @@ description: |
 
   There are many different types of testing that you can use but it is important to have a well-defined process and documented testcases that can be easily executed when needed.
 
+  ### How to get started
+  To be able to repeatedly test each functionality it is important to have documented test cases. Test cases help guide the tester through a sequence of steps to validate 
+  whether a software application is free of bugs, and working as required by the end user.
+
+  A test case contains all steps that need to be executed and describe the expected result.
+
+  #### Example test case
+
+  **Title:** Login - Successfully authenticate  
+  **Description:** A registered user should be able to successfully login with valid credentials  
+  **Precondition:** A user must already be registered with an email address and password (separate test-case for registration)  
+  **Steps**  
+
+  1. navigate to "myapplication.com"
+  2. Click on "Login"
+  3. Fill in "testuser@example.com" in the "email" field
+  4. Fill in "secret" in the "password" field
+  5. Click on "Sign in"
+
+  **Expectated Result:** The user should be redirected to the personal dashboard and see the welcome message "Hello testuser"
+
+  * [How to write test cases](https://blog.testlodge.com/how-to-write-test-cases-for-software-with-sample/)
+  * [Test case example](https://www.guru99.com/test-case.html)
+
   ### Links
 
   * [13 Best practices of successful software testing projects](https://devops.com/13-best-practices-successful-software-testing-projects/)
   * [Software testing - wikipedia](https://en.wikipedia.org/wiki/Software_testing)
   * [Software testing courses by udemy](https://www.udemy.com/courses/development/software-testing/)
+  * [How to write test cases](https://blog.testlodge.com/how-to-write-test-cases-for-software-with-sample/)
+  * [Test case example](https://www.guru99.com/test-case.html)
   * [The different types of software testing](https://www.atlassian.com/continuous-delivery/software-testing/types-of-software-testing)
