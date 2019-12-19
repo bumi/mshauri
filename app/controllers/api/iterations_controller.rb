@@ -28,7 +28,7 @@ module Api
 
     def notify_user
       iteration = current_user.iterations.find(params[:id])
-      if iteration && current_user.update(user_params)
+      if current_user.update(user_params)
         iteration.notify_completion
         render json: 'Success', status: :ok
       else
