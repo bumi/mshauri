@@ -1,5 +1,5 @@
 <template>
-  <div class="w-90 mx-auto text-center">
+  <div class="w-45 mx-auto text-center">
     <p
       v-if="submitted"
       class="text-green"
@@ -10,7 +10,7 @@
       <p>Do you want these recommendations via email ?</p>
       <div class="mb-3">
         <div class="flex border-1 border-solid border-grey-light rounded-lg overflow-hidden">
-          <div class="w-65">
+          <div class="w-70">
             <input
               v-model="form.email"
               class="form-input border-none px-3 py-2 text-base h-auto min-h-auto shadow-none"
@@ -18,9 +18,9 @@
               placeholder="Email"
             >
           </div>
-          <div class="w-35">
+          <div class="w-30 bg-primary rounded-lg overflow-hidden">
             <button
-              class="w-100 btn btn-primary py-2 text-base rounded-lg "
+              class="w-100 btn btn-primary py-2 text-base"
               @click="save"
             >
               Submit
