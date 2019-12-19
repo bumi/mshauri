@@ -8,8 +8,10 @@ description: |
   Especially error/exception notification tools are important to identify bugs that occur while customers are using the application and thus allow to quickly fix such problems.
 
   ### Tools
+  The following tools support the most languages and provide easy to install tools/plugins.
 
   * [Sentry](https://sentry.io/welcome/) - open source and hosted exception tracking service
   * [Tideways for PHP](https://tideways.com/)
   * [New Relic](https://newrelic.com/)
+  * [Bugsnag](https://bugsnag.com)
 

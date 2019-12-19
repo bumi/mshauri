@@ -1,6 +1,6 @@
 <template>
-  <div class="w-90 md:w-100 xs:w-100 sm:w-100 mx-auto py-3 my-5 xs:my-0 bg-white rounded-lg">
-    <div class="w-80 mx-auto">
+  <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-3 my-3 xs:my-0 bg-white rounded-xl">
+    <div class="w-90 mx-auto">
       <div class="w-100 mt-4">
         <div class="h-3 w100 bg-grey-lighter rounded-full">
           <div
@@ -32,7 +32,7 @@
     >
       <div class="bg-primary-darker h-100 progress-loader w-20 rounded-full" />
     </div>
-    <div class="w-80 mx-auto relative">
+    <div class="w-90 mx-auto relative">
       <div class="w-100 py-4 relative z-0">
         <div class="w-100 pt-3 pb-5">
           <div
@@ -55,6 +55,18 @@
           >
             Next
           </button>
+        </div>
+        <div
+          v-if="iteration.recommendations_count > 0"
+          class="text-right xs:block mt-2 text-grey-dark"
+        >
+          <router-link
+            tag="div"
+            class="cursor-pointer"
+            :to="{name: 'recommendations-index', params:{iteration_id: iteration.id}}"
+          >
+            See recommendations
+          </router-link>
         </div>
       </div>
       <div

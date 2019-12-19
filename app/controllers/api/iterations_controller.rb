@@ -11,7 +11,6 @@ module Api
 
     def show
       @iteration = current_user.iterations.find(params[:id])
-      render json: @iteration
     end
 
     def create
@@ -21,6 +20,21 @@ module Api
       else
         render json: @iteration.errors, status: :unprocessable_entity
       end
+    end
+
+    def notify_user
+      if current_user.update(user_params)
+        current_iteration.notify_completion
+        render json: 'Success', status: :ok
+      else
+        render status: :unprocessable_entity
+      end
+    end
+
+    private
+
+    def user_params
+      params.permit(:email)
     end
   end
 end
