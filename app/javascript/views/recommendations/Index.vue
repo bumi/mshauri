@@ -1,8 +1,8 @@
 <template>
   <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-1 my-3 xs:my-0 bg-white rounded-xl">
     <div class="relative pt-5">
-      <div class="w-90 mx-auto h-20 bg-transparent border-grey-light shadow-sm border-solid border-1">
-        <h1 class="text-primary text-2xl pt-4 my-2 pl-5 xs:pl-0 xs:px-3 xs:text-xl xs:pt-2 md:text-xl md:pl-0 md:px-5 md:pt-2">
+      <div class="w-90 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
+        <h1 class="text-primary text-2xl  pt-4 my-2 pl-5 xs:pl-0 xs:px-3 xs:text-xl xs:pt-2 md:text-xl md:pl-0 md:px-5 md:pt-2">
           Our recommendations for your software development best practices.
         </h1>
         <p class="pl-5 pb-4 my-0 text-sm opacity-80 xs:pl-0 xs:px-3 md:pl-0 md:px-5">

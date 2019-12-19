@@ -20,7 +20,7 @@
     >
       <div class="relative pt-5">
         <div class="w-90 mx-auto  h-20 bg-transparent border-grey-light shadow-sm border-solid border-1 ">
-          <h3 class="text-primary text-2xl py-4 my-1 pl-5">
+          <h3 class="text-primary text-2xl xs:text-xl xs:pl-0 xs:px-3 py-4 my-1 pl-5">
             Our recommendtions for your software development best practices.
           </h3>
         </div>
