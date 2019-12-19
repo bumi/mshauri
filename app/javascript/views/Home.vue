@@ -25,7 +25,7 @@
         style="height:2px"
       />
 
-      <div class="w-90 xs:w-95 text-left ml-auto">
+      <div class="w-90 xs:w-95 text-left mx-auto">
         <h6 class="my-4 text-xl font-semibold">
           Your recommendations
         </h6>
