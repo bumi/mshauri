@@ -39,7 +39,7 @@ module Api
     private
 
     def user_params
-      params.permit(:email,:iteration_id)
+      params.permit(:email)
     end
   end
 end
