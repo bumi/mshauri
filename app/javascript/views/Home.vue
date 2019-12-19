@@ -4,9 +4,11 @@
       <div class="w-80 mx-auto xs:mx-auto py-4 flex xs:block sm:w-85">
         <div class="w-80 xs:w-100 ">
           <h5 class="my-0">
-            Hey, You Can Start Or Resume Surveys
+            Rwanda Tech Guide
           </h5>
-          <span class="text-xs text-grey-dark">Complete surveys to view recommendations</span>
+          <span class="text-xs text-grey-dark">
+            Complete the Rwanda Tech Guide survey and get individual recommendations for your software development best practices.
+          </span>
         </div>
 
         <div
@@ -14,7 +16,7 @@
           @click="newIteration"
         >
           <button class=" btn btn-primary rounded-lg py-2 text-base cursor-pointer w-100  shadow-sm cursor-pointer">
-            Start New Iteration
+            Start survey
           </button>
         </div>
       </div>
@@ -25,7 +27,7 @@
 
       <div class="w-90 xs:w-95 text-left ml-auto">
         <h6 class="my-4 text-xl font-semibold">
-          Recent iterations
+          Your recommendations
         </h6>
       </div>
       <div class="flex flex-wrap xs:block xs:w-90 xs:mx-auto justify-content-center md:w-90 md:mx-auto py-4">
