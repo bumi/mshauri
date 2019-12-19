@@ -29,7 +29,7 @@
           <p class="p-0 m-0 px-4 pb-2 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 text-right">
             <router-link
               tag="a"
-              class="cursor-pointer"
+              class="cursor-pointer text-sm text-muted"
               :to="{name: 'recommendation-show', params:{id: recommendation.id}}"
             >
             read more »
