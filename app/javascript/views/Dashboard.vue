@@ -1,6 +1,6 @@
 <template>
   <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-1 my-3 xs:my-0 bg-white rounded-xl">
-    <div class="w-70 mx-auto pt-5">
+    <div class="w-90 mx-auto pt-5">
       <h1 class="mb-2 text-grey-darkest text-4xl font-primary text-center text-weight-semibold">
         Thank you for completing the questionnaire.
       </h1>
