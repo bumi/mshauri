@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-1 my-3 xs:my-0 bg-white rounded-lg">
+  <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-3 my-3 xs:my-0 bg-white rounded-xl">
     <div class="w-90 mx-auto">
       <div class="w-100 mt-4">
         <div class="h-3 w100 bg-grey-lighter rounded-full">
