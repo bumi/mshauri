@@ -9,9 +9,8 @@ a {
     color: $accent-darkest !important;
 }
 
-ul {
+ul, ol {
     display: block;
-    list-style-type: disc;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -78,4 +77,11 @@ ul ul,
 ol ul,
 ul ol {
     margin-bottom: 0;
+}
+
+ul {
+    list-style-type: disc;
+}
+ol {
+   list-style: decimal;
 }
