@@ -1,0 +1,5 @@
+class AddGeneralToRecommendations < ActiveRecord::Migration[6.0]
+  def change
+    add_column :recommendations, :general, :boolean, default: false
+  end
+end

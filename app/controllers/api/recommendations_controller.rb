@@ -6,7 +6,12 @@ module Api
     before_action :require_current_iteration
 
     def index
-      render json: current_iteration.recommendations.order(priority: :desc).distinct.all
+      @recommendations = current_iteration.recommendations.order(priority: :desc).distinct.to_a
+      return unless @recommendations.count < 7
+
+      @recommendations += Recommendation.general.to_a
+      @recommendations.uniq!
+      @recommendations.sort! { |a, b| a.priority <=> b.priority }
     end
 
     def show
