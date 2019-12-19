@@ -2,7 +2,7 @@
 id: testing
 title: Software testing
 intro: Thorough testing is vital for quality assurance and to ensure that a software is workig as expected. We recommend detailed documented testcases.
-priority: 1000
+priority: 900
 description: |
   Software testing is defined as an activity to check whether the actual results match the expected results and to ensure that the software is working as expected.
   It involves execution of a software component or system component to evaluate the various functionalities.
