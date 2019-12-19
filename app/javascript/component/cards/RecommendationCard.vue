@@ -23,8 +23,17 @@
           <h4 class="text-lg pt-4 pb-2 p-0 m-0 px-4 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 font-bold">
             {{ recommendation.title }}
           </h4>
-          <p class="p-0 m-0 px-4 pb-4 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4">
+          <p class="p-0 m-0 px-4 pb-1 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4">
             {{ recommendation.intro }}
+          </p>
+          <p class="p-0 m-0 px-4 pb-2 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4 text-right">
+            <router-link
+              tag="a"
+              class="cursor-pointer"
+              :to="{name: 'recommendation-show', params:{id: recommendation.id}}"
+            >
+            read more »
+            </router-link>
           </p>
         </div>
       </router-link>
