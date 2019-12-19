@@ -3,6 +3,7 @@
 module Api
   class IterationsController < BaseController
     before_action :require_current_user
+    skip_after_action :verify_authorized, only: %i[notify_user]
 
     # get all current user's iterations
     def index
@@ -26,8 +27,9 @@ module Api
     end
 
     def notify_user
-      if current_user.update(user_params)
-        current_iteration.notify_completion
+      iteration = current_user.iterations.find(params[:id])
+      if iteration && current_user.update(user_params)
+        iteration.notify_completion
         render json: 'Success', status: :ok
       else
         render status: :unprocessable_entity
@@ -37,7 +39,7 @@ module Api
     private
 
     def user_params
-      params.permit(:email)
+      params.permit(:email,:iteration_id)
     end
   end
 end
