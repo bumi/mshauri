@@ -34,9 +34,9 @@
             </div>
           </div>
           <div class="w-90 py-3">
-            <div class="w-95 ml-auto bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
+            <div class="w-100 px-3 bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
               <div
-                class="p-0 m-0 px-4 py-4 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4"
+                class="m-0 p-4 xs:pl-0 xs:p-3"
                 v-html="recommendation.description_formatted"
               />
             </div>
