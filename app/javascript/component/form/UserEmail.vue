@@ -1,5 +1,5 @@
 <template>
-  <div class="w-45 mx-auto text-center">
+  <div class="w-45 mx-auto text-center xs:w-95 md:w-60 sm:w-70 lg:w-55">
     <p
       v-if="submitted"
       class="text-green"
