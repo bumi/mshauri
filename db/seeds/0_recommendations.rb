@@ -11,5 +11,6 @@ Dir['./data/recommendations/*.yml'].each do |filename|
   recommendation.intro = recommendation_data['intro']
   recommendation.description = recommendation_data['description']
   recommendation.priority = recommendation_data['priority'] || 0
+  recommendation.general = recommendation_data['general']
   recommendation.save!
 end
