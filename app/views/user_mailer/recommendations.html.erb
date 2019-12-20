@@ -12,8 +12,13 @@
     <p>
 
     <p>
-      Click <%= link_to "here", recommendations_url(user_slug: @user.slug, iteration_id: @iteration.id) %> see the full list of recommendations and related information:<br>
+      Click <%= link_to "here", recommendations_url(user_slug: @user.slug, iteration_id: @iteration.id) %> to see the full list of recommendations and related information:<br>
       <%= link_to nil, recommendations_url(user_slug: @user.slug, iteration_id: @iteration.id) %>
+    </p>
+
+    <p>
+      You can <%= link_to "start another questionnaire anytime", home_url(@user.slug) %> here:
+      <%= link_to nil, home_url(@user.slug) %>
     </p>
   </body>
 </html>
