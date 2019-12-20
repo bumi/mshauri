@@ -9,11 +9,6 @@
           <span class="text-xs text-grey-dark">
             Complete the Rwanda Tech Guide survey and get individual recommendations for your software development best practices.
           </span>
-          <button class="btn btn-primary">
-            <router-link :to="{name: 'recommendations-home' }">
-              View Recommendations
-            </router-link>
-          </button>
         </div>
 
         <div
@@ -32,7 +27,9 @@
 
       <div class="w-90 xs:w-95 text-left mx-auto">
         <h6 class="my-4 text-xl font-semibold">
-          Your recommendations
+          <router-link :to="{name: 'recommendations-home' }">
+            View Recommendations all Your recommendations
+          </router-link>
         </h6>
       </div>
       <div class="flex flex-wrap xs:block xs:w-90 xs:mx-auto justify-content-center md:w-90 md:mx-auto py-4">
