@@ -79,10 +79,12 @@ export default {
     }) => {
       this.recommendations = data;
     });
+    if(this.$route.params.iteration_id){
     Iteration.show(this.$route.params.iteration_id).then(({ data }) => {
       this.iteration = data;
       console.log(data);
     });
+    }
   }
 }
 </script>

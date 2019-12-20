@@ -29,6 +29,10 @@ export default {
       path: '/:user_slug/i/:iteration_id/completed',
       component: Dashboard,
       name: 'dashboard'
+    }, {
+      path: '/:user_slug/recommendations/all',
+      component: RecommendationIndex,
+      name: 'recommendations-home'
     },
     {
       path: '/:user_slug/i/:iteration_id/recommendations',

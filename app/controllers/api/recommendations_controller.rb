@@ -6,7 +6,12 @@ module Api
     before_action :require_current_iteration
 
     def index
-      @recommendations = current_iteration.recommendations.order(priority: :desc).distinct.to_a
+      if params[:iteration_id]
+        @recommendations = current_iteration.recommendations.order(priority: :desc).distinct.to_a
+      else 
+        @recommendations = Recommendation.order(priority: :desc).distinct.to_a
+      end  
+     
       return unless @recommendations.count < 7
 
       @recommendations += Recommendation.general.to_a
