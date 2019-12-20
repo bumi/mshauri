@@ -35,10 +35,10 @@
           </div>
           <div class="w-90 py-3">
             <div class="w-100 px-3 bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
-              <div
-                class="m-0 p-4 xs:pl-0 xs:p-3"
-                v-html="recommendation.description_formatted"
-              />
+              <div class="m-0 p-4 xs:pl-0 xs:p-3">
+                <h2>{{ recommendation.title }}</h2>
+                <div v-html="recommendation.description_formatted" />
+              </div>
             </div>
           </div>
         </div>
