@@ -82,6 +82,12 @@ ul ol {
 ul {
     list-style-type: disc;
 }
+
 ol {
    list-style: decimal;
 }
+
+.capitalize-first:first-letter {
+    text-transform: uppercase;
+}
+
