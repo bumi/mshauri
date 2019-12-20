@@ -1,6 +1,6 @@
 ---
 id: exception_tracking
-title: Monitoring & Exception tracking
+title: Monitoring & Exception Tracking
 intro: Monitoring and notifications about bugs and issues on the production system are helpful to identify and fix problems
 priority: 50
 description: |
@@ -8,6 +8,7 @@ description: |
   Especially error/exception notification tools are important to identify bugs that occur while customers are using the application and thus allow to quickly fix such problems.
 
   ### Tools
+  The following example tools support the most languages and provide easy to install tools/plugins.
 
   * [Sentry](https://sentry.io/welcome/) - open source and hosted exception tracking service
   * [Tideways for PHP](https://tideways.com/)
