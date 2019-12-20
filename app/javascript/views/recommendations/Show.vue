@@ -3,7 +3,7 @@
   <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-1 my-3 xs:my-0 bg-white rounded-xl">
     <div class="relative pt-5 z-10">
       <div class="w-90 mx-auto h-20 bg-transparent border-grey-light shadow-sm border-solid border-1">
-        <h1 class="text-primary text-2xl  my-4 pl-5 xs:pl-0 xs:px-3 xs:text-xl xs:pt-2 md:text-xl md:pl-0 md:px-5 md:pt-2">
+        <h1 class="text-primary text-3xl  my-4 pl-5 xs:pl-0 xs:px-3 xs:text-xl xs:pt-2 md:text-xl md:pl-0 md:px-5 md:pt-2">
           <span
             class="text-grey-dark text-base cursor-pointer"
             @click="goBack"
