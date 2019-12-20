@@ -11,7 +11,7 @@
       </div>
       <div class="w-100 relative">
         <div class="py-4 relative z-0">
-          <h4 class="my-1 font-medium xs:text-xl">
+          <h4 class="my-1 font-medium xs:text-xl capitalize-first">
             {{ question.title }}
           </h4>
           <div
