@@ -9,24 +9,27 @@
     <div v-if="!submitted">
       <p>Do you want these recommendations via email ?</p>
       <div class="mb-3">
-        <div class="flex border-1 border-solid border-grey-light rounded-lg overflow-hidden">
-          <div class="w-70">
-            <input
-              v-model="form.email"
-              class="form-input border-none px-3 py-2 text-base h-auto min-h-auto shadow-none"
-              type="email"
-              placeholder="Email"
-            >
+        <form @submit.prevent="save">
+          <div class="flex border-1 border-solid border-grey-light rounded-lg overflow-hidden">
+            <div class="w-70">
+              <input
+                v-model="form.email"
+                class="form-input border-none px-3 py-2 text-base h-auto min-h-auto shadow-none"
+                type="email"
+                required
+                placeholder="Email"
+              >
+            </div>
+            <div class="w-30 bg-primary rounded-lg overflow-hidden">
+              <button
+                class="w-100 btn btn-primary py-2 text-base"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
           </div>
-          <div class="w-30 bg-primary rounded-lg overflow-hidden">
-            <button
-              class="w-100 btn btn-primary py-2 text-base"
-              @click="save"
-            >
-              Submit
-            </button>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
