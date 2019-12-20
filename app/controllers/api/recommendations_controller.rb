@@ -11,7 +11,7 @@ module Api
 
       @recommendations += Recommendation.general.to_a
       @recommendations.uniq!
-      @recommendations.sort! { |a, b| a.priority <=> b.priority }
+      @recommendations.sort! { |a, b| b.priority <=> a.priority } # sorty by highest priorty first
     end
 
     def show
