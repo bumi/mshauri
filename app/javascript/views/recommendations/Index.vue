@@ -72,19 +72,25 @@ export default {
   },
 
   mounted() {
-    Recommendation.index({
-      'iteration_id': this.$route.params.iteration_id
-    }).then(({
-      data
-    }) => {
-      this.recommendations = data;
-    });
     if (this.$route.params.iteration_id) {
       Iteration.show(this.$route.params.iteration_id).then(({ data }) => {
         this.iteration = data;
         console.log(data);
       });
+      Recommendation.index({
+        'iteration_id': this.$route.params.iteration_id
+      }).then(({
+        data
+      }) => {
+        this.recommendations = data;
+      });
+      return;
     }
+    Recommendation.show('all').then(({
+      data
+    }) => {
+      this.recommendations = data;
+    });
   }
 }
 </script>

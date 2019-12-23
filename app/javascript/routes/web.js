@@ -16,6 +16,16 @@ export default {
   },
   routes: [
     {
+      path: '/recommendations',
+      component: RecommendationIndex,
+      name: 'recommendations-home'
+    },
+    {
+      path: '/recommendations/:id',
+      component: RecommendationShow,
+      name: 'recommendation-show'
+    },
+    {
       path: '/:user_slug',
       component: Home,
       name: 'home'
@@ -29,20 +39,11 @@ export default {
       path: '/:user_slug/i/:iteration_id/completed',
       component: Dashboard,
       name: 'dashboard'
-    }, {
-      path: '/:user_slug/recommendations/all',
-      component: RecommendationIndex,
-      name: 'recommendations-home'
     },
     {
       path: '/:user_slug/i/:iteration_id/recommendations',
       component: RecommendationIndex,
       name: 'recommendations-index'
-    },
-    {
-      path: '/:user_slug/recommendations/:id',
-      component: RecommendationShow,
-      name: 'recommendation-show'
     }
   ]
 }

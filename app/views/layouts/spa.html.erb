@@ -4,7 +4,9 @@
    <title>Rwanda Tech Guide</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="user-slug" content="<%= @user.slug %>">
+    <% if @user %>
+        <meta name="user-slug" content="<%= @user.slug %>">
+    <% end %>
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
