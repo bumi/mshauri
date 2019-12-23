@@ -27,9 +27,7 @@
 
       <div class="w-90 xs:w-95 text-left mx-auto">
         <h6 class="my-4 text-xl font-semibold">
-          <router-link :to="{name: 'recommendations-home' }">
-            View Recommendations all Your recommendations
-          </router-link>
+          Your recommendations
         </h6>
       </div>
       <div class="flex flex-wrap xs:block xs:w-90 xs:mx-auto justify-content-center md:w-90 md:mx-auto py-4">
