@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   # entry point for the vue.js app
   # rendered with a given user slug /[USER SLUG]
   def index
-    @user = User.find_by!(slug: params[:user_slug]) unless params[:user_slug] == "recommendations" 
+    @user = User.find_by!(slug: params[:user_slug]) unless params[:user_slug] == 'recommendations'
 
     # calling the spa(single page application) layout which invokes the
     # vue and vue router to handle the requests

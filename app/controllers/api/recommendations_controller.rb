@@ -2,8 +2,8 @@
 
 module Api
   class RecommendationsController < BaseController
-    before_action :require_current_user, except: [:all, :show]
-    before_action :require_current_iteration, except: [:all, :show]
+    before_action :require_current_user, except: %i[all show]
+    before_action :require_current_iteration, except: %i[all show]
 
     def index
       @recommendations = current_iteration.recommendations.order(priority: :desc).distinct.to_a
