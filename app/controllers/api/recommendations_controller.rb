@@ -16,7 +16,7 @@ module Api
     end
 
     def all
-      @recommendations = Recommendation.order(priority: :desc).distinct.to_a
+      @recommendations = Recommendation.order(priority: :desc)
       render '/api/recommendations/index'
     end
 
