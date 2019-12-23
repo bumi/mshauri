@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   # Validations for the model
   validates :slug, presence: true, uniqueness: true
-  validates :email, uniqueness: { allow_blank: true }, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, uniqueness: { allow_blank: true }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, allow_blank: true }
 
   def send_welcome_email
     UserMailer.with(user: self).welcome_email.deliver_now if email.present?

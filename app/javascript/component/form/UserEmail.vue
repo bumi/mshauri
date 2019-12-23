@@ -9,8 +9,14 @@
     <div v-if="!submitted">
       <p>Do you want these recommendations via email ?</p>
       <div class="mb-3">
-        <form @submit.prevent="save">
-          <div class="flex border-1 border-solid border-grey-light rounded-lg overflow-hidden">
+        <form
+          @submit.prevent="save"
+          @keydown="form.errors.clear()"
+        >
+          <div
+            class="flex border-1 border-solid  rounded-lg overflow-hidden transition-500ms"
+            :class="[form.errors.has('email') ? 'border-red-light' : 'border-grey-light']"
+          >
             <div class="w-70">
               <input
                 v-model="form.email"
@@ -28,6 +34,14 @@
                 Submit
               </button>
             </div>
+          </div>
+          <div
+            v-if="form.errors.has('email')"
+            class="text-left px-3 transition-500ms"
+          >
+            <span class="text-red text-xs">
+              Email {{ form.errors.get('email') }}
+            </span>
           </div>
         </form>
       </div>
