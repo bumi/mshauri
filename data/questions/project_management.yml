@@ -16,9 +16,11 @@
       value: "Agile Software Development: Kanban"
     -
       value: "Agile adaption for our own process"
+      recommendation: agile
     -
       value: Other
       input: true
+      recommendation: sdlc
 
 -
   id: 20

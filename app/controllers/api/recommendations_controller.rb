@@ -6,16 +6,12 @@ module Api
     skip_after_action :verify_authorized, only: %i[show]
 
     def index
-      recommendations = policy_scope(Recommendation)
+      @recommendations = policy_scope(Recommendation).order(priority: :desc).distinct.to_a
+      return unless @recommendations.count < 7
 
-      if params[:iteration_id]
-        recommendations = recommendations.joins(:iterations)
-                                         .where(iterations: { id: params[:iteration_id] })
-                                         .order(priority: :desc)
-                                         .distinct
-      end
-
-      render json: recommendations
+      @recommendations += Recommendation.general.to_a
+      @recommendations.uniq!
+      @recommendations.sort! { |a, b| b.priority <=> a.priority } # sorty by highest priorty first
     end
 
     def show

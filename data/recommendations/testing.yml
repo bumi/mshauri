@@ -1,7 +1,7 @@
 ---
 id: testing
-title: Software testing
-intro: Thorough testing is vital for quality assurance and to ensure that a software is workig as expected. We recommend detailed documented testcases.
+title: Software Testing
+intro: Thorough testing is vital for quality assurance and to ensure that a software is workig as expected. We recommend regular software tests based on detailed, documented test cases.
 priority: 900
 description: |
   Software testing is defined as an activity to check whether the actual results match the expected results and to ensure that the software is working as expected.
@@ -31,6 +31,8 @@ description: |
   5. Click on "Sign in"
 
   **Expectated Result:** The user should be redirected to the personal dashboard and see the welcome message "Hello testuser"
+
+  More examples: 
 
   * [How to write test cases](https://blog.testlodge.com/how-to-write-test-cases-for-software-with-sample/)
   * [Test case example](https://www.guru99.com/test-case.html)
