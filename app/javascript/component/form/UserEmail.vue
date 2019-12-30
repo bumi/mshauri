@@ -13,9 +13,9 @@
           @submit.prevent="save"
           @keydown="form.errors.clear()"
         >
+          <errors :errors="form.errors.errors" />
           <div
-            class="flex border-1 border-solid  rounded-lg overflow-hidden transition-500ms"
-            :class="[form.errors.has('email') ? 'border-red-light' : 'border-grey-light']"
+            class="flex border-1 border-solid  rounded-lg overflow-hidden transition-500ms border-grey-light"
           >
             <div class="w-70">
               <input
@@ -35,14 +35,6 @@
               </button>
             </div>
           </div>
-          <div
-            v-if="form.errors.has('email')"
-            class="text-left px-3 transition-500ms"
-          >
-            <span class="text-red text-xs">
-              Email {{ form.errors.get('email') }}
-            </span>
-          </div>
         </form>
       </div>
     </div>
@@ -52,8 +44,10 @@
 <script>
 import Form from "../../utilities/Form";
 import Iteration from '../../models/Iteration';
+import Errors from '../../component/form/Errors';
 export default {
   name: "UserEmail",
+  components: { Errors },
   props: {
     iterationId: {
       type: [Number, String],
