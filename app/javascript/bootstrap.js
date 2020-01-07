@@ -41,4 +41,6 @@ if (token) {
 }
 
 let user_slug = document.head.querySelector('meta[name="user-slug"]');
-window.axios.defaults.headers.common['X-USER-SLUG'] = user_slug.content;
+if (user_slug) {
+  window.axios.defaults.headers.common['X-USER-SLUG'] = user_slug.content;
+}
