@@ -18,6 +18,16 @@ export default {
   },
   routes: [
     {
+      path: '/recommendations',
+      component: RecommendationIndex,
+      name: 'recommendations-home'
+    },
+    {
+      path: '/recommendations/:id',
+      component: RecommendationShow,
+      name: 'recommendation-show'
+    },
+    {
       path: '/:user_slug',
       component: Home,
       name: 'home'

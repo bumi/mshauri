@@ -16,7 +16,11 @@ Rails.application.routes.draw do
         put :notify_user
       end
     end
-    resources :recommendations, only: %i[index show]
+    resources :recommendations, only: %i[index show] do
+      collection do
+        get :all
+      end
+    end
   end
 
   resources :users, only: [:create]

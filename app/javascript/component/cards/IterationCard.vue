@@ -1,10 +1,7 @@
 <template>
   <div class="w-100 mx-auto border-1 p-4 border-solid border-grey-lighter shadow-sm">
     <div class="flex h-1 bg-grey-lighter rounded-full overflow-hidden">
-      <div
-        class="h-100 bg-primary rounded-full"
-        :style="{ width: iteration.completion_rate+'%' }"
-      />
+      <progress-bar :value="iteration.completion_rate" />
     </div>
 
     <div class="w-100 mx-auto">
@@ -34,8 +31,12 @@
 </template>
 
 <script>
+
+import ProgressBar from "../ProgressBar";
+
 export default {
   name: 'IterationCard',
+  components: { ProgressBar },
   props: {
     iteration: {
       type: Object,

@@ -2,8 +2,9 @@
 
 module Api
   class RecommendationsController < BaseController
-    before_action :require_current_user
-    skip_after_action :verify_authorized, only: %i[show]
+    before_action :require_current_user, except: %i[all show]
+    before_action :require_current_iteration, except: %i[all show]
+    skip_after_action :verify_authorized, only: %i[all show]
 
     def index
       @recommendations = policy_scope(Recommendation).order(priority: :desc).distinct.to_a
@@ -12,6 +13,11 @@ module Api
       @recommendations += Recommendation.general.to_a
       @recommendations.uniq!
       @recommendations.sort! { |a, b| b.priority <=> a.priority } # sorty by highest priorty first
+    end
+
+    def all
+      @recommendations = Recommendation.order(priority: :desc)
+      render '/api/recommendations/index'
     end
 
     def show

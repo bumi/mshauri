@@ -32,7 +32,7 @@ module Api
         iteration.notify_completion
         render json: 'Success', status: :ok
       else
-        render status: :unprocessable_entity
+        render json: current_user.errors, status: :unprocessable_entity
       end
     end
 

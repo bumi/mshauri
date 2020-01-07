@@ -32,7 +32,7 @@
               class="cursor-pointer text-sm text-muted"
               :to="{name: 'recommendation-show', params:{id: recommendation.id}}"
             >
-            read more »
+              read more »
             </router-link>
           </p>
         </div>

@@ -7,21 +7,21 @@
     "lint": "eslint --ext .js,.vue app/javascript/**/*"
   },
   "dependencies": {
-    "@rails/actioncable": "^6.0.0-alpha",
-    "@rails/activestorage": "^6.0.0-alpha",
-    "@rails/ujs": "^6.0.0-alpha",
-    "@rails/webpacker": "^4.2.0",
+    "@rails/actioncable": "^6.0.2",
+    "@rails/activestorage": "^6.0.2",
+    "@rails/ujs": "^6.0.2",
+    "@rails/webpacker": "^4.2.2",
     "axios": "^0.18",
-    "og-css": "^2.0.2",
+    "og-css": "^2.0.6",
     "turbolinks": "^5.2.0",
-    "vue": "^2.6.10",
-    "vue-loader": "^15.7.2",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.8.3",
     "vue-router": "^3.0.6",
-    "vue-template-compiler": "^2.6.10",
-    "eslint": "^6.7.2",
+    "vue-template-compiler": "^2.6.11",
+    "eslint": "^6.8.0",
     "eslint-loader": "^3.0.3",
     "babel-eslint": "^10.0.3",
-    "eslint-plugin-vue": "^6.0.1"
+    "eslint-plugin-vue": "^6.1.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.9.0"

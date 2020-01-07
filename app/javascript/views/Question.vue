@@ -3,10 +3,7 @@
     <div class="w-90 mx-auto">
       <div class="w-100 mt-4">
         <div class="h-3 w100 bg-grey-lighter rounded-full">
-          <div
-            class="h-100 bg-primary rounded-full"
-            :style="{ width: completionRate+'%' }"
-          />
+          <progress-bar :value="completionRate" />
         </div>
       </div>
       <div class="w-100 relative">
@@ -83,10 +80,12 @@ import Question from "../models/Question";
 import AnswerModel from "../models/Answer";
 import Answer from "../component/form/Answer";
 import Iteration from "../models/Iteration";
+import ProgressBar from "../component/ProgressBar";
 
 export default {
   name: "Question",
-  components: { Answer },
+  components: { Answer,
+    ProgressBar },
   data() {
     return {
       question: {},
