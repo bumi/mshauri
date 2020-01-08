@@ -23,12 +23,7 @@
       </div>
     </div>
     <div class="w-100 border-0 border-b-1 border-solid" />
-    <div
-      :class="{'invisible': !loading}"
-      class="w-100 overflow-hidden h-2 relative"
-    >
-      <div class="bg-primary-darker h-100 progress-loader w-20 rounded-full" />
-    </div>
+    <loader :value="loading" />
     <div class="w-90 mx-auto relative">
       <div class="w-100 py-4 relative z-0">
         <div class="w-100 pt-3 pb-5">
@@ -80,11 +75,13 @@ import Question from "../models/Question";
 import AnswerModel from "../models/Answer";
 import Answer from "../component/form/Answer";
 import Iteration from "../models/Iteration";
+import Loader from "../component/Loader";
 import ProgressBar from "../component/ProgressBar";
 
 export default {
   name: "Question",
   components: { Answer,
+    Loader,
     ProgressBar },
   data() {
     return {
