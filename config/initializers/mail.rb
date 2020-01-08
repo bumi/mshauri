@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
+ENV['MAIL_HOST'] ||= 'localhost:3000'
+ActionMailer::Base.default_url_options = {
+  host: ENV['MAIL_HOST'],
+}
+ActionMailer::Base.default_options = {
+  from: ENV['MAIL_SENDER'] || "no-reply@#{ENV['MAIL_HOST']}",
+}
+
 if Rails.env.production?
   ActionMailer::Base.smtp_settings = {
     port:           ENV['SMTP_PORT'],

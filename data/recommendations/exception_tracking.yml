@@ -1,14 +1,14 @@
 ---
 id: exception_tracking
 title: Exception Tracking
-intro: Notifications about bugs and issues on the production system are helpful to identify and fix problems
+intro: Notifications about bugs and issues on the production system are helpful to identify and fix problems. We recommend the usage of exception tracking services to quickly identify production issues.
 priority: 500
 description: |
   Monitoring and error logging tools help to get important insights when running applications in production. It is important to get informed about errors and potential problems as well as performance insights of the application. 
   Especially error/exception notification tools are important to identify bugs that occur while customers are using the application and thus allow to quickly fix such problems.
 
   ### Tools
-  The following tools support the most languages and provide easy to install tools/plugins.
+  The following example tools support the most languages and provide easy to install tools/plugins.
 
   * [Sentry](https://sentry.io/welcome/) - open source and hosted exception tracking service
   * [Tideways for PHP](https://tideways.com/)

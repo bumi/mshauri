@@ -1,0 +1,27 @@
+---
+id: learn
+title: Learn, Learn, Learn
+intro: Software engineering is a fast changing field with constant new developments and improvements. This requires constant learning.
+priority: 10
+general: true
+description: |
+  Most important for every team is to constantly learn and gether new skills. The software development world is moving fast and is constantly changing and improving.
+  Teams have to keep up with that and strive to improve.
+
+  Software development is a constant learning process. We recommend every team reserves some time to learn and to teach each other new skills.  
+  For example you could do regular presentations by team members to tell others about new ideas and skills.
+  
+  ### Some recommended learning resources
+
+  -   [Mobile dev weekly newsletter](https://mobiledevweekly.com/)
+  -   [Frontend focus newsletter](https://frontendfoc.us/)
+  -   [Android weekly](https://androidweekly.net)
+  -   [Programming digest newsletter](https://programmingdigest.net/)
+  -   [WDRL newsletter](https://wdrl.info/)
+  -   [Smashing Magazine](https://www.smashingmagazine.com/)
+  -   [Sitepoint](https://www.sitepoint.com/)
+  -   [Hacker News](https://news.ycombinator.com/)
+  -   [Tutorialize](https://tutorialzine.com/)
+  -   [Changelog news and podcast](https://changelog.com/)
+  -   [edX](https://www.edx.org/course/subject/computer-science), [coursera](https://www.coursera.org/browse/computer-science/software-development) & Co."
+

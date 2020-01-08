@@ -3,14 +3,15 @@
 class User < ApplicationRecord
   has_many :iterations, dependent: :destroy
   before_validation :insert_slug
-  after_save :send_welcome_email, if: :email_changed?
+  after_create :send_welcome_email
 
   # Validations for the model
   validates :slug, presence: true, uniqueness: true
   validates :email, uniqueness: { allow_blank: true }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, allow_blank: true }
 
   def send_welcome_email
-    UserMailer.with(user: user).welcome_email.deliver_now if email.present? && email_changed?
+    UserMailer.with(user: self).welcome_email.deliver_now if email.present?
   end
 
   def insert_slug

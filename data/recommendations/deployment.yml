@@ -9,6 +9,7 @@ description: |
   Deployment automation makes the release of new versions reliable and fast.
 
   We recommend to automate the release process as much as possible using scripts or [continuous integration and delivery tools](https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment)
+  If you manage your servers manually you can use a tool like [Capistrano](https://capistranorb.com/) to automate those tasks.
 
   ### More information:
 

@@ -1,10 +1,16 @@
 ---
 id: standups
 title: Daily Stand-up Meetings
-intro: Short stand-up meetings to share progress and issues among the team help the team to be up to date and to identify any dealays early. We recommend stand-ups to status updates among the team members.
+intro: Short stand-up meetings to share progress and issues among the team help the team to be up to date and to identify any delays early. We recommend stand-ups to share status updates among the team members.
+priority: 100
+general: true
 description: |
-  A core idea of agile methodologies like Scrum is to focus on people and communication within the team. Daily [stand-ups meetings](https://en.wikipedia.org/wiki/Stand-up_meeting) are a great way to get everybody up to date. It is a very short meeting where everybody shares what they are working and and if they need help. 
+  A core idea of agile methodologies like Scrum is to focus on people and communication within the team.
+  Daily [stand-ups meetings](https://en.wikipedia.org/wiki/Stand-up_meeting) are a great way to get everybody up to date. 
 
-  Learn more about stand-ups: 
+  It is a very short meeting where everybody shares in only a few minutes what they are working and and if they need help.
+
+  ### Learn more about stand-ups:
   * [Stand-ups for agile teams](https://www.atlassian.com/agile/scrum/standups)
   * [Patterns for Daily Standup Meetings](https://martinfowler.com/articles/itsNotJustStandingUp.html)
+

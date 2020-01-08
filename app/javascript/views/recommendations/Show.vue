@@ -8,11 +8,9 @@
     >
       <div class="relative pt-5 z-10">
         <div class="w-90 mx-auto h-20 bg-transparent border-grey-light shadow-sm border-solid border-1">
-          <h1
-            class="text-primary text-2xl  my-4 pl-5 xs:pl-0 xs:px-3 xs:text-xl xs:pt-2 md:text-xl md:pl-0 md:px-5 md:pt-2"
-          >
+          <h1 class="text-primary text-2xl my-4 pl-5 xs:pl-0 xs:px-3 xs:text-xl xs:pt-2 md:text-xl md:pl-0 md:px-5 md:pt-2">
             <span
-              class="text-grey-dark text-base cursor-pointer"
+              class="text-grey-dark cursor-pointer"
               @click="goBack"
             >
               Recommendations <i class="fas fa-chevron-right mx-3" />
@@ -32,22 +30,12 @@
             <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
               <div class="h-100 w-05 bg-grey-light" />
             </div>
-            <div class="w-10 z-99 flex align-items-center justify-content-center">
-              <div
-                class="rounded-full h-16 w-rem-16 xs:h-8 xs:w-rem-8 md:h-12 md:w-rem-12 sm:h-10 sm:w-rem-10 bg-white border-solid border-1 border-grey-lighter shadow z-9999 flex align-items-center justify-content-center text-2xl"
-              >
-                <div
-                  class="rounded-full h-4 bg-grey-darker"
-                  style="width: 1rem"
-                />
-              </div>
-            </div>
-            <div class="w-90 py-3">
-              <div class="w-95 ml-auto bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
-                <div
-                  class="p-0 m-0 px-4 py-4 xs:pl-0 xs:px-3 md:pl-0 md:px-4 sm:pl-0 sm:px-4"
-                  v-html="recommendation.description_formatted"
-                />
+          </div>
+          <div class="w-90 py-3">
+            <div class="w-100 px-3 bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
+              <div class="m-0 p-4 xs:pl-0 xs:p-3">
+                <h2>{{ recommendation.title }}</h2>
+                <div v-html="recommendation.description_formatted" />
               </div>
             </div>
           </div>

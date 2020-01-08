@@ -2,6 +2,8 @@
 id: agile
 title: Agile Software Develpment Methodologies
 intro: Many software teams are moving toward an iterative/adaptive methodology and agile processes and away from static waterfall like methodologies. We recommend applying agile methodologies.
+priority: 300
+general: true
 description: |
   There isn’t a single “perfect” methodology that you can apply across all companies and projects. However, many software teams are moving toward an iterative/adaptive methodology and agile processes and away from a static [waterfall methodology](https://en.wikipedia.org/wiki/Waterfall_model).
 
@@ -30,14 +32,18 @@ description: |
   #### Divide a bigger project into sprints
   Even if the project or client does not work agile your team can divide work packages into small sprints of 1-2 weeks. The team can decide together what is most important to work on in a sprint and plan issues for that time. After the sprint you can do a retrospective to see how well the sprint was completed and what can be optimized for the next one.
 
-  Learn more about sprints: 
+  ##### Learn more about sprints: 
   * [What is a sprint? by atlassian](https://www.atlassian.com/agile/scrum/sprints)
   * [Scrum.org: Sprints](https://www.scrum.org/resources/what-is-a-sprint-in-scrum)
 
   #### Do daily stand-ups
-  A core idea of agile methodologies like Scrum is to focus on people and communication within the team. Daily [stand-ups meetings](https://en.wikipedia.org/wiki/Stand-up_meeting) are a great way to get everybody up to date. It is a very short meeting where everybody shares what they are working and and if they need help. 
+  A core idea of agile methodologies like Scrum is to focus on people and communication within the team.
+  Daily [stand-ups meetings](https://en.wikipedia.org/wiki/Stand-up_meeting) are a great way to get everybody up to date.
 
-  Learn more about stand-ups: 
+  It is a very short meeting where everybody shares what they are working and and if they need help. 
+  Each team member has a few minutes to share what they have done and what they work on.
+
+  ##### Learn more about stand-ups: 
   * [Stand-ups for agile teams](https://www.atlassian.com/agile/scrum/standups)
   * [Patterns for Daily Standup Meetings](https://martinfowler.com/articles/itsNotJustStandingUp.html)
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>
+    <p class="capitalize-first">
       <label :class="{'radiocontainer': !isMultiple, 'checkcontainer': isMultiple}">
         <span class="text-lg">{{ answer.value }}</span>
         <input

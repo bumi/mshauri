@@ -3,15 +3,12 @@
     <div class="w-90 mx-auto">
       <div class="w-100 mt-4">
         <div class="h-3 w100 bg-grey-lighter rounded-full">
-          <div
-            class="h-100 bg-primary rounded-full"
-            :style="{ width: completionRate+'%' }"
-          />
+          <progress-bar :value="completionRate" />
         </div>
       </div>
       <div class="w-100 relative">
         <div class="py-4 relative z-0">
-          <h4 class="my-1 font-medium xs:text-xl">
+          <h4 class="my-1 font-medium xs:text-xl capitalize-first">
             {{ question.title }}
           </h4>
           <div
@@ -79,11 +76,13 @@ import AnswerModel from "../models/Answer";
 import Answer from "../component/form/Answer";
 import Iteration from "../models/Iteration";
 import Loader from "../component/Loader";
+import ProgressBar from "../component/ProgressBar";
 
 export default {
   name: "Question",
   components: { Answer,
-    Loader },
+    Loader,
+    ProgressBar },
   data() {
     return {
       question: {},

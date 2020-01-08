@@ -8,6 +8,19 @@ description: |
 
   It is a starting point for (new) developers to learn about a piece of software and is a way to quickly get the system running and  to start working on code.
 
+  To get started you can follow [these suggestions about writing a useful readme](https://www.makeareadme.com/#suggestions-for-a-good-readme)
+
+  ### Example Content
+
+  * Name
+  * Description - describe what the project/component/repository is about. A list of Features subsection can also be added here.
+  * Architecture diagram - Do you have an architecture diagram that describes the different components of the system?
+  * Installation - describe how the the project is installed and can be run. What are the system requirements? Which commands need to be executed?
+  * Configuration - describe what configuration options are available
+  * Deployment details - how is the project deployed? What steps need to be executed to release new versions?
+  * Development workflow - Which development workflow does the project follow? Where are todos managed? How are code reviews being done? 
+  * Where to find help and more information
+
   ### Links
   
   * [How to write a great README - Thoughtbot](https://thoughtbot.com/blog/how-to-write-a-great-readme)

@@ -17,9 +17,14 @@ description: |
   To get started document each data store and each person and process to access and update that data.
 
   ### Audit Logs for System Activities
-  
   In order to monitor data access and modification systems should generate comprehensive audit logs.
   Such logs help to analyze and monitor each activity on the system and quickly identify anomalies and potential breaches.
+
+  ### How to get started
+  An good way to get started is to list every relevant data storage of your project. For example a database.  
+  Then document every person and compontent that has access to that data. For example: an application and a system administrator have credentials to the database.  
+  Now you can define rules on that access. For example password requirements, or how often the password needs to be changed.
+
 
   ### Links
 
