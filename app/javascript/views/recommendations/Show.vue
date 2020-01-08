@@ -30,12 +30,20 @@
             <div class="absolute h-100 w-10 flex align-items-center justify-content-center">
               <div class="h-100 w-05 bg-grey-light" />
             </div>
-          </div>
-          <div class="w-90 py-3">
-            <div class="w-100 px-3 bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
-              <div class="m-0 p-4 xs:pl-0 xs:p-3">
-                <h2>{{ recommendation.title }}</h2>
-                <div v-html="recommendation.description_formatted" />
+            <div class="w-10 z-99 flex align-items-center justify-content-center">
+              <div class="rounded-full h-16 w-rem-16 xs:h-8 xs:w-rem-8 md:h-12 md:w-rem-12 sm:h-10 sm:w-rem-10 bg-white border-solid border-1 border-grey-lighter shadow z-9999 flex align-items-center justify-content-center text-2xl">
+                <div
+                  class="rounded-full h-4 bg-grey-darker"
+                  style="width: 1rem"
+                />
+              </div>
+            </div>
+            <div class="w-90 py-3">
+              <div class="w-100 px-3 bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
+                <div class="m-0 p-4 xs:pl-0 xs:p-3">
+                  <h2>{{ recommendation.title }}</h2>
+                  <div v-html="recommendation.description_formatted" />
+                </div>
               </div>
             </div>
           </div>
