@@ -19,12 +19,7 @@ application up and running.
     bundle install
     ```
 2) Setup your database
-     ```bash
-    cp config/database.yml.example
-    ```
-    ```bash
-    config/database.yml
-    ```
+    
     Edit your database configuration
     ```bash
     vim config/database.yml 
