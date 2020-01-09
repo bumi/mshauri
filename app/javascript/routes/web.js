@@ -5,6 +5,7 @@ import RecommendationIndex from "../views/recommendations/Index"
 import RecommendationShow from "../views/recommendations/Show"
 import AdminIndex from "../views/admin/Index"
 import UserShow from "../views/user/Show"
+import IterationAnswersIndex from "../views/admin/iteration-answers/Index"
 
 export default {
   mode: "history",
@@ -57,9 +58,13 @@ export default {
       component: AdminIndex,
       name: 'admin-index'
     }, {
-      path: '/:user_slug/user/:id',
+      path: '/:user_slug/admin/user/:id',
       component: UserShow,
-      name: 'user-show'
+      name: 'admin-user-show'
+    }, {
+      path: '/:user_slug/admin/i/:iteration_id/answers',
+      component: IterationAnswersIndex,
+      name: 'admin-iteration-answers'
     }
   ]
 }

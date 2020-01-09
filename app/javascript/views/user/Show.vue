@@ -7,7 +7,7 @@
     >
       <iteration-card
         :iteration="iteration"
-        :admin="true"
+        :is-admin="true"
       />
     </div>
 

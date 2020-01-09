@@ -3,7 +3,7 @@
     <div class="w-80 mx-auto flex relative py-2">
       <div class="w-50">
         <router-link
-          :to="{name: 'user-show', params:{id: user.id}}"
+          :to="{name: 'admin-user-show', params:{id: user.id}}"
         >
           <div v-if="user.name">
             <h3>Name</h3>

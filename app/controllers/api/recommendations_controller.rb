@@ -3,7 +3,7 @@
 module Api
   class RecommendationsController < BaseController
     before_action :require_current_user, except: %i[all show]
-    before_action :require_current_iteration, except: %i[all show]
+    # before_action :require_current_iteration, except: %i[all show]
     skip_after_action :verify_authorized, only: %i[all show]
 
     def index

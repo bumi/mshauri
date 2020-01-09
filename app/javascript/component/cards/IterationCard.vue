@@ -19,9 +19,8 @@
         Started on {{ startedOn }}
       </h3>
       <button
-        v-if="!admin"
         class="btn py-1 text-xs mx-auto w-100 rounded"
-        :class="[isComplete ? 'bg-primary text-white' : 'bg-grey-light text-black']"
+        :class="[isComplete || isAdmin ? 'bg-primary text-white' : 'bg-grey-light text-black']"
         @click="handleClick"
       >
         {{ buttonLabel }}
@@ -42,7 +41,7 @@ export default {
       type: Object,
       default: () => {}
     },
-    admin: {
+    isAdmin: {
       type: Boolean,
       default: false
     }
@@ -56,16 +55,27 @@ export default {
       return this.iteration.completion_rate === 100
     },
     buttonLabel: function() {
-      return this.isComplete ? 'View Recommendations' : 'Continue';
+      if (this.isAdmin) {
+        return "View Answers";
+      }
+      if (this.isComplete) {
+        return "Continue";
+      }
+      return 'View Recommendations';
     }
   },
   methods: {
     handleClick: function() {
       let options;
 
-      if (this.isComplete) {
+      if (this.isComplete & !this.isAdmin) {
         options = {
           name: 'recommendations-index',
+          params: { iteration_id: this.iteration.id }
+        };
+      } else if (this.isAdmin) {
+        options = {
+          name: 'admin-iteration-answers',
           params: { iteration_id: this.iteration.id }
         };
       } else {
