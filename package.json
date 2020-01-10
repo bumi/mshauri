@@ -24,6 +24,22 @@
     "eslint-plugin-vue": "^6.0.1"
   },
   "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "vue-jest": "^3.0.5",
     "webpack-dev-server": "^3.9.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/app/javascript/$1"
+    }
   }
 }
