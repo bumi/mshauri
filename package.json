@@ -24,6 +24,22 @@
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "vue-jest": "^3.0.5",
     "webpack-dev-server": "^3.10.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/app/javascript/$1"
+    }
   }
 }
