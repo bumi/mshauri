@@ -3,5 +3,15 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  context "Associations" do
+    it { should have_many(:iterations) }
+  end
+
+
+  context "Validations" do
+    # Basic validations
+    it { should validate_uniqueness_of(:slug) }
+    # Inclusion/acceptance of values
+  end
 end
