@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '> 2.3.0', '< 2.7.0' # specific upper limit to manually upgrade if next version is available
+ruby '> 2.3.0', '<= 2.7.0' # specific upper limit to manually upgrade if next version is available
 
 gem 'rails', '~> 6.0.1'
 # Use postgresql as the database for Active Record
@@ -63,6 +63,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
