@@ -3,15 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
-  context "Associations" do
-    it { should have_many(:iterations) }
+  context 'with associations' do
+    it { is_expected.to have_many(:iterations) }
   end
 
-
-  context "Validations" do
+  context 'with alidations' do
     # Basic validations
-    it { should validate_uniqueness_of(:slug) }
+    it { is_expected.to validate_uniqueness_of(:slug) }
     # Inclusion/acceptance of values
   end
 end
