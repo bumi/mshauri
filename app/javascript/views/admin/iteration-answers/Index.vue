@@ -2,6 +2,9 @@
   <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-3 my-3 xs:my-0 bg-white rounded-xl">
     <div class="w-80 mx-auto">
       <div class="my-5">
+        <div v-if="iteration.recommendations_count > 0" class="text-right w-100">
+          <button @click="viewRecommendations" class="btn btn-success">View Recommendations</button>
+        </div>
         <div
           v-for="iterationAnswer in iterationAnswers"
           :key="iterationAnswer.id"
@@ -41,11 +44,13 @@
 </template>
 <script>
 import IterationAnswer from "../../../models/IterationAnswer"
+import Iteration from "../../../models/Iteration"
 export default {
   name: 'IterationAnswersIndex',
   data() {
     return {
       iterationAnswers: [],
+      iteration: {}
     }
   },
   mounted() {
@@ -54,7 +59,17 @@ export default {
     }).then(({ data }) => {
       this.iterationAnswers = data;
       console.log(data);
-    })
+    });
+    Iteration.show(this.$route.params.iteration_id).then(({ data }) => {
+        this.iteration = data;
+    });
+  }, methods:{
+      viewRecommendations(){
+        this.$router.push({
+          name: 'recommendations-index',
+          params: { iteration_id: this.iteration.id }
+        });
+      }
   }
 }
 </script>

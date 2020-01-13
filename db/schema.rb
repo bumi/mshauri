@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_153813) do
     t.integer "priority"
     t.string "identifier"
     t.text "intro"
-    t.boolean "general"
+    t.boolean "general", default: false
   end
 
   create_table "users", force: :cascade do |t|
