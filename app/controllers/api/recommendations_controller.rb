@@ -7,7 +7,11 @@ module Api
     skip_after_action :verify_authorized, only: %i[all show]
 
     def index
-      @recommendations = policy_scope(Recommendation).order(priority: :desc).distinct.to_a
+      @recommendations = policy_scope(Recommendation)
+
+      @recommendations = @recommendations.where(iterations: { id: params[:iteration_id] }) if params[:iteration_id]
+
+      @recommendations = @recommendations.order(priority: :desc).distinct.to_a
       return unless @recommendations.count < 7
 
       @recommendations += Recommendation.general.to_a
