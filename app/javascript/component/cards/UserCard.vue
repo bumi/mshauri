@@ -21,10 +21,20 @@
         </router-link>
       </div>
       <div class="text-right w-45 ml-auto">
-        <h5 class="my-2 font-bold text-lg">Joined on {{joinedOn}}</h5>
+        <h5 class="my-2 font-bold text-lg">
+          Joined on {{ joinedOn }} <i class="far fa-calendar ml-2" />
+        </h5>
         <ul class="w-100 list-type-0 inline-list my-0 mt-2 ">
-          <li class="my-0 mr-2"><span class="opacity-80">Iterations:</span> <button class="w-5 h-5 bg-green text-white rounded-full p-0 leading-0">{{ user.iterations.length }}</button></li>
-          <li class="my-0 ml-2"><span class="opacity-80">Answers:</span> <button class="w-5 h-5 bg-green text-white rounded-full p-0 leading-0 text-sm">{{ user.answers.length }}</button></li>
+          <li class="my-0 mr-2">
+            <span class="opacity-80">Iterations:</span> <button class="w-5 h-5 bg-green text-white rounded-full p-0 leading-0">
+              {{ user.iterations.length }}
+            </button>
+          </li>
+          <li class="my-0 ml-2">
+            <span class="opacity-80">Answers:</span> <button class="w-5 h-5 bg-green text-white rounded-full p-0 leading-0 text-sm">
+              {{ user.answers.length }}
+            </button>
+          </li>
         </ul>
       </div>
     </div>
