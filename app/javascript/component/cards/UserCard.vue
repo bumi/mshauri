@@ -14,6 +14,16 @@
           </div>
         </router-link>
       </div>
+      <div class="w-50"> 
+        <h3>Iterations</h3>
+        {{ user.iterations.length }}
+      </div>
+      
+      <div class="w-50">
+      <h3>Answers</h3>
+      {{ user.answers.length }}
+      </div>  
+
       <div class="w-50">
         <h5>Joined on</h5>
         {{ joinedOn }}

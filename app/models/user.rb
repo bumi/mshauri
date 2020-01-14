@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :iterations, dependent: :destroy
   before_validation :insert_slug
   after_create :send_welcome_email
+  has_many :answers, through: :iterations
 
   # Validations for the model
   validates :slug, presence: true, uniqueness: true

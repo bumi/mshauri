@@ -6,8 +6,7 @@ module Api
     skip_after_action :verify_authorized, only: %i[me]
 
     def index
-      users = policy_scope(User)
-      render json: users
+      @users = policy_scope(User)
     end
 
     def show
