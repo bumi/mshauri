@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 mx-auto border-1 p-4 border-solid border-grey-lighter shadow-sm">
+  <div class="w-100 mx-auto bg-white border-1 p-4 border-solid border-grey-lighter shadow-sm">
     <div class="flex h-1 bg-grey-lighter rounded-full overflow-hidden">
       <progress-bar :value="iteration.completion_rate" />
     </div>
@@ -58,7 +58,7 @@ export default {
       if (this.isAdmin) {
         return "View Answers";
       }
-      if (this.isComplete) {
+      if (!this.isComplete) {
         return "Continue";
       }
       return 'View Recommendations';
