@@ -2,8 +2,16 @@
   <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-3 my-3 xs:my-0 bg-white rounded-xl">
     <div class="w-80 mx-auto">
       <div class="my-5">
-        <div v-if="iteration.recommendations_count > 0" class="text-right w-100">
-          <button @click="viewRecommendations" class="btn btn-success">View Recommendations</button>
+        <div
+          v-if="iteration.recommendations_count > 0"
+          class="text-right w-100"
+        >
+          <button
+            class="btn btn-success"
+            @click="viewRecommendations"
+          >
+            View Recommendations
+          </button>
         </div>
         <div
           v-for="iterationAnswer in iterationAnswers"
@@ -61,15 +69,16 @@ export default {
       console.log(data);
     });
     Iteration.show(this.$route.params.iteration_id).then(({ data }) => {
-        this.iteration = data;
+      this.iteration = data;
     });
-  }, methods:{
-      viewRecommendations(){
-        this.$router.push({
-          name: 'recommendations-index',
-          params: { iteration_id: this.iteration.id }
-        });
-      }
+  },
+  methods: {
+    viewRecommendations() {
+      this.$router.push({
+        name: 'recommendations-index',
+        params: { iteration_id: this.iteration.id }
+      });
+    }
   }
 }
 </script>
