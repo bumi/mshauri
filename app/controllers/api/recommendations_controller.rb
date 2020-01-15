@@ -9,7 +9,7 @@ module Api
     def index
       @recommendations = policy_scope(Recommendation)
 
-      @recommendations = @recommendations.where(iterations: { id: params[:iteration_id] }) if params[:iteration_id]
+      @recommendations = @recommendations.joins(:iterations).where(iterations: { id: params[:iteration_id] }) if params[:iteration_id]
 
       @recommendations = @recommendations.order(priority: :desc).distinct.to_a
       return unless @recommendations.count < 7
