@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
   end
 
   context 'when creating user' do
-    it 'should be valid' do
+    it 'is valid' do
       user = FactoryBot.create(:user, name: 'name')
       expect(user.name).to eq 'name'
     end

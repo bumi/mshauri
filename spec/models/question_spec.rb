@@ -14,7 +14,7 @@ RSpec.describe Question, type: :model do
   end
 
   context 'with validations' do
-    record = described_class.create()
+    record = described_class.create
     record.valid? # run validations
   end
 
