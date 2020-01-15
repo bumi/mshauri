@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe UsersController do
+RSpec.describe Api::UsersController do
   let(:user) { FactoryBot.create(:user) }
 
   describe 'GET #index' do
