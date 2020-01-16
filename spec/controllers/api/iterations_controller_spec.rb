@@ -15,7 +15,7 @@ RSpec.describe Api::IterationsController, type: :controller do
 
     it 'renders the #show view' do
       iteration = user.iterations.create
-      get :show, id: iteration, params: { user_slug: user.slug }, format: :json
+      get :show, params: { id: iteration, user_slug: user.slug }, format: :json
 
       expect(response.response_code).to be(200)
       # response.should render_template :show

@@ -7,5 +7,6 @@ FactoryBot.define do
     identifier { Faker::Number.rand }
     description { Faker::Lorem.paragraph(rand(2..8)) }
     multiple { Faker::Boolean.rand }
+    entry { false }
   end
 end
