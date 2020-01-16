@@ -7,18 +7,10 @@ RSpec.describe Api::UsersController do
 
   describe 'GET #index' do
     it 'renders the :index view' do
-      get :index, params: { user_id: user.id }
-      #   response.should render_template :index
+      user=FactoryBot.create(:user)
+      get :me, params: { user_slug: user.slug}
       response.response_code.should == 200
     end
 
-    it 'renders the #show view' do
-      @user = FactoryBot.create(:user)
-      #   get :show, params: { id: FactoryBot.create(:user) }
-      #   response.should render_template :show
-      get :show, params: { id: @user.to_param, template: 'users/show' }
-      expect(response).to render_template :show
-      response.response_code.should == 200
-    end
   end
 end
