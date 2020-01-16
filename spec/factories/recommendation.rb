@@ -2,11 +2,11 @@
 
 require 'faker'
 FactoryBot.define do
-  factory :question do
-    title { Faker::String.random }
+  factory :recommendation do
     identifier { Faker::Number.rand }
+    title { Faker::String.random }
+    intro { Faker::String.random }
     description { Faker::Lorem.paragraph(rand(2..8)) }
-    multiple { Faker::Boolean.rand }
-    entry { false }
+    priority { Faker::Number.digit }
   end
 end

@@ -23,13 +23,16 @@ class Iteration < ApplicationRecord
   def starting_question_id
     return iteration_answers.last.answer.next_question_id if iteration_answers.any?
 
-    Question.find_by(identifier: '1').id
+    question = Question.find_by(identifier: '1') || Question.first || Question.new
+    question.id
   end
 
   def completion_rate
     return 100 if completed?
 
-    (questions.distinct.count.to_f / Question.count * 100).to_i
+    return (questions.distinct.count.to_f / Question.count * 100).to_i if questions.any?
+
+    0
   end
 
   def as_json(args = {})
