@@ -5,10 +5,15 @@ require 'rails_helper'
 RSpec.describe Api::QuestionsController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
 
+  before do
+    request.env['HTTP_ACCEPT'] = 'application/json'
+  end
+
   describe 'GET' do
     it 'renders the #show view' do
-      get :show, params: { id: FactoryBot.create(:question) }
-      response.should render_template :show
+      question = FactoryBot.create(:question)
+      process :show, method: :get, params: { id: question.id }
+      assert_response :success
     end
   end
 end
