@@ -12,9 +12,8 @@ RSpec.describe Api::QuestionsController, type: :controller do
   describe 'GET' do
     it 'renders the #show view' do
       question = FactoryBot.create(:question)
-      get :show, params: { id: question.id }
+      process :show, method: :get, params: { id: question.id }
       assert_response :success
-      # response.should render_template :show
     end
   end
 end
