@@ -7,7 +7,7 @@
           class="text-right w-100"
         >
           <button
-            class="btn btn-success"
+            class="btn btn-success rounded"
             @click="viewRecommendations"
           >
             View Recommendations
