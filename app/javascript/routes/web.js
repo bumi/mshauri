@@ -3,6 +3,7 @@ import Home from "../views/Home"
 import Question from "../views/Question"
 import RecommendationIndex from "../views/recommendations/Index"
 import RecommendationShow from "../views/recommendations/Show"
+import Error404 from "../views/errors/404"
 
 export default {
   mode: "history",
@@ -44,6 +45,11 @@ export default {
       path: '/:user_slug/i/:iteration_id/recommendations',
       component: RecommendationIndex,
       name: 'recommendations-index'
+    },
+    {
+      path: '/*',
+      component: Error404,
+      name: 'error-404'
     }
   ]
 }
