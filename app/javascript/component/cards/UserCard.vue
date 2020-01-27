@@ -12,7 +12,7 @@
         >
           <div>
             <h3 class="mt-2 mb-2">
-              {{ user.name ? user.name : 'Anonymous' }}
+              {{ user.name ? user.name : user.email }}
             </h3>
             <p class="my-0 text-muted">
               {{ user.email }}
