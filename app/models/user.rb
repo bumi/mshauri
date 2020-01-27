@@ -11,6 +11,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: { allow_blank: true }
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, allow_blank: true }
 
+  default_scope { order(created_at: :desc) }
+
   def send_welcome_email
     UserMailer.with(user: self).welcome_email.deliver_now if email.present?
   end
