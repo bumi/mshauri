@@ -6,6 +6,8 @@ import RecommendationShow from "../views/recommendations/Show"
 import AdminIndex from "../views/admin/Index"
 import UserShow from "../views/user/Show"
 import IterationAnswersIndex from "../views/admin/iteration-answers/Index"
+import Error404 from "../views/errors/404"
+
 
 export default {
   mode: "history",
@@ -65,6 +67,10 @@ export default {
       path: '/:user_slug/admin/i/:iteration_id/answers',
       component: IterationAnswersIndex,
       name: 'admin-iteration-answers'
+    }, {
+      path: '/*',
+      component: Error404,
+      name: 'error-404'
     }
   ]
 }
