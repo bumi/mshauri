@@ -3,18 +3,22 @@
 module Api
   class IterationsController < BaseController
     before_action :require_current_user
+    skip_after_action :verify_authorized, only: %i[notify_user]
 
     # get all current user's iterations
     def index
-      render json: current_user.iterations
+      iterations = policy_scope(Iteration)
+      render json: iterations
     end
 
     def show
-      @iteration = current_user.iterations.find(params[:id])
+      @iteration = Iteration.find(params[:id])
+      authorize @iteration
     end
 
     def create
       @iteration = current_user.iterations.build
+      authorize @iteration
       if @iteration.save
         render json: @iteration
       else
@@ -23,8 +27,9 @@ module Api
     end
 
     def notify_user
+      iteration = current_user.iterations.find(params[:id])
       if current_user.update(user_params)
-        current_iteration.notify_completion
+        iteration.notify_completion
         render json: 'Success', status: :ok
       else
         render json: current_user.errors, status: :unprocessable_entity

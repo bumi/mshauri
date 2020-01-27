@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_153813) do
     t.integer "priority"
     t.string "identifier"
     t.text "intro"
-    t.boolean "general"
+    t.boolean "general", default: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_153813) do
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true, where: "((email IS NOT NULL) AND ((email)::text <> ''::text))"
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end

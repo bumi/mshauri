@@ -123,21 +123,23 @@ export default {
 
     },
     saveAnswer() {
+      let iteration_id = this.form.iteration_id;
+
       this.loading = true;
-      this.form.post(AnswerModel.url()).then(data => {
+      this.form.post(`${AnswerModel.url()}?iteration_id=${iteration_id}`).then(data => {
         if (data) {
           this.$router.push({
             name: 'question',
             params: {
               id: data,
-              iteration_id: this.form.iteration_id
+              iteration_id
             }
           });
           this.getReload();
         } else {
           this.$router.push({
             name: 'dashboard',
-            params: { iteration_id: this.form.iteration_id }
+            params: { iteration_id }
           });
         }
       })

@@ -2,8 +2,7 @@
 
 require 'faker'
 FactoryBot.define do
-  factory :user do
-    name { 'lewis' }
-    email { Faker::Internet.email }
+  factory :iteration do
+    association :user
   end
 end

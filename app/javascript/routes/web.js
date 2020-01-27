@@ -3,7 +3,11 @@ import Home from "../views/Home"
 import Question from "../views/Question"
 import RecommendationIndex from "../views/recommendations/Index"
 import RecommendationShow from "../views/recommendations/Show"
+import AdminIndex from "../views/admin/Index"
+import UserShow from "../views/user/Show"
+import IterationAnswersIndex from "../views/admin/iteration-answers/Index"
 import Error404 from "../views/errors/404"
+
 
 export default {
   mode: "history",
@@ -47,6 +51,23 @@ export default {
       name: 'recommendations-index'
     },
     {
+      path: '/:user_slug/recommendations/:id',
+      component: RecommendationShow,
+      name: 'recommendation-show'
+    },
+    {
+      path: '/:user_slug/admin',
+      component: AdminIndex,
+      name: 'admin-index'
+    }, {
+      path: '/:user_slug/admin/user/:id',
+      component: UserShow,
+      name: 'admin-user-show'
+    }, {
+      path: '/:user_slug/admin/i/:iteration_id/answers',
+      component: IterationAnswersIndex,
+      name: 'admin-iteration-answers'
+    }, {
       path: '/*',
       component: Error404,
       name: 'error-404'

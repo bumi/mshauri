@@ -3,11 +3,15 @@
 module Api
   class RecommendationsController < BaseController
     before_action :require_current_user, except: %i[all show]
-    before_action :require_current_iteration, except: %i[all show]
+    # before_action :require_current_iteration, except: %i[all show]
+    skip_after_action :verify_authorized, only: %i[all show]
 
     def index
-      @recommendations = current_iteration.recommendations.order(priority: :desc).distinct.to_a
+      @recommendations = policy_scope(Recommendation)
 
+      @recommendations = @recommendations.joins(:iterations).where(iterations: { id: params[:iteration_id] }) if params[:iteration_id]
+
+      @recommendations = @recommendations.order(priority: :desc).distinct.to_a
       return unless @recommendations.count < 7
 
       @recommendations += Recommendation.general.to_a

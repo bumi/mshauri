@@ -10,6 +10,8 @@ gem 'rails', '~> 6.0.1'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma'
+# Use pundit
+gem 'pundit'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -38,8 +40,10 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pundit-matchers', '~> 1.6.0'
   gem 'rspec-rails'
   gem 'rubocop', '0.76', require: false
+  gem 'rubocop-faker', require: false
   gem 'rubocop-rails', '2.3', require: false
   gem 'rubocop-rspec', '1.36', require: false
 end
