@@ -20,5 +20,6 @@ before_script:
 
 script:
   - npm run lint
+  - npm run test
   - bundle exec rubocop
   - bundle exec rake

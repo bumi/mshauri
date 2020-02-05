@@ -4,9 +4,11 @@ module.exports = {
     ecmaVersion: 2017,
     sourceType: 'module'
   },
+  plugins: ['jest'],
   extends: [
     'eslint:recommended',
-    'plugin:vue/recommended'
+    'plugin:vue/recommended',
+    'plugin:jest/recommended'
   ],
   rules: {
     'arrow-spacing': ['error', { 'before': true, 'after': true }],
