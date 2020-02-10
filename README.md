@@ -2,6 +2,10 @@
 
 Mshauri is the questionnaire application used for [tech-guide.rw](https://www.tech-guide.rw/)
 
+    tech-guide.rw is a software development questionnaire that provides individual recommendations 
+    and ideas about software engineering best practices to improve your development workflow. 
+
+
 It's main features include: Collecting answers to certain questions and providing relevant answers/suggestions depending on the user's replies.
 
 Currently it is used for "software engineering best practices", but the application can be used with any questions/content.
@@ -33,26 +37,28 @@ Currently it is used for "software engineering best practices", but the applicat
 
 ## Usage
 
-1) Run the server
-    ```bash
-    rails server
-    open http://localhost:3000
-    ```
+Run the server
 
+```bash
+rails server
+```
+
+Open [http://localhost:3000](http://localhost:3000)
 
 ## Contributing
 
 The project uses [eslitn](https://github.com/eslint/eslint) for code linting.
 
-    ```bash
-    node_modules/.bin/eslint --ext .js,.vue app/javascript/ --fix # auto fix
-    ```
+```bash
+node_modules/.bin/eslint --ext .js,.vue app/javascript/ --fix # auto fix
+```
 
 The project uses [rubocop](https://github.com/rubocop-hq/rubocop) for code linting.
-    ```rb
-    bundle exec rubocop
-    bundle exec rubocop -a # auto fix
-    ```
+
+```rb
+bundle exec rubocop
+bundle exec rubocop -a # auto fix
+```
 
 ## Content
 
