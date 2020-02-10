@@ -1,4 +1,4 @@
-# Mshauri
+# Mshauri - questionnaires and recommendations
 
 Mshauri is the questionnaire application used for [tech-guide.rw](https://www.tech-guide.rw/)
 
@@ -10,7 +10,7 @@ It's main features include: Collecting answers to certain questions and providin
 
 Currently it is used for "software engineering best practices", but the application can be used with any questions/content.
 
-## Reqirements
+## Requirements
 
 - Ruby 2.3.0 or newer
 - Rails
