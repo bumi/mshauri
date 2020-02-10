@@ -47,6 +47,9 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ## Contributing
 
+Feedback and pull requests are very welcome! 
+
+
 The project uses [eslitn](https://github.com/eslint/eslint) for code linting.
 
 ```bash
