@@ -3,22 +3,25 @@
     <loader :value="loading" />
     <div class="w-80 mx-auto">
       <div class="my-5">
-        <div
-          v-if="iteration.recommendations_count > 0"
-          class="text-right w-100"
-        >
-          <button
-            class="btn btn-success rounded"
-            @click="viewRecommendations"
-          >
-            View Recommendations
-          </button>
+        <div class="flex">
+          <div class="w-50 ml-0">
+            <button class="btn btn-success rounded" @click="viewRecommendations">
+              Overview of all users
+            </button>
+          </div>
+          <div v-if="iteration.recommendations_count > 0" class="text-right w-50">
+
+
+
+            <button class="btn btn-success rounded" @click="viewRecommendations">
+              View Recommendations
+            </button>
+
+          </div>
+
         </div>
-        <div
-          v-for="iterationAnswer in iterationAnswers"
-          :key="iterationAnswer.id"
-          class="w-100 my-4 px-3 py-2 bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl"
-        >
+        <div v-for="iterationAnswer in iterationAnswers" :key="iterationAnswer.id"
+          class="w-100 my-4 px-3 py-2 bg-transparent border-grey-light shadow-sm border-solid border-1 rounded-xl">
           <div class="w-100 flex px-4 py-2">
             <div class="w-auto pr-3">
               <p class="my-0 text-4xl font-primary">
@@ -32,25 +35,45 @@
               <p class="my-1">
                 {{ iterationAnswer.question.description }}
               </p>
+
             </div>
           </div>
-          <div class="w-100 flex px-4 py-2 text-primary-darkest">
+          <div class="w-100 flex px-4 py-2">
             <div class="w-auto pr-3">
-              <p class="my-0 text-4xl font-primary">
+              <p class="my-0 text-4xl font-primary text-primary-darkest">
                 A:
               </p>
             </div>
             <div class="w-90">
-              <h4>
+              <h4 class=" text-primary-darkest">
                 {{ iterationAnswer.answer.value }}
               </h4>
             </div>
+
+            <div v-for="question in questions" :key="question.id">
+              <div v-if="question.title == iterationAnswer.question.title">
+                <div class="w-auto pr-3">
+                  <p class="my-0 text-4xl">
+                    A:
+                  </p>
+                </div>
+
+                <div class="w-90">
+
+
+                  <div v-for="answer in question.answers" :key="answer.id">
+                    <div v-if="answer.value != iterationAnswer.answer.value">
+                      {{ answer.value}}
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
-        <div
-          v-if="iterationAnswers.length < 1 && !loading"
-          class="p-5"
-        >
+        <div v-if="iterationAnswers.length < 1 && !loading" class="p-5">
           <div class="w-100 p-5 opacity-60">
             <div class="w-100 flex px-4 py-2">
               <div class="w-auto pr-3">
@@ -82,39 +105,56 @@
   </div>
 </template>
 <script>
-import IterationAnswer from "../../../models/IterationAnswer"
-import Iteration from "../../../models/Iteration"
-import Loader from "../../../component/Loader"
-export default {
-  name: 'IterationAnswersIndex',
-  components: {
-    Loader
-  },
-  data() {
-    return {
-      iterationAnswers: [],
-      iteration: {},
-      loading: true
-    }
-  },
-  mounted() {
-    IterationAnswer.index({
-      'iteration_id': this.$route.params.iteration_id
-    }).then(({ data }) => {
-      this.iterationAnswers = data;
-      this.loading = false;
-    });
-    Iteration.show(this.$route.params.iteration_id).then(({ data }) => {
-      this.iteration = data;
-    });
-  },
-  methods: {
-    viewRecommendations() {
-      this.$router.push({
-        name: 'recommendations-index',
-        params: { iteration_id: this.iteration.id }
+  import IterationAnswer from "../../../models/IterationAnswer"
+  import Question from "../../../models/Question"
+  import Iteration from "../../../models/Iteration"
+  import Loader from "../../../component/Loader"
+  export default {
+    name: 'IterationAnswersIndex',
+    components: {
+      Loader
+    },
+    data() {
+      return {
+        iterationAnswers: [],
+        questions: [],
+        iteration: {},
+        loading: true
+      }
+    },
+    mounted() {
+      IterationAnswer.index({
+        'iteration_id': this.$route.params.iteration_id
+      }).then(({
+        data
+      }) => {
+        this.iterationAnswers = data;
+        this.question = data.question;
+        this.loading = false;
       });
+      Iteration.show(this.$route.params.iteration_id).then(({
+        data
+      }) => {
+        this.iteration = data;
+      });
+      Question.index().then(({
+        data
+      }) => {
+        this.questions = data
+        console.log(data)
+      })
+
+
+    },
+    methods: {
+      viewRecommendations() {
+        this.$router.push({
+          name: 'recommendations-index',
+          params: {
+            iteration_id: this.iteration.id
+          }
+        });
+      }
     }
   }
-}
 </script>
