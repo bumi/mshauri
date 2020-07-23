@@ -44,43 +44,25 @@
               </p>
             </div>
           </div>
-          <div class="flex flex-wrap px-4 py-2">
-            <div className="w-50">
-              <div class="flex">
-                <div class="w-50 pr-3">
-                  <p class="my-0 text-4xl font-primary text-primary-darkest">
-                    A:
-                  </p>
-                </div>
-                <div class="w-50">
-                  <h4 class=" text-primary-darkest">
-                    {{ iterationAnswer.answer.value }}
-                  </h4>
-                </div>
-              </div>
-            </div>
-
+          <div class="px-4 py-2">
             <div
               v-for="question in questions"
               :key="question.id"
             >
-              <div v-if="question.title == iterationAnswer.question.title">
-                <div class="w-50">
-                  <div class="flex">
-                    <div class="w-50 pr-3">
-                      <p class="my-0 text-4xl" />
-                    </div>
-
-                    <div class="my-0 text-4xl w-50">
-                      <div
-                        v-for="answer in question.answers"
-                        :key="answer.id"
-                      >
-                        <div v-if="answer.value != iterationAnswer.answer.value">
-                          A:{{ answer.value }}
-                        </div>
-                      </div>
-                    </div>
+              <div
+                v-if="question.title == iterationAnswer.question.title"
+                class="w-100 flex flex-wrap"
+              >
+                <div
+                  v-for="answer in question.answers"
+                  :key="answer.id"
+                  class="w-30"
+                >
+                  <div
+                    class="w-100 mb-2"
+                    :class="{'text-primary-darkest': answer.value== iterationAnswer.answer.value}"
+                  >
+                    A:{{ answer.value }}
                   </div>
                 </div>
               </div>
