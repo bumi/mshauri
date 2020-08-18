@@ -3,16 +3,26 @@
     <loader :value="loading" />
     <div class="w-80 mx-auto">
       <div class="my-5">
-        <div
-          v-if="iteration.recommendations_count > 0"
-          class="text-right w-100"
-        >
-          <button
-            class="btn btn-success rounded"
-            @click="viewRecommendations"
+        <div class="flex">
+          <div class="w-50 ml-0">
+            <button
+              class="btn btn-success rounded"
+              @click="usersOverview"
+            >
+              Overview of all users
+            </button>
+          </div>
+          <div
+            v-if="iteration.recommendations_count > 0"
+            class="text-right w-50"
           >
-            View Recommendations
-          </button>
+            <button
+              class="btn btn-success rounded"
+              @click="viewRecommendations"
+            >
+              View Recommendations
+            </button>
+          </div>
         </div>
         <div
           v-for="iterationAnswer in iterationAnswers"
@@ -34,16 +44,28 @@
               </p>
             </div>
           </div>
-          <div class="w-100 flex px-4 py-2 text-primary-darkest">
-            <div class="w-auto pr-3">
-              <p class="my-0 text-4xl font-primary">
-                A:
-              </p>
-            </div>
-            <div class="w-90">
-              <h4>
-                {{ iterationAnswer.answer.value }}
-              </h4>
+          <div class="px-4 py-2">
+            <div
+              v-for="question in questions"
+              :key="question.id"
+            >
+              <div
+                v-if="question.title == iterationAnswer.question.title"
+                class="w-100 flex flex-wrap"
+              >
+                <div
+                  v-for="answer in question.answers"
+                  :key="answer.id"
+                  class="w-30"
+                >
+                  <div
+                    class="w-100 mb-2"
+                    :class="{'text-primary-darkest': answer.value== iterationAnswer.answer.value}"
+                  >
+                    A:{{ answer.value }}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -74,7 +96,9 @@
                 <div class="w-100 h-4 bg-black mt-2 rounded-full" />
               </div>
             </div>
-            <h3 class="text-center">No Question answered yet</h3>
+            <h3 class="text-center">
+              No Question answered yet
+            </h3>
           </div>
         </div>
       </div>
@@ -83,6 +107,7 @@
 </template>
 <script>
 import IterationAnswer from "../../../models/IterationAnswer"
+import Question from "../../../models/Question"
 import Iteration from "../../../models/Iteration"
 import Loader from "../../../component/Loader"
 export default {
@@ -93,6 +118,7 @@ export default {
   data() {
     return {
       iterationAnswers: [],
+      questions: [],
       iteration: {},
       loading: true
     }
@@ -100,19 +126,39 @@ export default {
   mounted() {
     IterationAnswer.index({
       'iteration_id': this.$route.params.iteration_id
-    }).then(({ data }) => {
+    }).then(({
+      data
+    }) => {
       this.iterationAnswers = data;
+      this.question = data.question;
       this.loading = false;
     });
-    Iteration.show(this.$route.params.iteration_id).then(({ data }) => {
+    Iteration.show(this.$route.params.iteration_id).then(({
+      data
+    }) => {
       this.iteration = data;
     });
+    Question.index().then(({
+      data
+    }) => {
+      this.questions = data
+      console.log(data)
+    })
+
+
   },
   methods: {
     viewRecommendations() {
       this.$router.push({
         name: 'recommendations-index',
-        params: { iteration_id: this.iteration.id }
+        params: {
+          iteration_id: this.iteration.id
+        }
+      });
+    },
+    usersOverview() {
+      this.$router.push({
+        name: 'admin-index',
       });
     }
   }

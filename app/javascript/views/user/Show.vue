@@ -1,10 +1,21 @@
 <template>
   <div class="w-100 md:w-100 xs:w-100 sm:w-100 mx-auto py-3 my-3 xs:my-0 bg-white rounded-xl">
     <div class="w-90 mx-auto">
-      <div class="w-90 xs:w-95 text-left mx-auto">
-        <h6 class="my-4 text-xl font-semibold">
-          Iterations
-        </h6>
+      <div class="flex">
+        <div class="w-50">
+          <button
+            class="btn btn-success rounded"
+            @click="usersOverview"
+          >
+            Overview of all users
+          </button>
+        </div>
+
+        <div class="w-50 xs:w-95  mx-auto">
+          <h6 class="my-4 text-xl font-semibold">
+            Iterations
+          </h6>
+        </div>
       </div>
       <div class="flex flex-wrap xs:block xs:w-90 xs:mx-auto justify-content-center md:w-90 md:mx-auto py-4">
         <div
@@ -36,9 +47,18 @@ export default {
     }
   },
   mounted() {
-    User.show(this.$route.params.id).then(({ data }) => {
+    User.show(this.$route.params.id).then(({
+      data
+    }) => {
       this.user = data;
     });
+  },
+  methods: {
+    usersOverview() {
+      this.$router.push({
+        name: 'admin-index',
+      });
+    }
   }
 }
 </script>
