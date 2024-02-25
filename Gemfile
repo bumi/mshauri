@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '> 2.3.0', '<= 2.7.0' # specific upper limit to manually upgrade if next version is available
 
-gem 'rails', '~> 6.0.1'
+gem 'rails', '~> 6.1.7'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
